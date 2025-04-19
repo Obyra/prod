@@ -1,0 +1,263 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #1A1A1A;
+  line-height: 1.6;
+}
+
+.topbar {
+  background-color: #1A374D;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.topbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #A2C5D3;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #1A374D;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: #163147;
+}
+
+.card {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titulo-bloque {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1A374D;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+ul {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+ul li::before {
+  content: '✔';
+  color: #1A374D;
+  margin-right: 0.5rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  background: #1A374D;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1A374D;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+/* Imagen de fondo en el header */
+.imagen1-bg {
+  background: url('imagen1.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Imagen de fondo para ¿Quiénes somos? */
+.imagen2-bg {
+  background: url('imagen2.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imagen2-bg * {
+  position: relative;
+  z-index: 2;
+}
+
+.imagen2-bg .titulo-bloque {
+  color: #ffffff;
+}
+
+/* Fondos agregados con overlay */
+.imagen3-bg {
+  background: url('imagen3.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imagen4-bg {
+  background: url('imagen4.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.overlay-quienes {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.imagen3-bg *,
+.imagen4-bg * {
+  position: relative;
+  z-index: 2;
+}
+
+.imagen3-bg .titulo-bloque,
+.imagen4-bg .titulo-bloque {
+  color: #ffffff;
+}
+
+.contenido {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+/* Logo flotando */
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.anim-logo {
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .topbar-container {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content {
+    padding: 1.5rem;
+  }
+}

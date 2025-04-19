@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obyra | Consultoría de Compras para Obras</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .logo-nav {
+      height: 30px;
+      margin-left: 0;
+    }
+    .topbar-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .header-content h1 {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+    .header-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .header-content .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+    }
+    .logo {
+      display: none;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .whatsapp-icon {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2.2rem;
+      }
+      .header-content p {
+        font-size: 1.2rem;
+      }
+      .header-content .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="topbar-container">
+      <img src="obyralogo.png" alt="Logo de Obyra" class="logo-nav" />
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="inicio" class="imagen1-bg">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h1>OBYRA</h1>
+      <p>Consultoría en compras para obras</p>
+      <a href="#contacto" class="btn">Solicitá tu asesoría</a>
+    </div>
+  </header>
+
+  <section id="propuesta" class="card imagen4-bg propuesta-bg">
+    <div class="overlay-quienes"></div>
+    <div class="contenido">
+      <h2 class="titulo-bloque">¿Qué hacemos?</h2>
+      <p>En OBYRA te ayudamos a ahorrar tiempo y dinero gestionando todas tus compras de obra de forma estratégica.</p>
+      <p>Nos encargamos de todo: desde el relevamiento de necesidades hasta la entrega final. Vos solo te enfocás en construir.</p>
+      <p><strong>¿Cómo trabajamos?</strong><br>
+      - Cobrás un <strong>fee mensual o anual</strong>, sin comisiones ocultas ni letra chica.<br>
+      - Negociamos los mejores precios y condiciones para vos.<br>
+      - Te enviamos <strong>informes mensuales</strong> con el ahorro logrado.</p>
+      <p>Con OBYRA, tenés un equipo de compras experto, sin necesidad de contratar personal interno.</p>
+    </div>
+  </section>
+
+  <section id="servicios" class="card imagen3-bg servicios-bg">
+    <div class="overlay-quienes"></div>
+    <div class="contenido">
+      <h2 class="titulo-bloque">Servicios</h2>
+      <ul class="servicios-lista">
+        <li>Relevamiento de necesidades</li>
+        <li>Armado de listado de compras por etapa de obra</li>
+        <li>Búsqueda y comparación de proveedores</li>
+        <li>Negociación de precios y condiciones</li>
+        <li>Gestión de pedidos y seguimiento de entregas</li>
+        <li>Informes mensuales con resultados</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="quienes-somos" class="card imagen2-bg">
+    <div class="overlay-quienes"></div>
+    <div class="contenido">
+      <h2 class="titulo-bloque">¿Quiénes somos?</h2>
+      <p>En <strong>OBYRA</strong> nos especializamos en optimizar las compras para obras. Nuestro objetivo es ayudarte a ahorrar tiempo, dinero y energía en cada proyecto.</p>
+      <p>Con experiencia en el rubro de la construcción, sabemos lo que las obras necesitan y cómo conseguirlo de forma estratégica.</p>
+      <p>Trabajamos sin comisiones ocultas ni letra chica. Nuestro servicio se basa en un <strong>fee mensual o anual</strong> claro, transparente y accesible.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="card">
+    <h2 class="titulo-bloque">Solicitá tu asesoría</h2>
+    <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://obyra.github.io/obyra/#inicio">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nombre" placeholder="Nombre y apellido" required />
+      <input type="text" name="empresa" placeholder="Nombre de la empresa" />
+      <input type="text" name="zona" placeholder="Zona de obra (ciudad/barrio)" required />
+      <textarea name="necesidades" rows="5" placeholder="¿Qué materiales o insumos necesitás?" required></textarea>
+      <input type="email" name="email" placeholder="Email de contacto" required />
+      <input type="tel" name="telefono" placeholder="WhatsApp o teléfono" />
+      <input type="submit" value="Enviar solicitud" class="btn" />
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 OBYRA. Todos los derechos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5491173685175" class="whatsapp-float" target="_blank" title="Chateá con nosotros por WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon" />
+  </a>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
