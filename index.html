@@ -380,12 +380,21 @@
 
     .pwa-image {
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .pwa-mockup {
-      max-width: 300px;
-      border-radius: 30px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .pwa-mockup:hover {
+      transform: scale(1.02);
     }
 
     /* CTA Section */
