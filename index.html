@@ -10,15 +10,14 @@
   <link rel="icon" type="image/png" href="obyralogo.png">
   <style>
     :root {
-      --primary: #1a1a2e;
-      --primary-light: #16213e;
-      --accent: #f0b400;
-      --accent-hover: #d9a300;
-      --accent-dark: #c49200;
+      --primary: #1A374D;
+      --primary-light: #2D5A7B;
+      --accent: #4CAF50;
+      --accent-hover: #45a049;
       --text-dark: #1A1A1A;
       --text-light: #ffffff;
       --bg-light: #f8fafc;
-      --gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      --gradient: linear-gradient(135deg, #1A374D 0%, #2D5A7B 100%);
     }
 
     * {
@@ -78,18 +77,18 @@
 
     .btn-app {
       background: var(--accent);
-      color: #1a1a2e !important;
+      color: white !important;
       padding: 0.7rem 1.5rem !important;
       border-radius: 30px !important;
       font-weight: 700 !important;
       transition: all 0.3s !important;
-      box-shadow: 0 4px 15px rgba(240, 180, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
     }
 
     .btn-app:hover {
       background: var(--accent-hover) !important;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(240, 180, 0, 0.4);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
 
     /* Hero Section */
@@ -129,14 +128,14 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(240, 180, 0, 0.2);
-      color: var(--accent);
+      background: rgba(76, 175, 80, 0.2);
+      color: #7CFC00;
       padding: 0.5rem 1rem;
       border-radius: 30px;
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
-      border: 1px solid rgba(240, 180, 0, 0.3);
+      border: 1px solid rgba(76, 175, 80, 0.3);
     }
 
     .hero h1 {
@@ -147,7 +146,7 @@
     }
 
     .hero h1 span {
-      color: var(--accent);
+      color: #7CFC00;
     }
 
     .hero-text {
@@ -168,20 +167,20 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--accent);
-      color: #1a1a2e;
+      color: white;
       padding: 1rem 2rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
       font-size: 1.1rem;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(240, 180, 0, 0.4);
+      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
     }
 
     .btn-primary:hover {
       background: var(--accent-hover);
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(240, 180, 0, 0.5);
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.5);
     }
 
     .btn-secondary {
@@ -273,14 +272,14 @@
     .feature-icon {
       width: 60px;
       height: 60px;
-      background: var(--accent);
+      background: var(--gradient);
       border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
-      color: #1a1a2e;
+      color: white;
     }
 
     .feature-card h3 {
@@ -315,7 +314,7 @@
     .benefit-number {
       font-size: 3.5rem;
       font-weight: 800;
-      color: var(--accent);
+      color: #7CFC00;
       margin-bottom: 0.5rem;
     }
 
@@ -374,7 +373,7 @@
       background: var(--accent);
       border-radius: 50%;
       flex-shrink: 0;
-      color: #1a1a2e;
+      color: white;
       font-weight: bold;
       font-size: 0.8rem;
     }
@@ -423,20 +422,20 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--accent);
-      color: #1a1a2e;
+      color: white;
       padding: 1.2rem 2.5rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
       font-size: 1.1rem;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(240, 180, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
     }
 
     .btn-cta:hover {
       background: var(--accent-hover);
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(240, 180, 0, 0.4);
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.4);
     }
 
     /* Contact Section */
@@ -486,7 +485,6 @@
 
     .contact-methods a:hover {
       color: var(--accent);
-      text-decoration: underline;
     }
 
     .contact-form {
@@ -516,14 +514,14 @@
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: var(--accent);
+      border-color: var(--primary);
     }
 
     .contact-form button {
       width: 100%;
       padding: 1rem;
-      background: var(--accent);
-      color: #1a1a2e;
+      background: var(--primary);
+      color: white;
       border: none;
       border-radius: 12px;
       font-family: 'Montserrat', sans-serif;
@@ -534,7 +532,7 @@
     }
 
     .contact-form button:hover {
-      background: var(--accent-hover);
+      background: var(--primary-light);
     }
 
     /* Footer */
