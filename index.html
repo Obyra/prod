@@ -3,165 +3,1021 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obyra | Consultoría de Compras para Obras</title>
+  <title>OBYRA | Gestiona tus obras de construcción</title>
+  <meta name="description" content="OBYRA es la plataforma integral para gestionar obras de construcción. Presupuestos, inventario, tareas, clientes y más. Accedé desde cualquier dispositivo.">
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="obyralogo.png">
   <style>
-    .logo-nav {
-      height: 30px;
-      margin-left: 0;
+    :root {
+      --primary: #1A374D;
+      --primary-light: #2D5A7B;
+      --accent: #4CAF50;
+      --accent-hover: #45a049;
+      --text-dark: #1A1A1A;
+      --text-light: #ffffff;
+      --bg-light: #f8fafc;
+      --gradient: linear-gradient(135deg, #1A374D 0%, #2D5A7B 100%);
     }
-    .topbar-container {
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--gradient);
+      padding: 1rem 2rem;
+      position: fixed;
       width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 1rem;
-      padding-right: 1rem;
     }
-    .header-content {
-      max-width: 800px;
+
+    .logo-nav {
+      height: 35px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .btn-app {
+      background: var(--accent);
+      color: white !important;
+      padding: 0.7rem 1.5rem !important;
+      border-radius: 30px !important;
+      font-weight: 700 !important;
+      transition: all 0.3s !important;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn-app:hover {
+      background: var(--accent-hover) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 2rem 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      color: var(--text-light);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(76, 175, 80, 0.2);
+      color: #7CFC00;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      color: #7CFC00;
+    }
+
+    .hero-text {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-mockup {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: transform 0.5s;
+    }
+
+    .hero-mockup:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 2rem;
+      background: var(--bg-light);
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Benefits Section */
+    .benefits {
+      padding: 100px 2rem;
+      background: var(--gradient);
+      color: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
       text-align: center;
     }
-    .header-content h1 {
-      font-size: 3rem;
-      margin: 1rem 0;
+
+    .benefit-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #7CFC00;
+      margin-bottom: 0.5rem;
     }
-    .header-content p {
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-    .header-content .btn {
-      padding: 0.8rem 2rem;
+
+    .benefit-label {
       font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* PWA Section */
+    .pwa-section {
+      padding: 100px 2rem;
+      background: white;
+    }
+
+    .pwa-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .pwa-content h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .pwa-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .pwa-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pwa-features li {
+      padding: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    .pwa-features li::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .pwa-image {
+      text-align: center;
+    }
+
+    .pwa-mockup {
+      max-width: 300px;
       border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
     }
-    .logo {
-      display: none;
+
+    /* CTA Section */
+    .cta {
+      padding: 100px 2rem;
+      background: var(--bg-light);
+      text-align: center;
     }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(26, 55, 77, 0.3);
+    }
+
+    .btn-cta:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(26, 55, 77, 0.4);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 100px 2rem;
+      background: white;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-methods {
+      list-style: none;
+    }
+
+    .contact-methods li {
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-methods a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-methods a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+
+    .contact-form h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: var(--primary-light);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      height: 40px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 25px;
+      right: 25px;
       z-index: 1000;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
     }
-    .whatsapp-icon {
-      width: 50px;
-      height: 50px;
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
     }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-container,
+      .pwa-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-text {
+        margin: 0 auto 2rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-mockup {
+        max-width: 350px;
+        margin: 0 auto;
+        transform: none;
+      }
+
+      .pwa-features {
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto 2rem;
+      }
+    }
+
     @media (max-width: 768px) {
-      .header-content h1 {
-        font-size: 2.2rem;
+      .navbar {
+        padding: 1rem;
       }
-      .header-content p {
-        font-size: 1.2rem;
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
       }
-      .header-content .btn {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
+
+      .nav-links.active {
+        display: flex;
       }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 100px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-header h2,
+      .pwa-content h2,
+      .cta h2,
+      .contact-info h2 {
+        font-size: 1.8rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .benefit-number {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-cta {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.8s ease forwards;
     }
   </style>
 </head>
 <body>
-  <nav class="topbar">
-    <div class="topbar-container">
-      <img src="obyralogo.png" alt="Logo de Obyra" class="logo-nav" />
-      <ul class="nav-links">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="obyralogo.png" alt="OBYRA" class="logo-nav">
+      <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://app.obyra.com.ar" class="btn-app">Acceder a la App</a></li>
       </ul>
     </div>
   </nav>
 
-  <header id="inicio" class="imagen1-bg">
-    <div class="header-overlay"></div>
-    <div class="header-content">
-      <h1>OBYRA</h1>
-      <p>Consultoría en compras para obras</p>
-      <a href="#contacto" class="btn">Solicitá tu asesoría</a>
-    </div>
-  </header>
-
-  <section id="propuesta" class="card imagen4-bg propuesta-bg">
-    <div class="overlay-quienes"></div>
-    <div class="contenido">
-      <h2 class="titulo-bloque">¿Qué hacemos?</h2>
-      <p>En OBYRA te ayudamos a ahorrar tiempo y dinero gestionando todas tus compras de obra de forma estratégica.</p>
-      <p>Nos encargamos de todo: desde el relevamiento de necesidades hasta la entrega final. Vos solo te enfocás en construir.</p>
-      <p><strong>¿Cómo trabajamos?</strong><br>
-      - Abonas un <strong>fee mensual o anual</strong>, sin comisiones ocultas ni letra chica.<br>
-      - Negociamos los mejores precios y condiciones para vos.<br>
-      - Te enviamos <strong>informes mensuales</strong> con el ahorro logrado.</p>
-      <p>Con OBYRA, tenés un equipo de compras experto, sin necesidad de contratar personal interno.</p>
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Nueva App Web</span>
+        <h1>Gestiona tus <span>obras</span> de forma inteligente</h1>
+        <p class="hero-text">OBYRA es la plataforma integral para empresas constructoras. Administra presupuestos, inventario, tareas, clientes y reportes desde cualquier dispositivo.</p>
+        <div class="hero-buttons">
+          <a href="https://app.obyra.com.ar" class="btn-primary">
+            Comenzar ahora
+          </a>
+          <a href="#funcionalidades" class="btn-secondary">
+            Ver funcionalidades
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="imagen1.jpg" alt="OBYRA App" class="hero-mockup">
+      </div>
     </div>
   </section>
 
-  <section id="servicios" class="card imagen3-bg servicios-bg">
-    <div class="overlay-quienes"></div>
-    <div class="contenido">
-      <h2 class="titulo-bloque">Servicios</h2>
-      <ul class="servicios-lista">
-        <li>Relevamiento de necesidades</li>
-        <li>Armado de listado de compras por etapa de obra</li>
-        <li>Búsqueda y comparación de proveedores</li>
-        <li>Negociación de precios y condiciones</li>
-        <li>Gestión de pedidos y seguimiento de entregas</li>
-        <li>Informes mensuales con resultados</li>
+  <!-- Features Section -->
+  <section id="funcionalidades" class="features">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Todo lo que necesitas en un solo lugar</h2>
+        <p>Herramientas potentes para optimizar cada aspecto de tus proyectos de construccion</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#128200;</div>
+          <h3>Presupuestos Inteligentes</h3>
+          <p>Crea presupuestos detallados con nuestra calculadora IA. Genera comparativas en USD y ARS automaticamente.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128230;</div>
+          <h3>Control de Inventario</h3>
+          <p>Gestiona materiales, herramientas y equipos. Controla stock, traslados entre depositos y alertas de minimo.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128736;</div>
+          <h3>Gestion de Obras</h3>
+          <p>Administra multiples obras simultaneamente. Seguimiento de avance, tareas asignadas y documentacion.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128101;</div>
+          <h3>Clientes y Proveedores</h3>
+          <p>Mantene un registro organizado de todos tus contactos comerciales con historial de operaciones.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128202;</div>
+          <h3>Reportes y Metricas</h3>
+          <p>Visualiza el rendimiento de tus proyectos con dashboards interactivos y reportes exportables.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128274;</div>
+          <h3>Multi-usuario y Roles</h3>
+          <p>Crea equipos con diferentes niveles de acceso. Administradores, supervisores y operarios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="beneficios" class="benefits">
+    <div class="section-container">
+      <div class="section-header" style="color: white;">
+        <h2 style="color: white;">Resultados que importan</h2>
+        <p style="color: rgba(255,255,255,0.8);">Empresas constructoras confian en OBYRA para optimizar sus operaciones</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-number">40%</div>
+          <div class="benefit-label">Ahorro en tiempo de gestion</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">100%</div>
+          <div class="benefit-label">Acceso desde cualquier dispositivo</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">24/7</div>
+          <div class="benefit-label">Disponibilidad de la plataforma</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">0</div>
+          <div class="benefit-label">Instalacion requerida</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PWA Section -->
+  <section class="pwa-section">
+    <div class="section-container">
+      <div class="pwa-container">
+        <div class="pwa-content">
+          <h2>Funciona como una app nativa</h2>
+          <p>OBYRA es una Progressive Web App (PWA). Instalala en tu celular o computadora y usala sin conexion a internet.</p>
+          <ul class="pwa-features">
+            <li>Instalala directamente desde el navegador</li>
+            <li>Funciona sin conexion a internet</li>
+            <li>Recibe notificaciones push</li>
+            <li>Actualizaciones automaticas</li>
+            <li>Sin ocupar espacio en app stores</li>
+          </ul>
+          <a href="https://app.obyra.com.ar" class="btn-primary">
+            Instalar OBYRA
+          </a>
+        </div>
+        <div class="pwa-image">
+          <img src="imagen4.jpg" alt="OBYRA en movil" class="pwa-mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="section-container">
+      <h2>Comenza a gestionar tus obras hoy</h2>
+      <p>Registrate gratis y descubri como OBYRA puede transformar la gestion de tus proyectos de construccion.</p>
+      <div class="cta-buttons">
+        <a href="https://app.obyra.com.ar/registro" class="btn-cta">
+          Crear cuenta gratis
+        </a>
+        <a href="https://app.obyra.com.ar" class="btn-secondary" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">
+          Iniciar sesion
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="contact">
+    <div class="section-container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Contactanos</h2>
+          <p>Tenes preguntas sobre OBYRA? Nuestro equipo esta listo para ayudarte a optimizar la gestion de tus obras.</p>
+          <ul class="contact-methods">
+            <li>
+              <span style="font-size: 1.5rem;">&#128231;</span>
+              <a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a>
+            </li>
+            <li>
+              <span style="font-size: 1.5rem;">&#128222;</span>
+              <a href="https://wa.me/5491173685175">+54 9 11 7368-5175</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h3>Envianos un mensaje</h3>
+          <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://obyra.com.ar/#inicio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Consulta desde Landing Page OBYRA">
+            <input type="text" name="nombre" placeholder="Nombre y apellido" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="empresa" placeholder="Empresa (opcional)">
+            <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="obyralogo.png" alt="OBYRA" class="footer-logo">
+      <ul class="footer-links">
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://app.obyra.com.ar">Acceder</a></li>
       </ul>
     </div>
-  </section>
-
-  <section id="quienes-somos" class="card imagen2-bg">
-    <div class="overlay-quienes"></div>
-    <div class="contenido">
-      <h2 class="titulo-bloque">¿Quiénes somos?</h2>
-      <p>En <strong>OBYRA</strong> nos especializamos en optimizar las compras para obras. Nuestro objetivo es ayudarte a ahorrar tiempo, dinero y energía en cada proyecto.</p>
-      <p>Con experiencia en el rubro de la construcción, sabemos lo que las obras necesitan y cómo conseguirlo de forma estratégica.</p>
-      <p>Trabajamos sin comisiones ocultas ni letra chica. Nuestro servicio se basa en un <strong>fee mensual o anual</strong> claro, transparente y accesible.</p>
-    </div>
-  </section>
-
-  <section id="contacto" class="card">
-    <h2 class="titulo-bloque">Solicitá tu asesoría</h2>
-    <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://obyra.github.io/obyra/#inicio">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="nombre" placeholder="Nombre y apellido" required />
-      <input type="text" name="empresa" placeholder="Nombre de la empresa" />
-      <input type="text" name="zona" placeholder="Zona de obra (ciudad/barrio)" required />
-      <textarea name="necesidades" rows="5" placeholder="¿Qué materiales o insumos necesitás?" required></textarea>
-      <input type="email" name="email" placeholder="Email de contacto" required />
-      <input type="tel" name="telefono" placeholder="WhatsApp o teléfono" />
-      <input type="submit" value="Enviar solicitud" class="btn" />
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 OBYRA. Todos los derechos reservados.</p>
+    <p class="footer-copy">&copy; 2025 OBYRA. Todos los derechos reservados.</p>
   </footer>
 
-  <a href="https://wa.me/5491173685175" class="whatsapp-float" target="_blank" title="Chateá con nosotros por WhatsApp">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon" />
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5491173685175" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
   </a>
 
   <script>
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          document.getElementById('navLinks').classList.remove('active');
         }
       });
-    }, { threshold: 0.1 });
-    cards.forEach(card => {
-      observer.observe(card);
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'var(--primary)';
+      } else {
+        navbar.style.background = 'var(--gradient)';
+      }
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .benefit-item').forEach(el => {
+      observer.observe(el);
     });
   </script>
 </body>
