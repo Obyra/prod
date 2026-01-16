@@ -203,6 +203,27 @@
       border-color: rgba(255,255,255,0.5);
     }
 
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+    }
+
     .hero-image {
       position: relative;
     }
@@ -744,7 +765,8 @@
       }
 
       .btn-primary,
-      .btn-secondary {
+      .btn-secondary,
+      .btn-whatsapp {
         width: 100%;
         justify-content: center;
       }
@@ -814,6 +836,9 @@
           </a>
           <a href="#funcionalidades" class="btn-secondary">
             Ver funcionalidades
+          </a>
+          <a href="https://wa.me/5491173685175?text=Hola! Me interesa reservar una demo de OBYRA" target="_blank" class="btn-whatsapp">
+            Reserva tu demo sin cargo
           </a>
         </div>
       </div>
