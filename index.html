@@ -470,6 +470,184 @@
       box-shadow: 0 8px 30px rgba(76, 175, 80, 0.4);
     }
 
+    /* ============ PRECIOS SECTION ============ */
+    .precios {
+      padding: 100px 2rem;
+      background: #f9f9f9;
+    }
+
+    .precios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .precio-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .precio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+
+    .precio-mensual {
+      border-top: 5px solid #1A374D;
+    }
+
+    .precio-licencia {
+      border-top: 5px solid #4CAF50;
+    }
+
+    .badge-popular {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFC107;
+      color: #1A1A1A;
+      padding: 8px 22px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(255,193,7,0.4);
+    }
+
+    .precio-card h3 {
+      color: #1A374D;
+      font-size: 1.5rem;
+      margin: 1rem 0 0.3rem;
+    }
+
+    .precio-licencia h3 {
+      color: #4CAF50;
+    }
+
+    .precio-subtitle {
+      color: #666;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .precio-monto {
+      margin: 1.5rem 0 0.3rem;
+    }
+
+    .precio-numero {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #1A374D;
+      letter-spacing: -2px;
+    }
+
+    .precio-periodo {
+      font-size: 1.1rem;
+      color: #666;
+      margin-left: 0.3rem;
+    }
+
+    .precio-detalle {
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .precio-conversion {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .precio-ahorro {
+      color: #4CAF50;
+      font-weight: 700;
+    }
+
+    .precio-features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 0 0 2rem;
+    }
+
+    .precio-features li {
+      padding: 0.6rem 0;
+      color: #2c2c2c;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .precio-features li:last-child {
+      border-bottom: none;
+    }
+
+    .btn-precio {
+      display: block;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+      color: white;
+    }
+
+    .btn-precio-azul {
+      background: #1A374D;
+    }
+
+    .btn-precio-azul:hover {
+      background: #14293a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(26,55,77,0.3);
+    }
+
+    .btn-precio-verde {
+      background: #4CAF50;
+    }
+
+    .btn-precio-verde:hover {
+      background: #43a047;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(76,175,80,0.3);
+    }
+
+    .precios-footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .precios-footer a {
+      color: #4CAF50;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .precios-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .precios-grid {
+        grid-template-columns: 1fr;
+      }
+      .precio-numero {
+        font-size: 2.8rem;
+      }
+    }
+
     /* Contact Section */
     .contact {
       padding: 100px 2rem;
@@ -821,6 +999,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#funcionalidades">Funcionalidades</a></li>
         <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#precios">Precios</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="https://app.obyra.com.ar" class="btn-app">Acceder a la App</a></li>
       </ul>
@@ -947,6 +1126,72 @@
     </div>
   </section>
 
+  <!-- Precios Section -->
+  <section id="precios" class="precios">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Planes y Precios</h2>
+        <p>Una sola plataforma con todo lo que tu constructora necesita.<br><strong>Sin restricciones de usuarios ni obras.</strong></p>
+      </div>
+
+      <div class="precios-grid">
+
+        <!-- Card Mensual -->
+        <div class="precio-card precio-mensual">
+          <div class="badge-popular">⭐ MAS POPULAR</div>
+          <h3>Suscripcion Mensual</h3>
+          <p class="precio-subtitle">OBYRA Profesional</p>
+          <div class="precio-monto">
+            <span class="precio-numero">$399</span>
+            <span class="precio-periodo">USD/mes</span>
+          </div>
+          <p class="precio-detalle">+ IVA</p>
+          <p class="precio-conversion">≈ $560.000 ARS / mes</p>
+          <ul class="precio-features">
+            <li>✓ Acceso completo a la plataforma</li>
+            <li>✓ Sin restricciones de usuarios ni obras</li>
+            <li>✓ 30 dias de prueba gratis</li>
+            <li>✓ Sin tarjeta para empezar</li>
+            <li>✓ Cancelas cuando quieras</li>
+            <li>✓ Soporte por WhatsApp</li>
+          </ul>
+          <a href="https://app.obyra.com.ar/auth/register" class="btn-precio btn-precio-azul">
+            EMPEZAR PRUEBA GRATIS
+          </a>
+        </div>
+
+        <!-- Card Licencia -->
+        <div class="precio-card precio-licencia">
+          <h3>Licencia 5 Años</h3>
+          <p class="precio-subtitle">OBYRA Profesional - Pago unico</p>
+          <div class="precio-monto">
+            <span class="precio-numero">$14.900</span>
+            <span class="precio-periodo">USD</span>
+          </div>
+          <p class="precio-detalle">+ IVA (pago unico)</p>
+          <p class="precio-conversion precio-ahorro">Ahorras 38% vs mensual</p>
+          <ul class="precio-features">
+            <li>✓ 60 meses de servicio incluidos</li>
+            <li>✓ Sin restricciones de usuarios ni obras</li>
+            <li>✓ Mismas funcionalidades que mensual</li>
+            <li>✓ Renovacion 20% anual desde año 6</li>
+            <li>✓ Soporte preferencial</li>
+            <li>✓ Pago seguro por transferencia</li>
+          </ul>
+          <a href="https://wa.me/5491173685175?text=Hola%2C%20quiero%20info%20sobre%20la%20licencia%205%20anios%20de%20OBYRA" target="_blank" rel="noopener" class="btn-precio btn-precio-verde">
+            SOLICITAR POR WHATSAPP
+          </a>
+        </div>
+
+      </div>
+
+      <p class="precios-footer">
+        ¿Dudas? Escribinos por WhatsApp:
+        <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
+      </p>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta">
     <div class="section-container">
@@ -1005,6 +1250,7 @@
       <ul class="footer-links">
         <li><a href="#funcionalidades">Funcionalidades</a></li>
         <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#precios">Precios</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="https://app.obyra.com.ar">Acceder</a></li>
       </ul>
