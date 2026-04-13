@@ -996,12 +996,17 @@
         <span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#funcionalidades">Funcionalidades</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#precios">Precios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="https://app.obyra.com.ar" class="btn-app">Acceder a la App</a></li>
+        <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+        <li><a href="#funcionalidades" data-i18n="nav.funcionalidades">Funcionalidades</a></li>
+        <li><a href="#beneficios" data-i18n="nav.beneficios">Beneficios</a></li>
+        <li><a href="#precios" data-i18n="nav.precios">Precios</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        <li><a href="https://app.obyra.com.ar" class="btn-app" data-i18n="nav.acceder">Acceder a la App</a></li>
+        <li class="d-flex align-items-center gap-1 ms-2">
+          <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" style="width:20px;cursor:pointer;" id="flag-es"></a>
+          <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" style="width:20px;cursor:pointer;" id="flag-en"></a>
+          <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" style="width:20px;cursor:pointer;" id="flag-de"></a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -1010,17 +1015,17 @@
   <section id="inicio" class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <span class="hero-badge">Nueva App Web</span>
-        <h1>Gestiona tus <span>obras</span> de forma inteligente</h1>
-        <p class="hero-text">OBYRA es la plataforma integral para empresas constructoras. Administra presupuestos, inventario, tareas, clientes y reportes desde cualquier dispositivo.</p>
+        <span class="hero-badge" data-i18n="hero.badge">Nueva App Web</span>
+        <h1 data-i18n="hero.titulo">Gestiona tus obras de forma inteligente</h1>
+        <p class="hero-text" data-i18n="hero.subtitulo">OBYRA es la plataforma integral para empresas constructoras. Administra presupuestos, inventario, tareas, clientes y reportes desde cualquier dispositivo.</p>
         <div class="hero-buttons">
-          <a href="https://app.obyra.com.ar" class="btn-primary">
+          <a href="https://app.obyra.com.ar" class="btn-primary" data-i18n="hero.cta1">
             Comenzar ahora
           </a>
-          <a href="#funcionalidades" class="btn-secondary">
+          <a href="#funcionalidades" class="btn-secondary" data-i18n="hero.cta2">
             Ver funcionalidades
           </a>
-          <a href="https://wa.me/5491173685175?text=Hola! Me interesa reservar una demo de OBYRA" target="_blank" class="btn-whatsapp">
+          <a href="https://wa.me/5491173685175?text=Hola! Me interesa reservar una demo de OBYRA" target="_blank" class="btn-whatsapp" data-i18n="hero.cta3">
             Reserva tu demo sin cargo
           </a>
         </div>
@@ -1035,8 +1040,8 @@
   <section id="funcionalidades" class="features">
     <div class="section-container">
       <div class="section-header">
-        <h2>Todo lo que necesitas en un solo lugar</h2>
-        <p>Herramientas potentes para optimizar cada aspecto de tus proyectos de construccion</p>
+        <h2 data-i18n="features.titulo">Todo lo que necesitas en un solo lugar</h2>
+        <p data-i18n="features.subtitulo">Herramientas potentes para optimizar cada aspecto de tus proyectos de construccion</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -1310,5 +1315,6 @@
       observer.observe(el);
     });
   </script>
+  <script src="i18n.js"></script>
 </body>
 </html>
