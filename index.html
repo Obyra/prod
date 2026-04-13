@@ -50,6 +50,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     .logo-nav {
@@ -81,14 +82,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-left: auto;
-      padding: 0.5rem 0;
+      flex-shrink: 0;
     }
 
     .lang-flags a {
       display: inline-flex;
-      padding: 0 !important;
-      background: none !important;
+      line-height: 0;
     }
 
     .lang-flags img {
@@ -950,14 +949,12 @@
       }
 
       .lang-flags {
-        justify-content: center;
-        margin-left: 0;
-        padding: 1rem 0;
-        gap: 16px;
+        order: 3;
+        gap: 6px;
       }
 
       .lang-flags img {
-        width: 28px;
+        width: 18px;
       }
 
       .hero {
@@ -1050,12 +1047,12 @@
         <li><a href="#precios" data-i18n="nav.precios">Precios</a></li>
         <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
         <li><a href="https://app.obyra.com.ar" class="btn-app" data-i18n="nav.acceder">Acceder a la App</a></li>
-        <li class="lang-flags">
-          <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" id="flag-es"></a>
-          <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" id="flag-en"></a>
-          <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" id="flag-de"></a>
-        </li>
       </ul>
+      <div class="lang-flags">
+        <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" id="flag-es"></a>
+        <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" id="flag-en"></a>
+        <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" id="flag-de"></a>
+      </div>
     </div>
   </nav>
 
