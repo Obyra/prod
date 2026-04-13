@@ -23,7 +23,9 @@ var T = {
     'precio.cta_mensual':'EMPEZAR PRUEBA GRATIS','precio.cta_licencia':'SOLICITAR POR WHATSAPP','precio.ahorro':'Ahorras 38% vs mensual',
     'precio.dudas':'Dudas? Escribinos por WhatsApp:',
     'cta.titulo':'Comenza a gestionar tus obras hoy','cta.sub':'Registrate gratis y descubri como OBYRA puede transformar la gestion de tus proyectos de construccion.','cta.btn1':'Crear cuenta gratis','cta.btn2':'Iniciar sesion',
-    'contact.titulo':'Contactanos','contact.desc':'Estamos para ayudarte','contact.email':'Email','contact.whatsapp':'WhatsApp','contact.ubicacion':'Ubicacion',
+    'contact.titulo':'Contactanos','contact.desc':'Estamos para ayudarte','contact.desc2':'Tenes preguntas sobre OBYRA? Nuestro equipo esta listo para ayudarte a optimizar la gestion de tus obras.',
+    'contact.form_titulo':'Envianos un mensaje','contact.ph_nombre':'Nombre y apellido','contact.ph_email':'Email','contact.ph_empresa':'Empresa (opcional)','contact.ph_mensaje':'Tu mensaje','contact.btn_enviar':'Enviar mensaje',
+    'contact.email':'Email','contact.whatsapp':'WhatsApp','contact.ubicacion':'Ubicacion',
     'footer.desc':'Plataforma inteligente de planificacion y compras para obras en LATAM','footer.copy':'2025 OBYRA IA. Todos los derechos reservados.',
   },
   en: {
@@ -47,7 +49,9 @@ var T = {
     'precio.cta_mensual':'START FREE TRIAL','precio.cta_licencia':'REQUEST VIA WHATSAPP','precio.ahorro':'Save 38% vs monthly',
     'precio.dudas':'Questions? Contact us on WhatsApp:',
     'cta.titulo':'Start managing your projects today','cta.sub':'Sign up for free and discover how OBYRA can transform your construction project management.','cta.btn1':'Create free account','cta.btn2':'Sign in',
-    'contact.titulo':'Contact Us','contact.desc':'We are here to help','contact.email':'Email','contact.whatsapp':'WhatsApp','contact.ubicacion':'Location',
+    'contact.titulo':'Contact Us','contact.desc':'We are here to help','contact.desc2':'Have questions about OBYRA? Our team is ready to help you optimize your construction management.',
+    'contact.form_titulo':'Send us a message','contact.ph_nombre':'Full name','contact.ph_email':'Email','contact.ph_empresa':'Company (optional)','contact.ph_mensaje':'Your message','contact.btn_enviar':'Send message',
+    'contact.email':'Email','contact.whatsapp':'WhatsApp','contact.ubicacion':'Location',
     'footer.desc':'Smart planning and procurement platform for construction in LATAM','footer.copy':'2025 OBYRA. All rights reserved.',
   },
   de: {
@@ -71,12 +75,14 @@ var T = {
     'precio.cta_mensual':'KOSTENLOSE TESTVERSION STARTEN','precio.cta_licencia':'PER WHATSAPP ANFRAGEN','precio.ahorro':'38% Ersparnis vs monatlich',
     'precio.dudas':'Fragen? Kontaktieren Sie uns über WhatsApp:',
     'cta.titulo':'Beginnen Sie noch heute mit der Projektverwaltung','cta.sub':'Registrieren Sie sich kostenlos und entdecken Sie, wie OBYRA Ihre Bauprojektverwaltung transformieren kann.','cta.btn1':'Kostenloses Konto erstellen','cta.btn2':'Anmelden',
-    'contact.titulo':'Kontaktieren Sie uns','contact.desc':'Wir sind für Sie da','contact.email':'E-Mail','contact.whatsapp':'WhatsApp','contact.ubicacion':'Standort',
+    'contact.titulo':'Kontaktieren Sie uns','contact.desc':'Wir sind für Sie da','contact.desc2':'Haben Sie Fragen zu OBYRA? Unser Team hilft Ihnen gerne bei der Optimierung Ihrer Bauverwaltung.',
+    'contact.form_titulo':'Nachricht senden','contact.ph_nombre':'Vollständiger Name','contact.ph_email':'E-Mail','contact.ph_empresa':'Unternehmen (optional)','contact.ph_mensaje':'Ihre Nachricht','contact.btn_enviar':'Nachricht senden',
+    'contact.email':'E-Mail','contact.whatsapp':'WhatsApp','contact.ubicacion':'Standort',
     'footer.desc':'Intelligente Planungs- und Beschaffungsplattform für Bauprojekte in Lateinamerika','footer.copy':'2025 OBYRA. Alle Rechte vorbehalten.',
   }
 };
 function getLang(){var m=document.cookie.match(/(?:^|;\s*)lang=(\w+)/);return(m&&T[m[1]])?m[1]:'es';}
 function setLang(l){document.cookie='lang='+l+';path=/;max-age=31536000;domain=.obyra.com.ar;SameSite=Lax';applyT(l);updateFlags(l);}
-function applyT(l){var t=T[l]||T['es'];document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');if(t[k])e.textContent=t[k];});}
+function applyT(l){var t=T[l]||T['es'];document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');if(t[k])e.textContent=t[k];});document.querySelectorAll('[data-i18n-placeholder]').forEach(function(e){var k=e.getAttribute('data-i18n-placeholder');if(t[k])e.placeholder=t[k];});}
 function updateFlags(l){['es','en','de'].forEach(function(x){var f=document.getElementById('flag-'+x);if(f)f.style.opacity=(x===l)?'1':'0.4';});}
 document.addEventListener('DOMContentLoaded',function(){var l=getLang();applyT(l);updateFlags(l);});

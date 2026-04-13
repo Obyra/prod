@@ -77,6 +77,32 @@
       background: rgba(255,255,255,0.15);
     }
 
+    .lang-flags {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      padding: 0.5rem 0;
+    }
+
+    .lang-flags a {
+      display: inline-flex;
+      padding: 0 !important;
+      background: none !important;
+    }
+
+    .lang-flags img {
+      width: 22px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .lang-flags img:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
     .btn-app {
       background: var(--accent);
       color: white !important;
@@ -519,7 +545,12 @@
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.5px;
+      white-space: nowrap;
       box-shadow: 0 4px 12px rgba(255,193,7,0.4);
+    }
+
+    .badge-popular::before {
+      content: "\2B50 ";
     }
 
     .precio-card h3 {
@@ -584,6 +615,12 @@
       color: #2c2c2c;
       font-size: 0.95rem;
       border-bottom: 1px solid #f0f0f0;
+    }
+
+    .precio-features li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .precio-features li:last-child {
@@ -912,6 +949,17 @@
         display: block;
       }
 
+      .lang-flags {
+        justify-content: center;
+        margin-left: 0;
+        padding: 1rem 0;
+        gap: 16px;
+      }
+
+      .lang-flags img {
+        width: 28px;
+      }
+
       .hero {
         padding: 100px 1rem 60px;
       }
@@ -1002,12 +1050,12 @@
         <li><a href="#precios" data-i18n="nav.precios">Precios</a></li>
         <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
         <li><a href="https://app.obyra.com.ar" class="btn-app" data-i18n="nav.acceder">Acceder a la App</a></li>
+        <li class="lang-flags">
+          <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" id="flag-es"></a>
+          <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" id="flag-en"></a>
+          <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" id="flag-de"></a>
+        </li>
       </ul>
-      <div style="display:flex;align-items:center;gap:6px;margin-left:12px;">
-        <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" style="width:20px;cursor:pointer;" id="flag-es"></a>
-        <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" style="width:20px;cursor:pointer;" id="flag-en"></a>
-        <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" style="width:20px;cursor:pointer;" id="flag-de"></a>
-      </div>
     </div>
   </nav>
 
@@ -1040,8 +1088,8 @@
   <section id="funcionalidades" class="features">
     <div class="section-container">
       <div class="section-header">
-        <h2 data-i18n="features.titulo">Todo lo que necesitas en un solo lugar</h2>
-        <p data-i18n="features.subtitulo">Herramientas potentes para optimizar cada aspecto de tus proyectos de construccion</p>
+        <h2 data-i18n="feat.titulo">Todo lo que necesitas en un solo lugar</h2>
+        <p data-i18n="feat.sub">Herramientas potentes para optimizar cada aspecto de tus proyectos de construccion</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -1136,16 +1184,17 @@
     <div class="section-container">
       <div class="section-header">
         <h2 data-i18n="precio.titulo">Planes y Precios</h2>
-        <p>Una sola plataforma con todo lo que tu constructora necesita.<br><strong>Sin restricciones de usuarios ni obras.</strong></p>
+        <p data-i18n="precio.sub">Una sola plataforma con todo lo que tu constructora necesita.</p>
+        <p><strong data-i18n="precio.restriccion">Sin restricciones de usuarios ni obras.</strong></p>
       </div>
 
       <div class="precios-grid">
 
         <!-- Card Mensual -->
         <div class="precio-card precio-mensual">
-          <div class="badge-popular">⭐ MAS POPULAR</div>
+          <div class="badge-popular" data-i18n="precio.popular">MAS POPULAR</div>
           <h3 data-i18n="precio.mensual">Suscripcion Mensual</h3>
-          <p class="precio-subtitle">OBYRA Profesional</p>
+          <p class="precio-subtitle" data-i18n="precio.profesional">OBYRA Profesional</p>
           <div class="precio-monto">
             <span class="precio-numero">$399</span>
             <span class="precio-periodo">USD/mes</span>
@@ -1153,12 +1202,12 @@
           <p class="precio-detalle">+ IVA</p>
           <p class="precio-conversion">≈ $560.000 ARS / mes</p>
           <ul class="precio-features">
-            <li>✓ Acceso completo a la plataforma</li>
-            <li>✓ Sin restricciones de usuarios ni obras</li>
-            <li>✓ 30 dias de prueba gratis</li>
-            <li>✓ Sin tarjeta para empezar</li>
-            <li>✓ Cancelas cuando quieras</li>
-            <li>✓ Soporte por WhatsApp</li>
+            <li data-i18n="precio.m1">Acceso completo a la plataforma</li>
+            <li data-i18n="precio.m2">Sin restricciones de usuarios ni obras</li>
+            <li data-i18n="precio.m3">30 dias de prueba gratis</li>
+            <li data-i18n="precio.m4">Sin tarjeta para empezar</li>
+            <li data-i18n="precio.m5">Cancelas cuando quieras</li>
+            <li data-i18n="precio.m6">Soporte por WhatsApp</li>
           </ul>
           <a href="https://app.obyra.com.ar/auth/register" class="btn-precio btn-precio-azul">
             <span data-i18n="precio.cta_mensual">EMPEZAR PRUEBA GRATIS</span>
@@ -1167,31 +1216,31 @@
 
         <!-- Card Licencia -->
         <div class="precio-card precio-licencia">
-          <h3>Licencia 5 Años</h3>
-          <p class="precio-subtitle">OBYRA Profesional - Pago unico</p>
+          <h3 data-i18n="precio.licencia">Licencia 5 Años</h3>
+          <p class="precio-subtitle" data-i18n="precio.pago_unico">OBYRA Profesional - Pago unico</p>
           <div class="precio-monto">
             <span class="precio-numero">$14.900</span>
             <span class="precio-periodo">USD</span>
           </div>
           <p class="precio-detalle">+ IVA (pago unico)</p>
-          <p class="precio-conversion precio-ahorro">Ahorras 38% vs mensual</p>
+          <p class="precio-conversion precio-ahorro" data-i18n="precio.ahorro">Ahorras 38% vs mensual</p>
           <ul class="precio-features">
-            <li>✓ 60 meses de servicio incluidos</li>
-            <li>✓ Sin restricciones de usuarios ni obras</li>
-            <li>✓ Mismas funcionalidades que mensual</li>
-            <li>✓ Renovacion 20% anual desde año 6</li>
-            <li>✓ Soporte preferencial</li>
-            <li>✓ Pago seguro por transferencia</li>
+            <li data-i18n="precio.l1">60 meses de servicio incluidos</li>
+            <li data-i18n="precio.l2">Sin restricciones de usuarios ni obras</li>
+            <li data-i18n="precio.l3">Mismas funcionalidades que mensual</li>
+            <li data-i18n="precio.l4">Renovacion 20% anual desde año 6</li>
+            <li data-i18n="precio.l5">Soporte preferencial</li>
+            <li data-i18n="precio.l6">Pago seguro por transferencia</li>
           </ul>
           <a href="https://wa.me/5491173685175?text=Hola%2C%20quiero%20info%20sobre%20la%20licencia%205%20anios%20de%20OBYRA" target="_blank" rel="noopener" class="btn-precio btn-precio-verde">
-            SOLICITAR POR WHATSAPP
+            <span data-i18n="precio.cta_licencia">SOLICITAR POR WHATSAPP</span>
           </a>
         </div>
 
       </div>
 
       <p class="precios-footer">
-        ¿Dudas? Escribinos por WhatsApp:
+        <span data-i18n="precio.dudas">Dudas? Escribinos por WhatsApp:</span>
         <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
       </p>
     </div>
@@ -1200,13 +1249,13 @@
   <!-- CTA Section -->
   <section class="cta">
     <div class="section-container">
-      <h2>Comenza a gestionar tus obras hoy</h2>
-      <p>Registrate gratis y descubri como OBYRA puede transformar la gestion de tus proyectos de construccion.</p>
+      <h2 data-i18n="cta.titulo">Comenza a gestionar tus obras hoy</h2>
+      <p data-i18n="cta.sub">Registrate gratis y descubri como OBYRA puede transformar la gestion de tus proyectos de construccion.</p>
       <div class="cta-buttons">
-        <a href="https://app.obyra.com.ar/auth/register" class="btn-cta">
+        <a href="https://app.obyra.com.ar/auth/register" class="btn-cta" data-i18n="cta.btn1">
           Crear cuenta gratis
         </a>
-        <a href="https://app.obyra.com.ar" class="btn-secondary" style="background: var(--primary); border: 2px solid var(--primary); color: white;">
+        <a href="https://app.obyra.com.ar" class="btn-secondary" style="background: var(--primary); border: 2px solid var(--primary); color: white;" data-i18n="cta.btn2">
           Iniciar sesion
         </a>
       </div>
@@ -1218,8 +1267,8 @@
     <div class="section-container">
       <div class="contact-container">
         <div class="contact-info">
-          <h2>Contactanos</h2>
-          <p>Tenes preguntas sobre OBYRA? Nuestro equipo esta listo para ayudarte a optimizar la gestion de tus obras.</p>
+          <h2 data-i18n="contact.titulo">Contactanos</h2>
+          <p data-i18n="contact.desc2">Tenes preguntas sobre OBYRA? Nuestro equipo esta listo para ayudarte a optimizar la gestion de tus obras.</p>
           <ul class="contact-methods">
             <li>
               <span style="font-size: 1.5rem;">&#128231;</span>
@@ -1232,16 +1281,16 @@
           </ul>
         </div>
         <div class="contact-form">
-          <h3>Envianos un mensaje</h3>
+          <h3 data-i18n="contact.form_titulo">Envianos un mensaje</h3>
           <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
             <input type="hidden" name="_next" value="https://obyra.com.ar/#inicio">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_subject" value="Consulta desde Landing Page OBYRA">
-            <input type="text" name="nombre" placeholder="Nombre y apellido" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="empresa" placeholder="Empresa (opcional)">
-            <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar mensaje</button>
+            <input type="text" name="nombre" data-i18n-placeholder="contact.ph_nombre" placeholder="Nombre y apellido" required>
+            <input type="email" name="email" data-i18n-placeholder="contact.ph_email" placeholder="Email" required>
+            <input type="text" name="empresa" data-i18n-placeholder="contact.ph_empresa" placeholder="Empresa (opcional)">
+            <textarea name="mensaje" rows="4" data-i18n-placeholder="contact.ph_mensaje" placeholder="Tu mensaje" required></textarea>
+            <button type="submit" data-i18n="contact.btn_enviar">Enviar mensaje</button>
           </form>
         </div>
       </div>
@@ -1253,14 +1302,14 @@
     <div class="footer-container">
       <img src="logo-obyra.png" alt="OBYRA" class="footer-logo">
       <ul class="footer-links">
-        <li><a href="#funcionalidades">Funcionalidades</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#precios">Precios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="https://app.obyra.com.ar">Acceder</a></li>
+        <li><a href="#funcionalidades" data-i18n="nav.funcionalidades">Funcionalidades</a></li>
+        <li><a href="#beneficios" data-i18n="nav.beneficios">Beneficios</a></li>
+        <li><a href="#precios" data-i18n="nav.precios">Precios</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        <li><a href="https://app.obyra.com.ar" data-i18n="nav.acceder">Acceder</a></li>
       </ul>
     </div>
-    <p class="footer-copy">&copy; 2025 OBYRA. Todos los derechos reservados.</p>
+    <p class="footer-copy" data-i18n="footer.copy">&copy; 2025 OBYRA. Todos los derechos reservados.</p>
   </footer>
 
   <!-- WhatsApp Float -->
