@@ -78,29 +78,70 @@
       background: rgba(255,255,255,0.15);
     }
 
-    .lang-flags {
+    /* Language Selector Dropdown */
+    .lang-selector {
+      position: relative;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 0.35rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
+      gap: 0.35rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      white-space: nowrap;
     }
 
-    .lang-flags a {
-      display: inline-flex;
-      line-height: 0;
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.2);
     }
 
-    .lang-flags img {
-      width: 22px;
+    .lang-current-flag { font-size: 1rem; line-height: 1; }
+    .lang-arrow { font-size: 0.65rem; transition: transform 0.3s; }
+    .lang-selector.open .lang-arrow { transform: rotate(180deg); }
+
+    .lang-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      overflow: hidden;
+      min-width: 150px;
+      z-index: 1001;
+    }
+
+    .lang-selector.open .lang-dropdown { display: block; }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border: none;
+      background: white;
+      color: var(--text-dark);
       cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.3s, transform 0.3s;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: background 0.2s;
+      text-align: left;
     }
 
-    .lang-flags img:hover {
-      opacity: 1;
-      transform: scale(1.15);
-    }
+    .lang-option:hover { background: var(--bg-light); }
+    .lang-option span { font-size: 1.15rem; line-height: 1; }
 
     .btn-app {
       background: var(--accent);
@@ -948,13 +989,17 @@
         display: block;
       }
 
-      .lang-flags {
-        order: 3;
-        gap: 6px;
+      .lang-selector {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
       }
 
-      .lang-flags img {
-        width: 18px;
+      .lang-dropdown {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
       }
 
       .hero {
@@ -1046,13 +1091,20 @@
         <li><a href="#beneficios" data-i18n="nav.beneficios">Beneficios</a></li>
         <li><a href="#precios" data-i18n="nav.precios">Precios</a></li>
         <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        <li class="lang-selector" id="langSelector">
+          <button class="lang-btn" onclick="toggleLangMenu()" type="button">
+            <span class="lang-current-flag" id="langCurrentFlag">🇪🇸</span>
+            <span class="lang-current-text" id="langCurrentText">ES</span>
+            <span class="lang-arrow">▾</span>
+          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button type="button" onclick="setLang('es')" class="lang-option"><span>🇪🇸</span> Español</button>
+            <button type="button" onclick="setLang('en')" class="lang-option"><span>🇬🇧</span> English</button>
+            <button type="button" onclick="setLang('de')" class="lang-option"><span>🇩🇪</span> Deutsch</button>
+          </div>
+        </li>
         <li><a href="https://app.obyra.com.ar" class="btn-app" data-i18n="nav.acceder">Acceder a la App</a></li>
       </ul>
-      <div class="lang-flags">
-        <a href="#" onclick="setLang('es');return false;" title="Español"><img src="https://flagcdn.com/20x15/es.png" alt="ES" id="flag-es"></a>
-        <a href="#" onclick="setLang('en');return false;" title="English"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" id="flag-en"></a>
-        <a href="#" onclick="setLang('de');return false;" title="Deutsch"><img src="https://flagcdn.com/20x15/de.png" alt="DE" id="flag-de"></a>
-      </div>
     </div>
   </nav>
 
