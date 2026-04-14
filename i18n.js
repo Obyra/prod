@@ -93,12 +93,19 @@ var T = {
 /* ---- Language functions ---- */
 
 function getLang() {
-  var m = document.cookie.match(/(?:^|;\s*)lang=(\w+)/);
-  return (m && T[m[1]]) ? m[1] : 'es';
+  // Read from localStorage only (no cross-domain cookie leaks)
+  try {
+    var saved = localStorage.getItem('obyra_lang');
+    if (saved && T[saved]) return saved;
+  } catch(e) {}
+  return 'es';
 }
 
 function setLang(lang) {
-  document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;domain=.obyra.com.ar;SameSite=Lax';
+  try { localStorage.setItem('obyra_lang', lang); } catch(e) {}
+  // Clear legacy cookie to avoid stale translations
+  document.cookie = 'lang=;path=/;max-age=0;domain=.obyra.com.ar';
+  document.cookie = 'lang=;path=/;max-age=0';
   applyTranslations(lang);
   updateLangButton(lang);
   closeLangMenu();
@@ -149,6 +156,10 @@ document.addEventListener('click', function(e) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+  // Clear legacy cross-domain cookie that caused mixed-language issues
+  document.cookie = 'lang=;path=/;max-age=0;domain=.obyra.com.ar';
+  document.cookie = 'lang=;path=/;max-age=0';
+
   var lang = getLang();
   applyTranslations(lang);
   updateLangButton(lang);
