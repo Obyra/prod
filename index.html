@@ -48,21 +48,22 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .logo-nav {
       height: 42px;
       max-width: 180px;
       object-fit: contain;
+      flex-shrink: 0;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      flex: 1;
       list-style: none !important;
       margin: 0;
       padding: 0;
@@ -98,6 +99,7 @@
     /* Language Selector Dropdown */
     .lang-selector {
       position: relative;
+      margin-left: auto;
     }
 
     .lang-btn {
