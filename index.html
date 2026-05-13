@@ -360,7 +360,8 @@
 
     .pwa-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      /* 2026-05-13: dar mas espacio a la columna del video demo */
+      grid-template-columns: 1fr 1.4fr;
       gap: 4rem;
       align-items: center;
     }
@@ -429,7 +430,8 @@
     /* Video demo embed (YouTube) en la seccion PWA */
     .pwa-video {
       width: 100%;
-      max-width: 640px;
+      /* 2026-05-13: aumentado de 640 a 900 para que el video se vea mas grande */
+      max-width: 900px;
       aspect-ratio: 16 / 9;
       border-radius: 20px;
       box-shadow: 0 30px 60px rgba(0,0,0,0.2);
