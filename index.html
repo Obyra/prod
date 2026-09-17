@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OBYRA - Software para Constructoras | Gestión que Construye</title>
-<meta name="description" content="Plataforma de gestión para obras: control de presupuestos, tareas, materiales, equipos y reportes en tiempo real. Probala gratis 30 días, sin tarjeta.">
+<title>OBYRA - Software a medida para emprendedores y pymes</title>
+<meta name="description" content="Software factory argentina. Si tu negocio tiene un problema, te hacemos el sistema que lo resuelve: construcción, gastronomía, comercio y servicios.">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="canonical" href="https://obyra.com.ar/">
 
@@ -13,18 +13,24 @@
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="OBYRA">
 <meta property="og:url" content="https://obyra.com.ar/">
-<meta property="og:title" content="OBYRA - Software para Constructoras | Gestión que Construye">
-<meta property="og:description" content="Trazabilidad real: el 100% de tu obra bajo control, en tiempo real. Avances, tareas, materiales y equipos en un solo lugar.">
-<meta property="og:image" content="./images/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="OBYRA - Software a medida para emprendedores y pymes">
+<meta property="og:description" content="Si tu negocio tiene un problema, te hacemos el sistema que lo resuelve.">
+<meta property="og:image" content="https://obyra.com.ar/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OBYRA - Software para Constructoras">
-<meta name="twitter:description" content="Trazabilidad real: el 100% de tu obra bajo control, en tiempo real.">
-<meta name="twitter:image" content="./images/og-image.png">
+<meta name="twitter:title" content="OBYRA - Software a medida">
+<meta name="twitter:description" content="Si tu negocio tiene un problema, te hacemos el sistema que lo resuelve.">
+<meta name="twitter:image" content="https://obyra.com.ar/images/og-image.png">
 
 <link rel="icon" type="image/png" href="./images/favicon.png">
 <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+
+<script>
+/* Links viejos a secciones de la página de construcción (obyra.com.ar#precios, etc.) */
+(function () {
+  var viejas = ['#problema', '#solucion', '#funcionalidades', '#por-que', '#precios'];
+  if (viejas.indexOf(location.hash) !== -1) location.replace('construccion/' + location.hash);
+})();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,429 +38,300 @@
 
 <style>
 /* ============================================================
-   OBYRA — Landing
+   OBYRA — Software factory (home)
    Manual de identidad visual v1.0
    ============================================================ */
 
 :root{
-  /* Paleta oficial */
   --verde:        #16A34A;
+  --verde-boton:  #15803D;   /* texto blanco encima con contraste AA */
   --verde-hover:  #0F7A39;
-  --verde-texto:  #0F7A39;   /* variante accesible sobre blanco (AA) */
+  --verde-texto:  #0F7A39;
   --verde-suave:  #E8F6ED;
   --azul:         #0D1B2A;
   --azul-claro:   #16293D;
+  --azul-borde:   #243B53;
   --blanco:       #FFFFFF;
   --neutro-osc:   #374151;
   --neutro-med:   #6B7280;
   --neutro-clr:   #E5E7EB;
   --fondo-suave:  #F7F9F8;
+  --plomo-osc:    #A9B6C4;   /* texto secundario sobre azul */
 
   --radio:        8px;
-  --radio-lg:     16px;
-  --ancho:        1200px;
+  --radio-lg:     14px;
+  --ancho:        1120px;
   --sombra:       0 1px 2px rgba(13,27,42,.04), 0 8px 24px rgba(13,27,42,.06);
-  --sombra-alta:  0 2px 4px rgba(13,27,42,.06), 0 18px 48px rgba(13,27,42,.12);
-  --transicion:   .25s cubic-bezier(.4,0,.2,1);
+  --transicion:   .2s cubic-bezier(.4,0,.2,1);
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; scroll-padding-top:80px; -webkit-text-size-adjust:100%; }
 
 body{
   margin:0;
   font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-size:1rem;
-  line-height:1.65;
+  line-height:1.6;
   color:var(--neutro-osc);
-  background:var(--blanco);
+  background:var(--fondo-suave);
   -webkit-font-smoothing:antialiased;
 }
 
-h1,h2,h3,h4{
+h1,h2,h3{
   font-family:'Montserrat',system-ui,sans-serif;
   color:var(--azul);
   line-height:1.15;
   letter-spacing:-.02em;
   margin:0 0 .5em;
 }
-h1{ font-weight:800; font-size:clamp(2.1rem,5.6vw,3.6rem); }
-h2{ font-weight:800; font-size:clamp(1.75rem,4vw,2.75rem); }
-h3{ font-weight:700; font-size:1.2rem; }
-
+h1{ font-size:clamp(2.2rem,5.4vw,3.6rem); font-weight:800; }
+h2{ font-size:clamp(1.7rem,3.4vw,2.4rem); font-weight:800; max-width:20ch; }
+h3{ font-size:1.1rem; font-weight:700; }
 p{ margin:0 0 1rem; }
-a{ color:var(--verde-texto); text-decoration:none; transition:color var(--transicion); }
-a:hover{ color:var(--verde); }
-img{ max-width:100%; display:block; }
-ul{ margin:0; padding:0; list-style:none; }
+a{ color:inherit; }
+img{ max-width:100%; height:auto; display:block; }
 
-:focus-visible{ outline:3px solid var(--verde); outline-offset:3px; border-radius:4px; }
+.contenedor{ width:100%; max-width:var(--ancho); margin-inline:auto; padding-inline:clamp(1rem,4vw,2rem); }
 
-.contenedor{ width:100%; max-width:var(--ancho); margin-inline:auto; padding-inline:1.25rem; }
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
+}
+.visually-hidden:focus{
+  position:fixed; top:.5rem; left:.5rem; width:auto; height:auto; clip:auto; z-index:100;
+  background:var(--blanco); color:var(--azul); padding:.6rem 1rem; border-radius:var(--radio);
+}
 
-.seccion{ padding:clamp(4rem,9vw,7.5rem) 0; }
-.seccion--suave{ background:var(--fondo-suave); }
-.seccion--oscura{ background:var(--azul); color:#CBD5E1; }
-.seccion--oscura h2,.seccion--oscura h3{ color:var(--blanco); }
-
-.acento{ color:var(--verde); }
-.seccion--oscura .acento{ color:var(--verde); }
-
-/* Línea de accent verde */
-.linea{ width:64px; height:4px; background:var(--verde); border-radius:99px; margin:1.5rem 0; }
+:focus-visible{ outline:3px solid var(--verde); outline-offset:2px; }
 
 .eyebrow{
-  font-family:'Inter',sans-serif; font-size:.8rem; font-weight:600;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--verde-texto);
-  margin:0 0 1rem;
+  font-size:.75rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--verde-texto); margin-bottom:.9rem;
 }
-.seccion--oscura .eyebrow{ color:var(--verde); }
-
-.plomo{ font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--neutro-med); max-width:56ch; }
-.seccion--oscura .plomo{ color:#94A3B8; }
-
-.encabezado-seccion{ max-width:64ch; margin:0 auto clamp(2.5rem,5vw,4rem); text-align:center; }
-.encabezado-seccion .linea{ margin-inline:auto; }
-.encabezado-seccion .plomo{ margin-inline:auto; }
+.acento{ color:var(--verde); }
+.bajada{ color:var(--neutro-med); max-width:52ch; font-size:1.05rem; }
 
 /* ---------- Botones ---------- */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
-  font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700;
-  padding:.95rem 1.9rem; border-radius:var(--radio); border:2px solid transparent;
-  cursor:pointer; text-align:center; line-height:1.2;
-  transition:background var(--transicion),color var(--transicion),
-             transform var(--transicion),box-shadow var(--transicion);
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font:600 .95rem/1 'Inter',sans-serif;
+  padding:.85rem 1.3rem; border-radius:var(--radio);
+  border:1px solid transparent; text-decoration:none; cursor:pointer;
+  transition:background var(--transicion), border-color var(--transicion), color var(--transicion);
 }
-.btn:hover{ transform:translateY(-2px); }
-.btn--primario{ background:var(--verde); color:var(--blanco); box-shadow:0 4px 14px rgba(22,163,74,.28); }
-.btn--primario:hover{ background:var(--verde-hover); color:var(--blanco); box-shadow:0 8px 22px rgba(22,163,74,.34); }
-.btn--secundario{ background:transparent; color:var(--azul); border-color:var(--neutro-clr); }
-.btn--secundario:hover{ background:var(--blanco); color:var(--azul); border-color:var(--azul); }
-.btn--claro{ background:var(--blanco); color:var(--azul); }
-.btn--claro:hover{ background:#F1F5F4; color:var(--azul); }
-.btn--fantasma{ background:transparent; color:var(--blanco); border-color:rgba(255,255,255,.35); }
-.btn--fantasma:hover{ background:rgba(255,255,255,.1); color:var(--blanco); border-color:var(--blanco); }
-.btn svg{ flex:none; }
+.btn--primario{ background:var(--verde-boton); color:var(--blanco); }
+.btn--primario:hover{ background:var(--verde-hover); }
+.btn--oscuro{ background:var(--azul-claro); color:var(--blanco); border-color:var(--azul-borde); }
+.btn--oscuro:hover{ background:var(--azul-borde); }
+.btn--linea{ background:var(--blanco); color:var(--azul); border-color:var(--neutro-clr); }
+.btn--linea:hover{ border-color:var(--azul); }
+.btn--chico{ padding:.65rem 1rem; font-size:.875rem; }
+.grupo-btn{ display:flex; flex-wrap:wrap; gap:.75rem; }
 
-.grupo-btn{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2rem; }
-@media (max-width:520px){ .grupo-btn .btn{ width:100%; } }
-
-/* ---------- Header ---------- */
+/* ---------- Cabecera ---------- */
 .cabecera{
-  position:sticky; top:0; z-index:100;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  position:sticky; top:0; z-index:50;
+  background:rgba(247,249,248,.92); backdrop-filter:saturate(1.4) blur(10px);
   border-bottom:1px solid var(--neutro-clr);
 }
-.cabecera__inner{ display:flex; align-items:center; gap:1.5rem; height:76px; }
-.marca{ flex:none; }
-.marca img{ height:38px; width:auto; }
-
-.nav{ margin-left:auto; }
-.nav__lista{ display:flex; align-items:center; gap:2rem; }
-.nav__lista a{
-  font-size:.95rem; font-weight:500; color:var(--azul); position:relative; padding:.25rem 0;
+.cabecera__inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:68px; }
+.marca{ display:flex; align-items:center; gap:.65rem; text-decoration:none; }
+.marca__icono{
+  width:34px; height:34px; border-radius:8px; background:var(--verde-boton); color:var(--blanco);
+  display:grid; place-items:center; font:800 1rem/1 'Montserrat',sans-serif;
 }
-.nav__lista a::after{
-  content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px;
-  background:var(--verde); transition:width var(--transicion);
-}
-.nav__lista a:hover::after{ width:100%; }
+.marca__texto{ display:flex; flex-direction:column; line-height:1.1; }
+.marca__nombre{ font:800 1.05rem/1.1 'Montserrat',sans-serif; color:var(--azul); letter-spacing:.02em; }
+.marca__bajada{ font-size:.62rem; font-weight:600; letter-spacing:.16em; color:var(--neutro-med); text-transform:uppercase; }
 
-.cabecera .btn{ padding:.7rem 1.35rem; font-size:.9rem; }
-.cabecera__cta{ flex:none; }
-
-/* El CTA vive en .cabecera__cta en desktop y dentro del nav en mobile */
-@media (min-width:961px){ .solo-mobile{ display:none; } }
+.nav__lista{ display:flex; align-items:center; gap:1.75rem; list-style:none; margin:0; padding:0; }
+.nav__lista a:not(.btn){ text-decoration:none; font-size:.925rem; font-weight:500; color:var(--neutro-osc); }
+.nav__lista a:not(.btn):hover{ color:var(--verde-texto); }
 
 .hamburguesa{
-  display:none; flex:none; margin-left:auto;
-  width:44px; height:44px; padding:0; background:none; border:0; cursor:pointer;
+  display:none; width:44px; height:44px; border:0; background:transparent; cursor:pointer;
+  flex-direction:column; justify-content:center; align-items:center; gap:5px;
 }
-.hamburguesa span{
-  display:block; width:24px; height:2px; margin:5px auto;
-  background:var(--azul); border-radius:2px; transition:transform var(--transicion),opacity var(--transicion);
-}
-.hamburguesa[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-.hamburguesa[aria-expanded="true"] span:nth-child(2){ opacity:0; }
-.hamburguesa[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+.hamburguesa span{ display:block; width:22px; height:2px; background:var(--azul); border-radius:2px; }
 
-@media (max-width:960px){
-  .hamburguesa{ display:block; }
-  .cabecera__cta{ display:none; }
+@media (max-width:820px){
+  .hamburguesa{ display:flex; }
   .nav{
-    position:absolute; left:0; right:0; top:100%;
-    background:var(--blanco); border-bottom:1px solid var(--neutro-clr);
-    box-shadow:var(--sombra); display:none; margin:0;
+    position:absolute; top:100%; left:0; right:0;
+    background:var(--fondo-suave); border-bottom:1px solid var(--neutro-clr);
+    display:none;
   }
   .nav.abierto{ display:block; }
-  .nav__lista{ flex-direction:column; align-items:stretch; gap:0; padding:.5rem 1.25rem 1.5rem; }
-  .nav__lista a{ display:block; padding:.9rem 0; border-bottom:1px solid var(--neutro-clr); }
-  .nav__lista a::after{ display:none; }
-  .nav__lista .btn{ margin-top:1rem; width:100%; }
+  .nav__lista{ flex-direction:column; align-items:stretch; gap:0; padding:.5rem clamp(1rem,4vw,2rem) 1rem; }
+  .nav__lista li a:not(.btn){ display:block; padding:.8rem 0; border-bottom:1px solid var(--neutro-clr); }
+  .nav__lista li:last-child{ margin-top:1rem; }
+  .nav__lista .btn{ width:100%; }
 }
-
-/* ---------- Split layout (humand style) ---------- */
-.split{
-  display:grid; gap:clamp(2.5rem,6vw,5rem); align-items:center;
-  grid-template-columns:1fr;
-}
-@media (min-width:900px){
-  .split{ grid-template-columns:1fr 1fr; }
-  .split--invertido .split__media{ order:-1; }
-}
-
-/* Marco de imagen con forma de marca */
-.marco{ position:relative; margin-inline:auto; width:100%; max-width:420px; }
-.marco::before{
-  content:''; position:absolute; inset:auto -14px -18px 22%;
-  height:62%; background:var(--verde-suave);
-  border-radius:var(--radio-lg); z-index:0;
-}
-.marco__img{
-  position:relative; z-index:1; overflow:hidden;
-  border-radius:var(--radio-lg); box-shadow:var(--sombra-alta);
-  aspect-ratio:5/7; background:var(--azul);
-}
-.marco__img img{ width:100%; height:100%; object-fit:cover; }
-.marco--hero .marco__img img{ object-position:58% 34%; }
-.marco--problema .marco__img img{ object-position:50% 45%; }
 
 /* ---------- Hero ---------- */
-.hero{
-  position:relative; overflow:hidden;
-  padding:clamp(3rem,7vw,5.5rem) 0 clamp(4rem,8vw,6.5rem);
-  background:
-    radial-gradient(120% 90% at 100% 0%, #F2F7F4 0%, transparent 60%),
-    var(--blanco);
-}
-.hero h1{ margin-bottom:0; }
-.hero .plomo{ font-size:clamp(1.1rem,2vw,1.3rem); color:var(--neutro-osc); }
+.hero{ background:var(--azul); color:var(--blanco); padding:clamp(3.5rem,8vw,6rem) 0; }
+.hero__grilla{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+.hero h1{ color:var(--blanco); max-width:13ch; }
+.hero .eyebrow{ color:var(--verde); }
+.hero__bajada{ color:var(--plomo-osc); max-width:44ch; font-size:1.05rem; margin:1.5rem 0 2rem; }
+.hero__rubros{ margin:1.75rem 0 0; font-size:.85rem; color:var(--plomo-osc); }
 
-/* ---------- Pain points ---------- */
-.dolores{ margin-top:2.25rem; display:grid; gap:.75rem; }
-.dolor{
-  display:flex; align-items:center; gap:1rem;
-  padding:.9rem 1.15rem; background:var(--blanco);
-  border:1px solid var(--neutro-clr); border-radius:var(--radio);
-  transition:transform var(--transicion),box-shadow var(--transicion),border-color var(--transicion);
+.rubros{
+  background:var(--azul-claro); border:1px solid var(--azul-borde); border-radius:var(--radio-lg);
+  padding:clamp(1.25rem,3vw,1.75rem);
 }
-.dolor:hover{ transform:translateX(4px); border-color:rgba(22,163,74,.4); box-shadow:var(--sombra); }
-.dolor__icono{
-  flex:none; width:42px; height:42px; display:grid; place-items:center;
-  background:var(--verde-suave); border-radius:50%; color:var(--verde-texto);
+.rubros__titulo{ font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--plomo-osc); margin-bottom:.9rem; }
+.rubros__tabs{ display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.5rem; }
+.rubros__tab{
+  font:500 .8125rem/1 'Inter',sans-serif; color:var(--plomo-osc);
+  background:transparent; border:1px solid var(--azul-borde); border-radius:999px;
+  padding:.55rem .8rem; cursor:pointer; transition:all var(--transicion);
 }
-.dolor b{ font-family:'Montserrat',sans-serif; font-weight:700; color:var(--azul); }
-.dolor span{ color:var(--neutro-med); }
+.rubros__tab:hover{ color:var(--blanco); border-color:var(--plomo-osc); }
+.rubros__tab[aria-selected="true"]{ background:var(--verde-boton); border-color:var(--verde-boton); color:var(--blanco); }
 
-/* ---------- Pilares (solución) ---------- */
-.pilares{
-  display:grid; gap:1.5rem; margin-top:3rem;
-  grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));
-  padding:2rem; border:1px solid rgba(255,255,255,.12); border-radius:var(--radio-lg);
-  background:rgba(255,255,255,.03);
-}
-.pilar__icono{ color:var(--verde); margin-bottom:.85rem; }
-.pilar h3{ font-size:1.02rem; margin-bottom:.35rem; }
-.pilar p{ font-size:.92rem; color:#94A3B8; margin:0; }
+.rubros__panel[hidden]{ display:none; }
+.paso{ display:grid; grid-template-columns:28px 1fr; gap:.85rem; margin-bottom:1.25rem; }
+.paso__icono{ width:28px; height:28px; border-radius:7px; display:grid; place-items:center; }
+.paso__icono--antes{ background:rgba(220,38,38,.18); color:#F87171; }
+.paso__icono--despues{ background:rgba(22,163,74,.2); color:#4ADE80; }
+.paso__etiqueta{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--plomo-osc); margin:0 0 .25rem; }
+.paso p:last-child{ margin:0; color:#E2E8F0; font-size:.95rem; }
+.rubros__pie{ border-top:1px solid var(--azul-borde); padding-top:1rem; margin-top:.5rem; font-size:.85rem; color:var(--plomo-osc); }
+.rubros__pie strong{ color:var(--blanco); }
+.rubros__pie a{ color:var(--blanco); font-weight:600; text-decoration-color:var(--verde); text-underline-offset:3px; }
 
-.marco--dash{ max-width:100%; }
-.marco--dash .marco__img{ aspect-ratio:auto; border-radius:var(--radio-lg); }
-.marco--dash .marco__img img{ height:auto; }
-.marco--dash::before{ display:none; }
-
-/* ---------- Banda CTA dentro de sección oscura ---------- */
-.banda-cta{
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  gap:1.5rem; margin-top:3rem; padding:2rem clamp(1.5rem,3vw,2.75rem);
-  background:var(--verde); border-radius:var(--radio-lg);
-}
-.banda-cta h3{ margin:0; font-size:clamp(1.2rem,2.4vw,1.6rem); color:var(--blanco); }
-.banda-cta p{ margin:.25rem 0 0; color:rgba(255,255,255,.9); }
-.banda-cta .btn{ flex:none; }
-
-/* ---------- Módulos ---------- */
-.grilla-modulos{
-  display:grid; gap:1.5rem;
-  grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
-}
-.modulo{
-  padding:2rem 1.75rem; background:var(--blanco);
-  border:1px solid var(--neutro-clr); border-radius:var(--radio);
-  transition:transform var(--transicion),box-shadow var(--transicion),border-color var(--transicion);
-}
-.modulo:hover{ transform:scale(1.02); box-shadow:var(--sombra-alta); border-color:rgba(22,163,74,.35); }
-.modulo__icono{
-  width:52px; height:52px; display:grid; place-items:center; margin-bottom:1.25rem;
-  background:var(--verde-suave); border-radius:var(--radio); color:var(--verde-texto);
-}
-.modulo h3{ margin-bottom:.5rem; }
-.modulo p{ margin:0; color:var(--neutro-med); font-size:.95rem; }
-
-/* ---------- Valores ---------- */
-.valores{
-  display:grid; gap:2rem 1.5rem;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  text-align:center;
-}
-.valor__icono{ color:var(--verde); margin:0 auto .9rem; }
-.valor h3{
-  font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.4rem;
-}
-.valor p{ font-size:.92rem; color:var(--neutro-med); margin:0; }
-.tagline{
-  margin-top:clamp(2.5rem,5vw,3.5rem); padding-top:2.5rem;
-  border-top:1px solid var(--neutro-clr); text-align:center;
-  font-family:'Montserrat',sans-serif; font-weight:700;
-  font-size:clamp(1.1rem,2.4vw,1.5rem); color:var(--azul);
+@media (max-width:900px){
+  .hero__grilla{ grid-template-columns:1fr; }
 }
 
-/* ---------- Video ---------- */
-.video{
-  position:relative; max-width:900px; margin:0 auto;
-  aspect-ratio:16/9; border-radius:var(--radio); overflow:hidden;
-  box-shadow:var(--sombra-alta); background:var(--azul);
-}
-.video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* ---------- Secciones ---------- */
+.seccion{ padding:clamp(4rem,9vw,6.5rem) 0; }
+.seccion--blanca{ background:var(--blanco); border-block:1px solid var(--neutro-clr); }
+.seccion--oscura{ background:var(--azul); }
+.seccion--oscura h2{ color:var(--blanco); }
+.seccion--oscura .eyebrow{ color:var(--verde); }
+.seccion--oscura .bajada{ color:var(--plomo-osc); }
 
-/* ---------- Precios ---------- */
-.grilla-precios{
-  display:grid; gap:2rem; align-items:start;
-  grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));
-  max-width:900px; margin-inline:auto;
-}
-.precio{
-  position:relative; display:flex; flex-direction:column; height:100%;
-  padding:2.5rem 2rem; background:var(--blanco);
-  border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
-  transition:transform var(--transicion),box-shadow var(--transicion);
-}
-.precio:hover{ transform:translateY(-4px); box-shadow:var(--sombra-alta); }
-.precio--destacado{ border:2px solid var(--verde); box-shadow:var(--sombra); }
-.precio__badge{
-  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
-  background:var(--verde); color:var(--blanco); white-space:nowrap;
-  font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-  letter-spacing:.1em; padding:.4rem 1rem; border-radius:99px;
-}
-.precio h3{ margin-bottom:.15rem; }
-.precio__sub{ font-size:.9rem; color:var(--neutro-med); margin-bottom:1.25rem; }
-.precio__monto{ display:flex; align-items:baseline; gap:.45rem; }
-.precio__numero{
-  font-family:'Montserrat',sans-serif; font-weight:800; font-size:3rem;
-  color:var(--azul); line-height:1;
-}
-.precio__periodo{ font-weight:600; color:var(--neutro-med); }
-.precio__detalle{ font-size:.85rem; color:var(--neutro-med); margin:.5rem 0 0; }
-.precio__extra{
-  display:inline-block; margin:.75rem 0 1.5rem; padding:.3rem .75rem;
-  font-size:.85rem; font-weight:600; color:var(--verde-texto);
-  background:var(--verde-suave); border-radius:99px;
-}
-.precio__lista{ display:grid; gap:.7rem; margin-bottom:2rem; font-size:.95rem; }
-.precio__lista li{ display:flex; gap:.65rem; align-items:flex-start; }
-.precio__lista svg{ flex:none; margin-top:.3rem; color:var(--verde); }
-.precio .btn{ width:100%; margin-top:auto; }
-.precios__pie{ margin:2.5rem 0 0; text-align:center; color:var(--neutro-med); }
+.grilla-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.75rem; }
+@media (max-width:900px){ .grilla-3{ grid-template-columns:1fr; } }
 
-/* ---------- CTA final ---------- */
-.cta-final{ background:var(--verde); color:var(--blanco); text-align:center; padding:clamp(4rem,8vw,5.5rem) 0; }
-.cta-final h2{ color:var(--blanco); }
-.cta-final p{ color:rgba(255,255,255,.92); max-width:52ch; margin-inline:auto; font-size:1.1rem; }
-.cta-final .grupo-btn{ justify-content:center; }
-.cta-final small{ display:block; margin-top:1.5rem; color:rgba(255,255,255,.85); font-size:.9rem; }
+/* ---------- Casos ---------- */
+.caso{
+  background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
+  padding:1.75rem; display:flex; flex-direction:column; box-shadow:var(--sombra);
+}
+.caso__rubro{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--verde-texto); margin-bottom:.75rem; }
+.caso h3{ margin-bottom:.2rem; }
+.caso__cliente{ font-size:.875rem; color:var(--neutro-med); margin-bottom:1rem; }
+.caso__texto{ font-size:.925rem; }
+.caso ul{ list-style:none; padding:0; margin:0 0 1.5rem; display:grid; gap:.45rem; }
+.caso li{ position:relative; padding-left:1.1rem; font-size:.875rem; }
+.caso li::before{ content:""; position:absolute; left:0; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--verde); }
+.caso__link{ margin-top:auto; font-weight:600; font-size:.9rem; color:var(--verde-texto); text-decoration:none; }
+.caso__link:hover{ text-decoration:underline; text-underline-offset:3px; }
+.caso__nota{ margin-top:auto; font-size:.825rem; color:var(--neutro-med); }
+
+/* ---------- Etapas ---------- */
+.etapas{
+  display:grid; grid-template-columns:repeat(4,1fr); margin-top:2.75rem;
+  border:1px solid var(--neutro-clr); border-radius:var(--radio-lg); overflow:hidden; background:var(--blanco);
+}
+.etapa{ padding:1.5rem; border-right:1px solid var(--neutro-clr); display:flex; flex-direction:column; }
+.etapa:last-child{ border-right:0; }
+.etapa__numero{ font:700 .95rem/1 'Montserrat',sans-serif; color:var(--verde-texto); margin-bottom:.6rem; }
+.etapa h3{ font-size:1rem; margin-bottom:.4rem; }
+.etapa p{ font-size:.875rem; color:var(--neutro-med); }
+.etapa__tiempo{
+  margin-top:auto; align-self:flex-start; background:var(--verde-suave); color:var(--verde-texto);
+  font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  padding:.35rem .65rem; border-radius:999px;
+}
+@media (max-width:900px){
+  .etapas{ grid-template-columns:repeat(2,1fr); }
+  .etapa:nth-child(2){ border-right:0; }
+  .etapa:nth-child(-n+2){ border-bottom:1px solid var(--neutro-clr); }
+}
+@media (max-width:560px){
+  .etapas{ grid-template-columns:1fr; }
+  .etapa{ border-right:0; border-bottom:1px solid var(--neutro-clr); }
+  .etapa:last-child{ border-bottom:0; }
+}
+
+/* ---------- Producto ---------- */
+.producto{
+  display:grid; grid-template-columns:1.15fr .85fr; gap:2rem; align-items:center; margin-top:2.75rem;
+  background:var(--blanco); border:1px solid var(--neutro-clr); border-left:4px solid var(--verde);
+  border-radius:var(--radio-lg); padding:clamp(1.5rem,4vw,2.5rem); box-shadow:var(--sombra);
+}
+.producto h3{ font-size:clamp(1.3rem,2.4vw,1.6rem); font-weight:800; }
+.producto p{ font-size:.95rem; }
+.datos{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--neutro-clr); border-radius:var(--radio); }
+.dato{ padding:1.1rem 1.25rem; }
+.dato:nth-child(odd){ border-right:1px solid var(--neutro-clr); }
+.dato:nth-child(-n+2){ border-bottom:1px solid var(--neutro-clr); }
+.dato__valor{ display:block; font:800 1.6rem/1.1 'Montserrat',sans-serif; color:var(--azul); margin-bottom:.3rem; }
+.dato__texto{ font-size:.8rem; color:var(--neutro-med); line-height:1.4; }
+@media (max-width:900px){ .producto{ grid-template-columns:1fr; } }
 
 /* ---------- Contacto ---------- */
-.contacto__grilla{ display:grid; gap:clamp(2.5rem,5vw,4rem); grid-template-columns:1fr; }
-@media (min-width:900px){ .contacto__grilla{ grid-template-columns:1fr 1fr; } }
-.contacto__metodos{ display:grid; gap:1rem; margin-top:2rem; }
-.contacto__metodos li{ display:flex; align-items:center; gap:1rem; }
-.contacto__metodos svg{ flex:none; color:var(--verde-texto); }
-.contacto__metodos a{ font-weight:500; color:var(--azul); }
-.contacto__metodos a:hover{ color:var(--verde-texto); }
+.canal{
+  background:var(--azul-claro); border:1px solid var(--azul-borde); border-radius:var(--radio-lg);
+  padding:1.5rem; display:flex; flex-direction:column; color:var(--plomo-osc);
+}
+.canal__etiqueta{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--verde); margin-bottom:.6rem; }
+.canal h3{ color:var(--blanco); margin-bottom:.35rem; }
+.canal p{ font-size:.9rem; margin-bottom:1.25rem; }
+.canal .btn{ margin-top:auto; align-self:flex-start; }
+.canal form{ display:grid; gap:.6rem; margin-top:auto; }
+.canal input{
+  width:100%; font:400 .9rem/1.2 'Inter',sans-serif; color:var(--blanco);
+  background:var(--azul); border:1px solid var(--azul-borde); border-radius:var(--radio); padding:.75rem .85rem;
+}
+.canal input::placeholder{ color:#7D8FA3; }
+.canal input:focus{ outline:2px solid var(--verde); outline-offset:0; border-color:transparent; }
+.canal form .btn{ align-self:stretch; }
+.gracias{
+  display:none; margin-top:2rem; padding:1rem 1.25rem; border-radius:var(--radio);
+  background:rgba(22,163,74,.15); border:1px solid rgba(22,163,74,.4); color:#BBF7D0;
+}
+.gracias.visible{ display:block; }
 
-.formulario{
-  padding:clamp(1.75rem,3vw,2.5rem); background:var(--blanco);
-  border:1px solid var(--neutro-clr); border-radius:var(--radio-lg); box-shadow:var(--sombra);
-}
-.campo{ margin-bottom:1.15rem; }
-.campo label{ display:block; font-size:.88rem; font-weight:600; color:var(--azul); margin-bottom:.4rem; }
-.campo input,.campo textarea{
-  width:100%; padding:.85rem 1rem; font-family:inherit; font-size:1rem; color:var(--azul);
-  background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio);
-  transition:border-color var(--transicion),box-shadow var(--transicion);
-}
-.campo input:focus,.campo textarea:focus{
-  outline:none; border-color:var(--verde); box-shadow:0 0 0 3px rgba(22,163,74,.15);
-}
-.campo textarea{ resize:vertical; min-height:120px; }
-.formulario .btn{ width:100%; }
-
-/* ---------- Footer ---------- */
-.pie{ background:var(--azul); color:#94A3B8; padding:clamp(3.5rem,6vw,4.5rem) 0 2rem; }
-.pie__grilla{
-  display:grid; gap:2.5rem; align-items:start;
-  grid-template-columns:1fr;
-}
-@media (min-width:768px){ .pie__grilla{ grid-template-columns:2fr 1fr 1fr; } }
-.pie img{ height:42px; width:auto; margin-bottom:1rem; border-radius:4px; }
-.pie h4{
-  font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:700;
-  letter-spacing:.12em; text-transform:uppercase; color:var(--blanco); margin:0 0 1.1rem;
-}
-.pie ul{ display:grid; gap:.65rem; }
-.pie a{ color:#94A3B8; font-size:.95rem; }
-.pie a:hover{ color:var(--verde); }
-.pie__redes{ display:flex; gap:.75rem; margin-top:1.5rem; }
-.pie__redes a{
-  width:40px; height:40px; display:grid; place-items:center; color:#94A3B8;
-  border:1px solid rgba(255,255,255,.15); border-radius:var(--radio);
-  transition:all var(--transicion);
-}
-.pie__redes a:hover{ color:var(--blanco); background:var(--verde); border-color:var(--verde); }
-.pie__base{
-  margin-top:3rem; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,.12);
-  display:flex; flex-wrap:wrap; gap:.75rem; justify-content:space-between;
-  font-size:.87rem; color:#64748B;
-}
+/* ---------- Pie ---------- */
+.pie{ padding:1.75rem 0; font-size:.85rem; color:var(--neutro-med); }
+.pie__inner{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; }
+.pie ul{ display:flex; flex-wrap:wrap; gap:1.25rem; list-style:none; margin:0; padding:0; }
+.pie a{ text-decoration:none; }
+.pie a:hover{ color:var(--azul); }
 
 /* ---------- WhatsApp flotante ---------- */
 .wa{
-  position:fixed; right:1.25rem; bottom:1.25rem; z-index:99;
-  width:56px; height:56px; display:grid; place-items:center;
-  background:#25D366; color:var(--blanco); border-radius:50%;
-  box-shadow:0 6px 20px rgba(0,0,0,.22); transition:transform var(--transicion);
+  position:fixed; right:1.1rem; bottom:1.1rem; z-index:40;
+  width:56px; height:56px; border-radius:50%; background:#25D366; color:var(--blanco);
+  display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.25);
 }
-.wa:hover{ transform:scale(1.08); color:var(--blanco); }
-
-/* ---------- Reveal ---------- */
-.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
-.reveal.visible{ opacity:1; transform:none; }
+.wa:hover{ background:#1EBE5A; }
 
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
-  .reveal{ opacity:1; transform:none; transition:none; }
-  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
-}
-
-.visually-hidden{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+  *{ transition:none !important; }
 }
 </style>
 </head>
-
 <body>
 
 <a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ CABECERA ============ -->
 <header class="cabecera">
   <div class="contenedor cabecera__inner">
-    <a href="#inicio" class="marca" aria-label="OBYRA — Inicio">
-      <img src="./images/logo-obyra.png" alt="OBYRA — Gestión que construye" width="420" height="130">
+    <a href="#inicio" class="marca" aria-label="OBYRA Software Factory — Inicio">
+      <span class="marca__icono" aria-hidden="true">O</span>
+      <span class="marca__texto">
+        <span class="marca__nombre">OBYRA</span>
+        <span class="marca__bajada">Software factory</span>
+      </span>
     </a>
 
     <button class="hamburguesa" id="btnMenu" aria-expanded="false" aria-controls="navPrincipal" aria-label="Abrir menú">
@@ -463,493 +340,259 @@ ul{ margin:0; padding:0; list-style:none; }
 
     <nav class="nav" id="navPrincipal" aria-label="Navegación principal">
       <ul class="nav__lista">
-        <li><a href="#problema">El problema</a></li>
-        <li><a href="#solucion">La solución</a></li>
-        <li><a href="#funcionalidades">Funcionalidades</a></li>
-        <li><a href="#precios">Precios</a></li>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="construccion/">Construcción</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li class="solo-mobile"><a href="https://app.obyra.com.ar/auth/register" class="btn btn--primario">Probar gratis</a></li>
+        <li><a href="#contacto" class="btn btn--primario btn--chico">Contar mi problema</a></li>
       </ul>
     </nav>
-
-    <div class="cabecera__cta">
-      <a href="https://app.obyra.com.ar/auth/register" class="btn btn--primario">Probar gratis</a>
-    </div>
   </div>
 </header>
 
 <main id="contenido">
 
-  <!-- ============ 1. HERO (headline + video + copy + CTAs) ============ -->
+  <!-- ============ 1. HERO ============ -->
   <section class="hero" id="inicio">
-    <div class="contenedor" style="max-width:900px;text-align:center">
-      <h1>Todas tus obras en un lugar. No en demasiadas planillas de <span class="acento">excel</span>.</h1>
-      <div class="linea" style="margin-inline:auto"></div>
-
-      <div class="video" style="margin-top:2.5rem">
-        <iframe src="https://www.youtube-nocookie.com/embed/UsK6R9PmFLs?rel=0&amp;modestbranding=1"
-                title="Demo de la plataforma OBYRA"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-
-      <p class="plomo" style="margin:2rem auto 0">Controlá presupuestos, tareas, materiales y equipos desde un solo lugar, en tiempo real. Sin perseguir información dispersa en Excel, WhatsApp y llamados.</p>
-
-      <div class="grupo-btn" style="justify-content:center">
-        <a href="https://app.obyra.com.ar/auth/register" class="btn btn--primario">
-          Empezar prueba gratis
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#problema" class="btn btn--secundario">Descubrí por qué</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 2. EL PROBLEMA REAL ============ -->
-  <section class="seccion seccion--suave" id="problema">
-    <div class="contenedor split split--invertido">
-      <div class="split__texto">
-        <p class="eyebrow">El problema real</p>
-        <h2>Lo que vimos una y otra vez en las constructoras que acompañamos</h2>
-        <div class="linea"></div>
-
-        <ul class="dolores">
-          <li class="dolor">
-            <span class="dolor__icono" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-            </span>
-            <p style="margin:0"><b>Excel</b> <span>para todo.</span></p>
-          </li>
-          <li class="dolor">
-            <span class="dolor__icono" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l2-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
-            </span>
-            <p style="margin:0"><b>WhatsApp</b> <span>para coordinar.</span></p>
-          </li>
-          <li class="dolor">
-            <span class="dolor__icono" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-            </span>
-            <p style="margin:0"><b>Llamadas</b> <span>para resolver.</span></p>
-          </li>
-          <li class="dolor">
-            <span class="dolor__icono" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-            </span>
-            <p style="margin:0"><b>Papeles</b> <span>para controlar.</span></p>
-          </li>
-          <li class="dolor">
-            <span class="dolor__icono" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
-            </span>
-            <p style="margin:0"><b>Y errores</b> <span>que se repiten.</span></p>
-          </li>
-        </ul>
-
-        <div class="grupo-btn">
-          <a href="#solucion" class="btn btn--secundario">Entender el problema real</a>
-        </div>
-      </div>
-
-      <div class="split__media">
-        <div class="marco marco--problema">
-          <div class="marco__img">
-            <picture>
-              <source srcset="./images/problem-photo.webp" type="image/webp">
-              <img src="./images/problem-photo.png" width="392" height="640" loading="lazy" decoding="async"
-                   alt="Notebook con una planilla de cálculo, handy, casco y planos en papel sobre una mesa en obra">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 3. SOLUCIÓN ============ -->
-  <section class="seccion seccion--oscura" id="solucion">
-    <div class="contenedor">
-      <div class="split">
-        <div class="split__texto">
-          <p class="eyebrow">La solución</p>
-          <h2>Así se ve una obra con <span class="acento">trazabilidad real</span>.</h2>
-          <div class="linea"></div>
-          <p class="plomo">
-            Trazabilidad real es tener el <strong style="color:#fff">100% de tu obra bajo control</strong>, en tiempo real:
-            avances, tareas, materiales y equipos. <strong style="color:var(--verde)">Todo en un solo lugar.</strong>
-          </p>
-        </div>
-
-        <div class="split__media">
-          <div class="marco marco--dash">
-            <div class="marco__img">
-              <picture>
-                <source srcset="./images/dashboard-photo.webp" type="image/webp">
-                <img src="./images/dashboard-photo.png" width="642" height="770" loading="lazy" decoding="async"
-                     alt="Dashboard de OBYRA mostrando avance general 68%, 3 obras activas, 24 tareas y control de materiales críticos">
-              </picture>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pilares">
-        <div class="pilar">
-          <div class="pilar__icono" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-          </div>
-          <h3>Información en tiempo real</h3>
-          <p>Desde cada obra, sin esperar el parte del lunes.</p>
-        </div>
-        <div class="pilar">
-          <div class="pilar__icono" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4"/></svg>
-          </div>
-          <h3>Tareas claras</h3>
-          <p>Responsables definidos y seguimiento total.</p>
-        </div>
-        <div class="pilar">
-          <div class="pilar__icono" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-          </div>
-          <h3>Control de materiales y stock</h3>
-          <p>Para evitar faltantes y sobrecostos.</p>
-        </div>
-        <div class="pilar">
-          <div class="pilar__icono" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-4 4"/></svg>
-          </div>
-          <h3>Reportes y datos</h3>
-          <p>Para tomar mejores decisiones.</p>
-        </div>
-      </div>
-
-      <div class="banda-cta">
-        <div>
-          <h3>Pedí una demo</h3>
-          <p>y llevá el control de tu obra al siguiente nivel.</p>
-        </div>
-        <a href="https://wa.me/5491173685175?text=Hola!%20Me%20interesa%20reservar%20una%20demo%20de%20OBYRA" target="_blank" rel="noopener" class="btn btn--claro">
-          PEDÍ UNA DEMO
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 4. MÓDULOS ============ -->
-  <section class="seccion seccion--suave" id="funcionalidades">
-    <div class="contenedor">
-      <div class="encabezado-seccion">
-        <p class="eyebrow">Funcionalidades</p>
-        <h2>Todo lo que tu obra necesita, en un solo lugar</h2>
-        <div class="linea"></div>
-        <p class="plomo">Módulos pensados para el día a día de una constructora, no para un manual de sistemas.</p>
-      </div>
-
-      <div class="grilla-modulos">
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M14 10h2M8 14h2M14 14h2M8 18h8"/></svg>
-          </div>
-          <h3>Presupuestos con IA</h3>
-          <p>Creá presupuestos detallados con nuestra calculadora inteligente y generá comparativas en USD y ARS automáticamente.</p>
-        </article>
-
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Gestión de obra</h3>
-          <p>Planificá etapas, asigná responsables y seguí el avance real de cada obra desde el celular o la computadora.</p>
-        </article>
-
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-          </div>
-          <h3>Inventario y stock</h3>
-          <p>Controlá materiales críticos, mínimos y alertas para que nunca se te frene la obra por un faltante.</p>
-        </article>
-
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Seguridad e higiene</h3>
-          <p>Registrá personal en sitio, controles y documentación para cumplir con lo que la obra exige.</p>
-        </article>
-
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
-          </div>
-          <h3>Reportes y analítica</h3>
-          <p>Números claros de avance, costos y productividad para decidir con datos y no con intuición.</p>
-        </article>
-
-        <article class="modulo reveal">
-          <div class="modulo__icono" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
-          </div>
-          <h3>Equipos y configuración</h3>
-          <p>Adaptá roles, permisos y flujos a cómo trabaja tu empresa, sin depender de nadie.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 5. VALORES/PILARES ============ -->
-  <section class="seccion">
-    <div class="contenedor">
-      <div class="encabezado-seccion">
-        <p class="eyebrow">Nuestros pilares</p>
-        <h2>La marca detrás del software</h2>
-        <div class="linea"></div>
-      </div>
-
-      <div class="valores">
-        <div class="valor">
-          <div class="valor__icono" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Vigilancia</h3>
-          <p>Control e inteligencia sobre cada proyecto.</p>
-        </div>
-        <div class="valor">
-          <div class="valor__icono" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Ubicación</h3>
-          <p>Planificación y dominio del territorio.</p>
-        </div>
-        <div class="valor">
-          <div class="valor__icono" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20"/><path d="M4 18v-3a8 8 0 0 1 16 0v3"/><path d="M12 7V4"/></svg>
-          </div>
-          <h3>Construcción</h3>
-          <p>Integra obra, ejecución y eficiencia.</p>
-        </div>
-        <div class="valor">
-          <div class="valor__icono" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
-          </div>
-          <h3>Eficiencia</h3>
-          <p>Obra ejecutada sin desperdicio de recursos.</p>
-        </div>
-        <div class="valor">
-          <div class="valor__icono" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M11 2v3M13 2v3M11 19v3M13 19v3M2 11h3M2 13h3M19 11h3M19 13h3"/></svg>
-          </div>
-          <h3>Tecnología</h3>
-          <p>Precisión y proyección en cada decisión.</p>
-        </div>
-      </div>
-
-      <p class="tagline">Tecnología, precisión y control en cada proyecto.</p>
-    </div>
-  </section>
-
-  <!-- ============ 6. ¿POR QUÉ CONSTRUCTORAS? ============ -->
-  <section class="seccion" id="por-que">
-    <div class="contenedor split">
-      <div class="split__texto">
-        <p class="eyebrow">Nuestra historia</p>
-        <h2>¿Por qué armamos un software solo para constructoras?</h2>
-        <div class="linea"></div>
-        <p>Después de años trabajando junto a constructoras, vimos siempre la misma película: presupuestos en una planilla, coordinación por WhatsApp, controles en papel y decisiones que llegaban tarde porque la información estaba dispersa.</p>
-        <p>Probamos herramientas genéricas de gestión de proyectos y ninguna entendía cómo funciona realmente una obra: los acopios, los avances por etapa, los equipos que rotan de sitio en sitio. Así nació OBYRA — un software pensado exclusivamente para constructoras, de punta a punta.</p>
-        <p>Hoy seguimos trabajando codo a codo con cada equipo que usa la plataforma, porque el objetivo no es vender software: es que cada obra se termine a tiempo, con el presupuesto bajo control y sin sorpresas.</p>
-      </div>
-
-      <div class="split__media">
-        <div class="marco marco--hero">
-          <div class="marco__img">
-            <picture>
-              <source srcset="./images/hero-photo.webp" type="image/webp">
-              <img src="./images/hero-photo.png" width="330" height="900" loading="lazy" decoding="async"
-                   alt="Jefe de obra con casco y planos observando la construcción de un edificio en altura">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 7. PRECIOS ============ -->
-  <section class="seccion seccion--suave" id="precios">
-    <div class="contenedor">
-      <div class="encabezado-seccion">
-        <p class="eyebrow">Precios</p>
-        <h2>Un precio claro, sin sorpresas</h2>
-        <div class="linea"></div>
-        <p class="plomo">Hasta 15 usuarios. Obras ilimitadas. Elegí cómo querés pagarlo.</p>
-        <p style="font-size:.75rem;color:var(--neutro-med);margin-top:.5rem">Los precios corresponden a 1 año. Actualización trimestral por IPC.</p>
-      </div>
-
-      <div class="grilla-precios">
-        <article class="precio">
-          <h3>Suscripción mensual</h3>
-          <p class="precio__sub">OBYRA Profesional</p>
-          <div class="precio__monto">
-            <span class="precio__numero">$300</span>
-            <span class="precio__periodo">USD/mes</span>
-          </div>
-          <p class="precio__detalle">+ IVA</p>
-          <span class="precio__extra">≈ $420.000 ARS / mes</span>
-          <ul class="precio__lista">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Acceso completo a la plataforma</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Hasta 15 usuarios</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 30 días de prueba gratis</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Sin tarjeta para empezar</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Cancelás cuando quieras</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Soporte por WhatsApp</li>
-          </ul>
-          <a href="https://app.obyra.com.ar/auth/register" class="btn btn--primario">EMPEZAR PRUEBA GRATIS</a>
-        </article>
-
-        <article class="precio precio--destacado">
-          <span class="precio__badge">MÁS POPULAR</span>
-          <h3>Licencia 5 años</h3>
-          <p class="precio__sub">OBYRA Profesional — pago único</p>
-          <div class="precio__monto">
-            <span class="precio__numero">$11.900</span>
-            <span class="precio__periodo">USD</span>
-          </div>
-          <p class="precio__detalle">+ IVA (pago único)</p>
-          <span class="precio__extra">Ahorrás 34% vs. mensual</span>
-          <ul class="precio__lista">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 60 meses de servicio incluidos</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Hasta 15 usuarios</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Mismas funcionalidades que el mensual</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Soporte preferencial</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pago seguro por transferencia</li>
-          </ul>
-          <a href="https://wa.me/5491173685175?text=Hola%2C%20quiero%20info%20sobre%20la%20licencia%205%20a%C3%B1os%20de%20OBYRA" target="_blank" rel="noopener" class="btn btn--secundario">SOLICITAR POR WHATSAPP</a>
-        </article>
-      </div>
-
-      <p class="precios__pie">
-        ¿Dudas? Escribinos por WhatsApp:
-        <a href="https://wa.me/5491173685175" target="_blank" rel="noopener"><strong>+54 9 11 7368-5175</strong></a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ 8. CTA FINAL ============ -->
-  <section class="cta-final">
-    <div class="contenedor">
-      <h2>Construyamos el futuro juntos</h2>
-      <p>Solicitá tu demo hoy y descubrí cómo OBYRA puede transformar la gestión de tu obra.</p>
-      <div class="grupo-btn">
-        <a href="https://app.obyra.com.ar/auth/register" class="btn btn--claro">SOLICITAR DEMO</a>
-        <a href="https://app.obyra.com.ar" class="btn btn--fantasma">Iniciar sesión</a>
-      </div>
-      <small>Acceso gratuito por 30 días. Sin tarjeta requerida.</small>
-    </div>
-  </section>
-
-  <!-- ============ 9. CONTACTO ============ -->
-  <section class="seccion" id="contacto">
-    <div class="contenedor contacto__grilla">
+    <div class="contenedor hero__grilla">
       <div>
-        <p class="eyebrow">Contacto</p>
-        <h2>Hablemos de tu obra</h2>
-        <div class="linea"></div>
-        <p class="plomo">¿Tenés preguntas sobre OBYRA? Nuestro equipo está listo para ayudarte a optimizar la gestión de tus obras.</p>
-
-        <ul class="contacto__metodos">
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-            <a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a>
-          </li>
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-            <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
-          </li>
-        </ul>
+        <p class="eyebrow">Software a medida · Argentina</p>
+        <h1>Si tu negocio tiene un problema, <span class="acento">te hacemos el sistema</span> que lo resuelve.</h1>
+        <p class="hero__bajada">Desarrollamos software para emprendedores y pymes. No vendemos una plantilla con tu logo: hacemos el sistema que tu operación necesita, en el rubro que sea.</p>
+        <div class="grupo-btn">
+          <a href="#contacto" class="btn btn--primario">Quiero mi sistema</a>
+          <a href="#casos" class="btn btn--oscuro">Ver casos reales</a>
+        </div>
+        <p class="hero__rubros">Construcción · Gastronomía · Comercio y distribución · Servicios profesionales</p>
       </div>
 
-      <div class="formulario">
-        <h3>Envianos un mensaje</h3>
-        <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
-          <input type="hidden" name="_next" value="https://obyra.com.ar/#inicio">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Consulta desde Landing Page OBYRA">
+      <div class="rubros">
+        <p class="rubros__titulo" id="rubrosTitulo">Elegí un rubro</p>
+        <div class="rubros__tabs" role="tablist" aria-labelledby="rubrosTitulo">
+          <button class="rubros__tab" role="tab" id="tab-gastro" aria-controls="panel-gastro" aria-selected="true">Gastronomía</button>
+          <button class="rubros__tab" role="tab" id="tab-constru" aria-controls="panel-constru" aria-selected="false" tabindex="-1">Construcción</button>
+          <button class="rubros__tab" role="tab" id="tab-comercio" aria-controls="panel-comercio" aria-selected="false" tabindex="-1">Comercio</button>
+          <button class="rubros__tab" role="tab" id="tab-servicios" aria-controls="panel-servicios" aria-selected="false" tabindex="-1">Servicios</button>
+        </div>
 
-          <div class="campo">
-            <label for="nombre">Nombre y apellido</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+        <div class="rubros__panel" role="tabpanel" id="panel-gastro" aria-labelledby="tab-gastro">
+          <div class="paso">
+            <span class="paso__icono paso__icono--antes" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><p class="paso__etiqueta">Antes</p><p>Pedidos por WhatsApp, anotados en un cuaderno. Nunca se sabe qué se vendió ni qué falta congelar.</p></div>
           </div>
-          <div class="campo">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+          <div class="paso">
+            <span class="paso__icono paso__icono--despues" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><p class="paso__etiqueta">Con OBYRA</p><p>Tienda propia con carrito, pago por Mercado Pago o transferencia, y un panel donde ves los pedidos del día y el reporte de ventas.</p></div>
           </div>
-          <div class="campo">
-            <label for="telefono">Teléfono <span style="font-weight:400;color:var(--neutro-med)">(opcional)</span></label>
-            <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+          <p class="rubros__pie">Caso real: <a href="https://www.gingereat.com.ar" target="_blank" rel="noopener">Ginger — pastas y empanadas congeladas</a></p>
+        </div>
+
+        <div class="rubros__panel" role="tabpanel" id="panel-constru" aria-labelledby="tab-constru" hidden>
+          <div class="paso">
+            <span class="paso__icono paso__icono--antes" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><p class="paso__etiqueta">Antes</p><p>Presupuestos en una planilla, avances por WhatsApp y controles en papel. La información llega cuando ya es tarde.</p></div>
           </div>
-          <div class="campo">
-            <label for="mensaje">Tu mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <div class="paso">
+            <span class="paso__icono paso__icono--despues" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><p class="paso__etiqueta">Con OBYRA</p><p>Presupuestos, cómputo, avance de obra y materiales en una sola plataforma, desde el celular o la computadora.</p></div>
           </div>
-          <div class="campo" style="display:flex;align-items:center;gap:.6rem">
-            <input type="checkbox" id="quiero-info" name="quiero_info" value="Sí" style="width:auto;flex:none">
-            <label for="quiero-info" style="margin:0;font-weight:400;font-size:.9rem">Quiero recibir info sobre OBYRA</label>
+          <p class="rubros__pie">Producto: <a href="construccion/">OBYRA Construcción</a></p>
+        </div>
+
+        <div class="rubros__panel" role="tabpanel" id="panel-comercio" aria-labelledby="tab-comercio" hidden>
+          <div class="paso">
+            <span class="paso__icono paso__icono--antes" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><p class="paso__etiqueta">Antes</p><p>El stock lo conocía una sola persona. Nadie más sabía qué había, dónde estaba ni cuánto costaba.</p></div>
           </div>
-          <button type="submit" class="btn btn--primario">Enviar mensaje</button>
-        </form>
+          <div class="paso">
+            <span class="paso__icono paso__icono--despues" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><p class="paso__etiqueta">Con OBYRA</p><p>Inventario compartido en tiempo real, con cada movimiento registrado y los pedidos, compras y despachos conectados.</p></div>
+          </div>
+          <p class="rubros__pie">Caso real: <strong>Amperios — inventario y distribución</strong></p>
+        </div>
+
+        <div class="rubros__panel" role="tabpanel" id="panel-servicios" aria-labelledby="tab-servicios" hidden>
+          <div class="paso">
+            <span class="paso__icono paso__icono--antes" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            <div><p class="paso__etiqueta">Antes</p><p>Turnos por WhatsApp, clientes en una planilla y cobros que hay que perseguir uno por uno.</p></div>
+          </div>
+          <div class="paso">
+            <span class="paso__icono paso__icono--despues" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><p class="paso__etiqueta">Con OBYRA</p><p>Un sistema armado a la medida de cómo atendés: agenda, historial de cada cliente y cobros en un mismo lugar.</p></div>
+          </div>
+          <p class="rubros__pie">¿Tu negocio es de servicios? <a href="#contacto">Contanos el problema</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. CASOS ============ -->
+  <section class="seccion" id="casos">
+    <div class="contenedor">
+      <p class="eyebrow">Casos</p>
+      <h2>Tres rubros distintos, la misma forma de trabajar</h2>
+      <p class="bajada">Cada sistema salió de un problema concreto que el dueño nos contó en la primera reunión. Ninguno es el mismo software con otro color.</p>
+
+      <div class="grilla-3">
+        <article class="caso">
+          <p class="caso__rubro">Gastronomía</p>
+          <h3>Ginger</h3>
+          <p class="caso__cliente">Pastas y empanadas congeladas · Buenos Aires</p>
+          <p class="caso__texto">Vendían por WhatsApp y perdían pedidos entre mensajes. Hoy tienen su propia tienda online y un panel de gestión.</p>
+          <ul>
+            <li>Catálogo y carrito propio</li>
+            <li>Cobro con Mercado Pago y transferencia</li>
+            <li>Panel de pedidos y reportes de venta</li>
+          </ul>
+          <a class="caso__link" href="https://www.gingereat.com.ar" target="_blank" rel="noopener">Ver la tienda →</a>
+        </article>
+
+        <article class="caso">
+          <p class="caso__rubro">Comercio · Distribución</p>
+          <h3>OBYRA Stock</h3>
+          <p class="caso__cliente">Amperios · Córdoba</p>
+          <p class="caso__texto">Necesitaban saber qué tenían, dónde y a qué costo, sin depender de una planilla que solo entendía una persona.</p>
+          <ul>
+            <li>Inventario multiusuario en tiempo real</li>
+            <li>Movimientos con trazabilidad</li>
+            <li>Pedidos, compras y despachos conectados</li>
+          </ul>
+          <p class="caso__nota">Sistema de uso interno del cliente.</p>
+        </article>
+
+        <article class="caso">
+          <p class="caso__rubro">Construcción</p>
+          <h3>OBYRA Construcción</h3>
+          <p class="caso__cliente">Constructoras y contratistas</p>
+          <p class="caso__texto">Nuestro producto más maduro: presupuestos, cómputo y seguimiento de obra para empresas que hoy viven en Excel.</p>
+          <ul>
+            <li>Presupuestos y cómputo por rubro</li>
+            <li>Avance de obra y certificaciones</li>
+            <li>Análisis de desvíos con IA</li>
+          </ul>
+          <a class="caso__link" href="construccion/">Conocer el producto →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. CÓMO TRABAJAMOS ============ -->
+  <section class="seccion seccion--blanca" id="como-trabajamos">
+    <div class="contenedor">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Un camino de cuatro etapas, con algo para ver en cada una</h2>
+      <p class="bajada">No arrancamos pidiéndote un pliego de requerimientos. Arrancamos entendiendo cómo trabajás hoy.</p>
+
+      <div class="etapas">
+        <div class="etapa">
+          <p class="etapa__numero">Etapa 1</p>
+          <h3>Diagnóstico</h3>
+          <p>Una reunión para entender tu operación y detectar dónde se pierde plata o tiempo. Sin costo.</p>
+          <span class="etapa__tiempo">1 semana</span>
+        </div>
+        <div class="etapa">
+          <p class="etapa__numero">Etapa 2</p>
+          <h3>Prototipo</h3>
+          <p>Te mostramos las pantallas reales del sistema antes de desarrollarlo. Ahí se corrige, no después.</p>
+          <span class="etapa__tiempo">2 semanas</span>
+        </div>
+        <div class="etapa">
+          <p class="etapa__numero">Etapa 3</p>
+          <h3>Desarrollo</h3>
+          <p>Entregas parciales cada dos semanas, para que lo uses mientras se construye.</p>
+          <span class="etapa__tiempo">4 a 10 semanas</span>
+        </div>
+        <div class="etapa">
+          <p class="etapa__numero">Etapa 4</p>
+          <h3>Puesta en marcha</h3>
+          <p>Migramos tus datos, capacitamos al equipo y quedamos con soporte y mejoras.</p>
+          <span class="etapa__tiempo">Continuo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PRODUCTO ============ -->
+  <section class="seccion" id="producto">
+    <div class="contenedor">
+      <p class="eyebrow">Producto</p>
+      <h2>Además del software a medida, tenemos productos listos para usar</h2>
+      <p class="bajada">Cuando el problema de tu rubro ya lo resolvimos antes, no hace falta empezar de cero.</p>
+
+      <div class="producto">
+        <div>
+          <p class="eyebrow">OBYRA Construcción</p>
+          <h3>Todas tus obras en un lugar. No en veinte planillas.</h3>
+          <p>La plataforma de gestión para constructoras: presupuestos, cómputo, avance de obra, materiales y control de desvíos. Es el producto con el que arrancó OBYRA y tiene su propio sitio.</p>
+          <div class="grupo-btn">
+            <a href="construccion/" class="btn btn--primario">Ver OBYRA Construcción →</a>
+            <a href="#contacto" class="btn btn--linea">Hablar con nosotros</a>
+          </div>
+        </div>
+        <div class="datos">
+          <div class="dato"><span class="dato__valor">15</span><span class="dato__texto">usuarios incluidos en el plan Profesional</span></div>
+          <div class="dato"><span class="dato__valor">∞</span><span class="dato__texto">obras, sin límite</span></div>
+          <div class="dato"><span class="dato__valor">30</span><span class="dato__texto">días de prueba gratis, sin tarjeta</span></div>
+          <div class="dato"><span class="dato__valor">5</span><span class="dato__texto">años de licencia en la opción de pago único</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. CONTACTO ============ -->
+  <section class="seccion seccion--oscura" id="contacto">
+    <div class="contenedor">
+      <p class="eyebrow">Contacto</p>
+      <h2>Contanos el problema. La primera reunión es para escucharte.</h2>
+      <p class="bajada">Elegí por dónde te resulta más cómodo. Respondemos el mismo día hábil.</p>
+
+      <div class="gracias" id="gracias" role="status">¡Gracias! Recibimos tus datos y te contactamos en el día hábil.</div>
+
+      <div class="grilla-3">
+        <div class="canal">
+          <p class="canal__etiqueta">Directo</p>
+          <h3>Escribinos por WhatsApp</h3>
+          <p>La vía más rápida. Contanos en dos líneas qué necesitás resolver.</p>
+          <a href="https://wa.me/5491173685175?text=Hola!%20Tengo%20un%20problema%20en%20mi%20negocio%20y%20quiero%20ver%20si%20un%20sistema%20lo%20resuelve" target="_blank" rel="noopener" class="btn btn--primario btn--chico">Abrir WhatsApp</a>
+        </div>
+
+        <div class="canal">
+          <p class="canal__etiqueta">Por mail</p>
+          <h3>Mandanos un correo</h3>
+          <p>Si preferís contarlo con más detalle o adjuntar planillas, escribinos a obyra.servicios@gmail.com.</p>
+          <a href="mailto:obyra.servicios@gmail.com?subject=Consulta%20por%20software%20a%20medida" class="btn btn--oscuro btn--chico">Enviar mail</a>
+        </div>
+
+        <div class="canal">
+          <p class="canal__etiqueta">Te llamamos</p>
+          <h3>Dejanos tus datos</h3>
+          <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://obyra.com.ar/?enviado=1#contacto">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Consulta desde obyra.com.ar (software a medida)">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <label class="visually-hidden" for="nombre">Nombre y empresa</label>
+            <input type="text" id="nombre" name="nombre_y_empresa" placeholder="Nombre y empresa" autocomplete="organization" required>
+            <label class="visually-hidden" for="contactoDato">Teléfono o email</label>
+            <input type="text" id="contactoDato" name="telefono_o_email" placeholder="Teléfono o email" required>
+            <button type="submit" class="btn btn--primario btn--chico">Enviar</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ============ 10. FOOTER ============ -->
+<!-- ============ PIE ============ -->
 <footer class="pie">
-  <div class="contenedor">
-    <div class="pie__grilla">
-      <div>
-        <img src="./images/logo-obyra-white.png" alt="OBYRA — Gestión que construye" width="400" height="130">
-        <p style="max-width:38ch">Software de gestión para constructoras. Trazabilidad real de principio a fin.</p>
-        <div class="pie__redes">
-          <a href="https://www.linkedin.com/in/obyra/" target="_blank" rel="noopener" aria-label="OBYRA en LinkedIn">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05C21.4 8.65 22 11 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.6-2.37 3.27V21h-4z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/obyra.app/" target="_blank" rel="noopener" aria-label="OBYRA en Instagram">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@Obyra-f3h" target="_blank" rel="noopener" aria-label="OBYRA en YouTube">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.5-.45-5.18a2.9 2.9 0 0 0-2.04-2.05C18.83 4.3 12 4.3 12 4.3s-6.83 0-8.51.47A2.9 2.9 0 0 0 1.45 6.8C1 8.5 1 12 1 12s0 3.5.45 5.18a2.9 2.9 0 0 0 2.04 2.05c1.68.47 8.51.47 8.51.47s6.83 0 8.51-.47a2.9 2.9 0 0 0 2.04-2.05C23 15.5 23 12 23 12zM9.75 15.25v-6.5L15.5 12z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <nav aria-label="Enlaces del sitio">
-        <h4>Software</h4>
-        <ul>
-          <li><a href="#problema">El problema</a></li>
-          <li><a href="#solucion">La solución</a></li>
-          <li><a href="#funcionalidades">Funcionalidades</a></li>
-          <li><a href="#precios">Precios</a></li>
-        </ul>
-      </nav>
-
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a></li>
-          <li><a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a></li>
-          <li><a href="https://app.obyra.com.ar">Acceder a la app</a></li>
-          <li><a href="#contacto">Pedir una demo</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="pie__base">
-      <span>© <span id="anio">2026</span> OBYRA. Gestión que construye.</span>
-      <span>Hecho en Argentina 🇦🇷</span>
-    </div>
+  <div class="contenedor pie__inner">
+    <span>© <span id="anio">2026</span> OBYRA · Software factory · Buenos Aires, Argentina</span>
+    <ul>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="construccion/">OBYRA Construcción</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
   </div>
 </footer>
 
@@ -964,11 +607,10 @@ ul{ margin:0; padding:0; list-style:none; }
   "name":"OBYRA",
   "url":"https://obyra.com.ar",
   "logo":"https://obyra.com.ar/images/logo-obyra.png",
-  "slogan":"Gestión que construye",
-  "description":"Plataforma de gestión para constructoras: presupuestos, obras, tareas, materiales, equipos y reportes en tiempo real.",
+  "description":"Software factory argentina: desarrollo de sistemas a medida para emprendedores y pymes.",
   "email":"obyra.servicios@gmail.com",
   "telephone":"+5491173685175",
-  "address":{"@type":"PostalAddress","addressCountry":"AR"},
+  "address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},
   "sameAs":[
     "https://www.linkedin.com/in/obyra/",
     "https://www.instagram.com/obyra.app/",
@@ -984,45 +626,48 @@ ul{ margin:0; padding:0; list-style:none; }
   /* --- Menú mobile --- */
   var btn = document.getElementById('btnMenu');
   var nav = document.getElementById('navPrincipal');
-
+  function cerrarMenu() {
+    nav.classList.remove('abierto');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menú');
+  }
   btn.addEventListener('click', function () {
     var abierto = nav.classList.toggle('abierto');
     btn.setAttribute('aria-expanded', String(abierto));
     btn.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
   });
-
   nav.addEventListener('click', function (e) {
-    if (e.target.closest('a') && nav.classList.contains('abierto')) {
-      nav.classList.remove('abierto');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', 'Abrir menú');
-    }
+    if (e.target.closest('a')) cerrarMenu();
   });
 
-  /* --- Reveal al hacer scroll --- */
-  var elementos = document.querySelectorAll('.reveal');
+  /* --- Selector de rubro --- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.rubros__tab'));
+  function elegir(tab) {
+    tabs.forEach(function (t) {
+      var activo = t === tab;
+      t.setAttribute('aria-selected', String(activo));
+      t.tabIndex = activo ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !activo;
+    });
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { elegir(tab); });
+    tab.addEventListener('keydown', function (e) {
+      var destino = null;
+      if (e.key === 'ArrowRight') destino = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') destino = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (destino) { e.preventDefault(); elegir(destino); destino.focus(); }
+    });
+  });
 
-  if (!('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    elementos.forEach(function (el) { el.classList.add('visible'); });
-  } else {
-    var obs = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (entrada, i) {
-        if (!entrada.isIntersecting) return;
-        var el = entrada.target;
-        el.style.transitionDelay = (i * 70) + 'ms';
-        el.classList.add('visible');
-        obs.unobserve(el);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-    elementos.forEach(function (el) { obs.observe(el); });
+  /* --- Aviso después de mandar el formulario --- */
+  if (/[?&]enviado=1/.test(location.search)) {
+    document.getElementById('gracias').classList.add('visible');
   }
 
-  /* --- Año del footer --- */
+  /* --- Año del pie --- */
   document.getElementById('anio').textContent = new Date().getFullYear();
 })();
 </script>
-
 </body>
 </html>
