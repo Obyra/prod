@@ -1,0 +1,42 @@
+/* ============================================================
+   OBYRA — Bloque legal del pie
+   Se suma al pie que ya tiene cada página (home y construcción).
+   Los nombres arrancan con "pieleg" para no chocar con los
+   estilos propios de cada página.
+   ============================================================ */
+
+.pieleg{
+  margin-top:2rem; padding-top:1.5rem;
+  border-top:1px solid rgba(169,182,196,.25);
+  display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2rem;
+  font-size:.85rem; line-height:1.7;
+}
+.pieleg h4{
+  font:700 .7rem/1 'Inter',sans-serif; letter-spacing:.14em; text-transform:uppercase;
+  margin:0 0 .9rem;
+}
+.pieleg ul{ list-style:none; padding:0; margin:0; }
+.pieleg .pieleg__lista{ display:grid; gap:.55rem; }
+.pieleg p{ margin:0 0 .75rem; }
+.pieleg a{ text-decoration:none; }
+.pieleg a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+.pieleg__arrepentimiento{
+  display:inline-block; margin-top:.35rem; font-weight:600;
+  border:1px solid rgba(169,182,196,.4); border-radius:8px; padding:.55rem .9rem;
+}
+
+.pieleg .pieleg__medios{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.75rem 0 0; padding:0; list-style:none; }
+.pieleg .pieleg__medios li{
+  background:#fff; color:#0D1B2A; font-size:.68rem; font-weight:700; letter-spacing:.03em;
+  border-radius:6px; padding:.35rem .55rem;
+}
+
+/* El pie de la home es claro y el de construcción es oscuro:
+   cada uno hereda el color de su propio pie. */
+.pieleg, .pieleg a{ color:inherit; }
+.pieleg h4{ color:inherit; opacity:.75; }
+
+@media (max-width:820px){
+  .pieleg{ grid-template-columns:1fr; gap:1.5rem; }
+}

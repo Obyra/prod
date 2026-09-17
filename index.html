@@ -32,6 +32,7 @@
 })();
 </script>
 
+<link rel="stylesheet" href="/css/pie-legal.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -306,6 +307,30 @@ img{ max-width:100%; height:auto; display:block; }
 .dato__texto{ font-size:.8rem; color:var(--neutro-med); line-height:1.4; }
 @media (max-width:900px){ .producto{ grid-template-columns:1fr; } }
 
+
+/* ---------- Precios (usa js/precios.js) ---------- */
+.precios__grilla{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.25rem; margin-top:2.75rem; }
+.plan{
+  background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
+  padding:1.75rem; display:flex; flex-direction:column; box-shadow:var(--sombra);
+}
+.plan--destacado{ border-color:var(--verde); border-top:4px solid var(--verde); }
+.plan__etiqueta{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--verde-texto); margin-bottom:.75rem; }
+.plan h3{ margin:0 0 .25rem; font-size:1.1rem; }
+.plan__modalidad{ font-size:.875rem; color:var(--neutro-med); margin-bottom:1.25rem; }
+.plan__monto{ display:flex; align-items:baseline; gap:.4rem; flex-wrap:wrap; margin-bottom:.25rem; }
+.plan__numero{ font:800 clamp(1.5rem,2.6vw,1.9rem)/1.1 'Montserrat',sans-serif; color:var(--azul); }
+.plan__periodo{ font-size:.85rem; color:var(--neutro-med); }
+.plan__detalle{ font-size:.82rem; color:var(--neutro-med); margin-bottom:1.25rem; }
+.plan__lista{ list-style:none; padding:0; margin:0 0 1.5rem; display:grid; gap:.5rem; font-size:.875rem; }
+.plan__lista li{ position:relative; padding-left:1.1rem; }
+.plan__lista li::before{ content:""; position:absolute; left:0; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--verde); }
+.plan__lista dt{ display:inline; font-weight:600; color:var(--azul); }
+.plan__lista dd{ display:inline; margin:0; }
+.plan .btn{ margin-top:auto; align-self:flex-start; }
+.precios__nota{ font-size:.85rem; color:var(--neutro-med); margin-top:1.75rem; max-width:72ch; }
+.precios__nota + .precios__nota{ margin-top:.5rem; }
+
 /* ---------- Contacto ---------- */
 .canal{
   background:var(--azul-claro); border:1px solid var(--azul-borde); border-radius:var(--radio-lg);
@@ -370,6 +395,7 @@ img{ max-width:100%; height:auto; display:block; }
       <ul class="nav__lista">
         <li><a href="#casos">Casos</a></li>
         <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="#precios">Precios</a></li>
         <li><a href="construccion/">Construcción</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#contacto" class="btn btn--primario btn--chico">Contar mi problema</a></li>
@@ -576,7 +602,26 @@ img{ max-width:100%; height:auto; display:block; }
     </div>
   </section>
 
-  <!-- ============ 5. CONTACTO ============ -->
+
+  <!-- ============ 5. PRECIOS ============ -->
+  <section class="seccion seccion--blanca" id="precios">
+    <div class="contenedor">
+      <p class="eyebrow">Precios</p>
+      <h2>Qué cuesta trabajar con nosotros</h2>
+      <p class="bajada">Los productos listos para usar tienen precio publicado. Los sistemas a medida se cotizan por proyecto, después de la reunión de diagnóstico, que no tiene costo.</p>
+
+      <div class="precios__grilla" id="precios-grilla"></div>
+
+      <p class="precios__nota" id="precios-nota"></p>
+      <p class="precios__nota">
+        Al contratar aceptás los <a href="/terminos/">Términos y Condiciones</a>.
+        Podés cancelar cuando quieras según la <a href="/reembolsos/">Política de Reembolsos y Cancelación</a>.
+        Ver el detalle completo en <a href="/precios/">la página de precios</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 6. CONTACTO ============ -->
   <section class="seccion seccion--oscura seccion--foto" id="contacto">
     <div class="contenedor">
       <p class="eyebrow">Contacto</p>
@@ -623,13 +668,58 @@ img{ max-width:100%; height:auto; display:block; }
 
 <!-- ============ PIE ============ -->
 <footer class="pie">
-  <div class="contenedor pie__inner">
-    <span>© <span id="anio">2026</span> OBYRA · Software factory · Buenos Aires, Argentina</span>
+  <div class="contenedor">
+
+      <div class="pieleg">
+        <div>
+          <h4>Datos del vendedor</h4>
+          <p>
+            <strong>OBYRA</strong> — Brenda Priscila Koldobsky<br>
+            CUIT 27-34722707-8 · Responsable Monotributo<br>
+            Provincia de Buenos Aires, Argentina
+          </p>
+          <p>
+            <a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a><br>
+            <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
+          </p>
+          <a class="pieleg__arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
+        </div>
+
+        <div>
+          <h4>Legales</h4>
+          <ul class="pieleg__lista">
+            <li><a href="/terminos/">Términos y Condiciones</a></li>
+            <li><a href="/privacidad/">Política de Privacidad</a></li>
+            <li><a href="/reembolsos/">Política de Reembolsos y Cancelación</a></li>
+            <li><a href="/arrepentimiento/">Botón de arrepentimiento</a></li>
+            <li><a href="/precios/">Precios</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Medios de pago aceptados</h4>
+          <!-- TODO (Brenda): cambiar por los logos oficiales cuando Mobbex
+               confirme qué medios quedan habilitados. -->
+          <ul class="pieleg__medios">
+            <li>VISA</li>
+            <li>MASTERCARD</li>
+            <li>AMERICAN EXPRESS</li>
+            <li>CABAL</li>
+            <li>TRANSFERENCIA</li>
+          </ul>
+          <p style="margin-top:.75rem">Pagos procesados por Mobbex.<br>No almacenamos datos de tarjetas.</p>
+        </div>
+      </div>
+
+    <div class="pie__inner" style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--neutro-clr)">
+    <span>© <span id="anio">2026</span> OBYRA · Software factory · Argentina</span>
     <ul>
       <li><a href="#casos">Casos</a></li>
       <li><a href="construccion/">OBYRA Construcción</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="/precios/">Precios</a></li>
     </ul>
+    </div>
   </div>
 </footer>
 
@@ -656,6 +746,7 @@ img{ max-width:100%; height:auto; display:block; }
 }
 </script>
 
+<script src="/js/precios.js"></script>
 <script>
 (function () {
   'use strict';
