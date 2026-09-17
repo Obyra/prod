@@ -135,15 +135,19 @@ img{ max-width:100%; height:auto; display:block; }
   background:rgba(247,249,248,.92); backdrop-filter:saturate(1.4) blur(10px);
   border-bottom:1px solid var(--neutro-clr);
 }
-.cabecera__inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:68px; }
-.marca{ display:flex; align-items:center; gap:.65rem; text-decoration:none; }
-.marca__icono{
-  width:34px; height:34px; border-radius:8px; background:var(--verde-boton); color:var(--blanco);
-  display:grid; place-items:center; font:800 1rem/1 'Montserrat',sans-serif;
+.cabecera__inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:72px; }
+/* La cabecera usa todo el ancho: en laptop el logo queda pegado a la izquierda */
+.cabecera .contenedor{ max-width:none; padding-inline:clamp(1rem,3vw,2.5rem); }
+.marca{ display:flex; align-items:center; gap:.9rem; text-decoration:none; }
+.marca img{ height:44px; width:auto; }
+.marca__bajada{
+  font-size:.65rem; font-weight:600; letter-spacing:.16em; color:var(--neutro-med); text-transform:uppercase;
+  border-left:1px solid var(--neutro-clr); padding-left:.9rem; line-height:1.3;
 }
-.marca__texto{ display:flex; flex-direction:column; line-height:1.1; }
-.marca__nombre{ font:800 1.05rem/1.1 'Montserrat',sans-serif; color:var(--azul); letter-spacing:.02em; }
-.marca__bajada{ font-size:.62rem; font-weight:600; letter-spacing:.16em; color:var(--neutro-med); text-transform:uppercase; }
+@media (max-width:480px){
+  .marca img{ height:38px; }
+  .marca__bajada{ display:none; }
+}
 
 .nav__lista{ display:flex; align-items:center; gap:1.75rem; list-style:none; margin:0; padding:0; }
 .nav__lista a:not(.btn){ text-decoration:none; font-size:.925rem; font-weight:500; color:var(--neutro-osc); }
@@ -170,7 +174,23 @@ img{ max-width:100%; height:auto; display:block; }
 }
 
 /* ---------- Hero ---------- */
-.hero{ background:var(--azul); color:var(--blanco); padding:clamp(3.5rem,8vw,6rem) 0; }
+.hero{
+  position:relative; isolation:isolate; overflow:hidden;
+  background:var(--azul); color:var(--blanco); padding:clamp(3.5rem,8vw,6.5rem) 0;
+}
+.hero__fondos{ position:absolute; inset:0; z-index:-1; }
+.hero__fondo{
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  opacity:0; transform:scale(1.04); transition:opacity .9s ease, transform 6s ease;
+}
+.hero__fondo.activo{ opacity:1; transform:scale(1); }
+.hero__fondos::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(13,27,42,.97) 0%, rgba(13,27,42,.9) 42%, rgba(13,27,42,.6) 100%);
+}
+@media (max-width:900px){
+  .hero__fondos::after{ background:rgba(13,27,42,.88); }
+}
 .hero__grilla{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
 .hero h1{ color:var(--blanco); max-width:13ch; }
 .hero .eyebrow{ color:var(--verde); }
@@ -178,8 +198,10 @@ img{ max-width:100%; height:auto; display:block; }
 .hero__rubros{ margin:1.75rem 0 0; font-size:.85rem; color:var(--plomo-osc); }
 
 .rubros{
-  background:var(--azul-claro); border:1px solid var(--azul-borde); border-radius:var(--radio-lg);
+  background:rgba(22,41,61,.82); border:1px solid rgba(169,182,196,.22); border-radius:var(--radio-lg);
   padding:clamp(1.25rem,3vw,1.75rem);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
 .rubros__titulo{ font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--plomo-osc); margin-bottom:.9rem; }
 .rubros__tabs{ display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.5rem; }
@@ -210,17 +232,26 @@ img{ max-width:100%; height:auto; display:block; }
 .seccion{ padding:clamp(4rem,9vw,6.5rem) 0; }
 .seccion--blanca{ background:var(--blanco); border-block:1px solid var(--neutro-clr); }
 .seccion--oscura{ background:var(--azul); }
+.seccion--foto{
+  background:linear-gradient(rgba(13,27,42,.9), rgba(13,27,42,.94)), url('images/home/contacto.jpg') center/cover no-repeat;
+}
 .seccion--oscura h2{ color:var(--blanco); }
 .seccion--oscura .eyebrow{ color:var(--verde); }
 .seccion--oscura .bajada{ color:var(--plomo-osc); }
 
 .grilla-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.75rem; }
+.grilla-3 > *{ min-width:0; }
 @media (max-width:900px){ .grilla-3{ grid-template-columns:1fr; } }
 
 /* ---------- Casos ---------- */
 .caso{
   background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
-  padding:1.75rem; display:flex; flex-direction:column; box-shadow:var(--sombra);
+  padding:1.75rem; display:flex; flex-direction:column; box-shadow:var(--sombra); overflow:hidden;
+  transition:transform var(--transicion), box-shadow var(--transicion);
+}
+.caso:hover{ transform:translateY(-3px); box-shadow:0 2px 4px rgba(13,27,42,.06), 0 18px 40px rgba(13,27,42,.12); }
+.caso__foto{
+  margin:-1.75rem -1.75rem 1.5rem; aspect-ratio:16/9; object-fit:cover; width:calc(100% + 3.5rem); max-width:none;
 }
 .caso__rubro{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--verde-texto); margin-bottom:.75rem; }
 .caso h3{ margin-bottom:.2rem; }
@@ -327,11 +358,8 @@ img{ max-width:100%; height:auto; display:block; }
 <header class="cabecera">
   <div class="contenedor cabecera__inner">
     <a href="#inicio" class="marca" aria-label="OBYRA Software Factory — Inicio">
-      <span class="marca__icono" aria-hidden="true">O</span>
-      <span class="marca__texto">
-        <span class="marca__nombre">OBYRA</span>
-        <span class="marca__bajada">Software factory</span>
-      </span>
+      <img src="images/home/logo-obyra-horizontal.png" alt="OBYRA" width="151" height="44">
+      <span class="marca__bajada">Software<br>factory</span>
     </a>
 
     <button class="hamburguesa" id="btnMenu" aria-expanded="false" aria-controls="navPrincipal" aria-label="Abrir menú">
@@ -354,6 +382,12 @@ img{ max-width:100%; height:auto; display:block; }
 
   <!-- ============ 1. HERO ============ -->
   <section class="hero" id="inicio">
+    <div class="hero__fondos" aria-hidden="true">
+      <div class="hero__fondo activo" data-rubro="gastro" style="background-image:url('images/home/gastronomia.jpg')"></div>
+      <div class="hero__fondo" data-rubro="constru" style="background-image:url('images/home/construccion.jpg')"></div>
+      <div class="hero__fondo" data-rubro="comercio" style="background-image:url('images/home/comercio.jpg')"></div>
+      <div class="hero__fondo" data-rubro="servicios" style="background-image:url('images/home/servicios.jpg')"></div>
+    </div>
     <div class="contenedor hero__grilla">
       <div>
         <p class="eyebrow">Software a medida · Argentina</p>
@@ -435,6 +469,7 @@ img{ max-width:100%; height:auto; display:block; }
 
       <div class="grilla-3">
         <article class="caso">
+          <img class="caso__foto" src="images/home/gastronomia.jpg" alt="Manos estirando pasta fresca recién hecha" width="960" height="640" loading="lazy" decoding="async">
           <p class="caso__rubro">Gastronomía</p>
           <h3>Ginger</h3>
           <p class="caso__cliente">Pastas y empanadas congeladas · Buenos Aires</p>
@@ -448,6 +483,7 @@ img{ max-width:100%; height:auto; display:block; }
         </article>
 
         <article class="caso">
+          <img class="caso__foto" src="images/home/comercio.jpg" alt="Electricista trabajando frente a un tablero eléctrico" width="960" height="639" loading="lazy" decoding="async">
           <p class="caso__rubro">Comercio · Distribución</p>
           <h3>OBYRA Stock</h3>
           <p class="caso__cliente">Amperios · Córdoba</p>
@@ -461,6 +497,7 @@ img{ max-width:100%; height:auto; display:block; }
         </article>
 
         <article class="caso">
+          <img class="caso__foto" src="images/home/construccion.jpg" alt="Grúas sobre un edificio en construcción" width="960" height="640" loading="lazy" decoding="async">
           <p class="caso__rubro">Construcción</p>
           <h3>OBYRA Construcción</h3>
           <p class="caso__cliente">Constructoras y contratistas</p>
@@ -540,7 +577,7 @@ img{ max-width:100%; height:auto; display:block; }
   </section>
 
   <!-- ============ 5. CONTACTO ============ -->
-  <section class="seccion seccion--oscura" id="contacto">
+  <section class="seccion seccion--oscura seccion--foto" id="contacto">
     <div class="contenedor">
       <p class="eyebrow">Contacto</p>
       <h2>Contanos el problema. La primera reunión es para escucharte.</h2>
@@ -647,6 +684,8 @@ img{ max-width:100%; height:auto; display:block; }
       var activo = t === tab;
       t.setAttribute('aria-selected', String(activo));
       t.tabIndex = activo ? 0 : -1;
+      var fondo = document.querySelector('.hero__fondo[data-rubro="' + t.id.replace('tab-', '') + '"]');
+      if (fondo) fondo.classList.toggle('activo', activo);
       document.getElementById(t.getAttribute('aria-controls')).hidden = !activo;
     });
   }
