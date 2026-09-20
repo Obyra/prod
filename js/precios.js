@@ -8,7 +8,7 @@
 window.OBYRA_PRECIOS = {
 
   /* Fecha que se muestra al pie de la sección de precios. */
-  actualizado: '17/09/2026',
+  actualizado: '20/09/2026',
 
   /* Leyenda impositiva. Brenda es Responsable Monotributo, así que
      NO corresponde "IVA incluido". */
@@ -17,23 +17,30 @@ window.OBYRA_PRECIOS = {
   planes: [
 
     {
-      id: 'gastronomico',
-      etiqueta: 'OBYRA Gastronómico',
+      id: 'pedidos',
+      etiqueta: 'OBYRA Pedidos',
       nombre: 'Tienda online y panel de pedidos',
       modalidad: 'Comisión sobre ventas',
-      /* Lo que se cobra por Mobbex. */
-      monto: '4%',
-      periodo: 'de la facturación mensual del local',
-      detalle: 'Se factura por mes vencido sobre las ventas efectivamente cobradas.',
+      /* Escalones del modelo vigente (decidido el 20/09/2026). El porcentaje
+         del tramo se aplica a TODO lo vendido, no por tramos acumulados: asi
+         la factura coincide con la tabla y se explica en una frase. */
+      monto: '3,90%',
+      periodo: 'de lo que vendas por mes',
+      detalle: 'Baja a 3,50%, 3% y 2,50% a medida que vendés más. Sin abono mensual fijo.',
       destacado: true,
       filas: [
-        ['Modalidad', 'Comisión mensual sobre ventas'],
+        ['Hasta $2.000.000 por mes', '3,90%'],
+        ['De $2 a $5 millones', '3,50%'],
+        ['De $5 a $10 millones', '3,00%'],
+        ['Más de $10 millones', '2,50%'],
+        ['Prueba gratuita', '14 días desde que se publica tu tienda'],
+        ['Si armás la tienda vos', 'Alta sin costo'],
+        ['Si te la armamos nosotros', '$100.000 por única vez'],
         ['Usuarios incluidos', 'Sin límite dentro del local'],
-        ['Puesta en marcha', 'Inversión inicial según el tamaño del local'],
         ['Actualizaciones', 'Incluidas'],
         ['Soporte', 'Incluido por WhatsApp']
       ],
-      cta: { texto: 'Pedir una demo', href: '/#contacto' }
+      cta: { texto: 'Creá tu tienda', href: 'https://pedidos.obyra.com.ar/crear-tienda' }
     },
 
     {
