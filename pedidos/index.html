@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OBYRA Pedidos - Tienda online y panel de pedidos para tu local</title>
-<meta name="description" content="Tu propia tienda de pedidos online, con tu marca y tu dominio: menú, promos, zonas de entrega y un panel donde los pedidos entran en vivo. Sin las comisiones de las apps de delivery.">
+<meta name="description" content="Tu propia tienda de pedidos online, con tu marca y tu dominio: menú, promos, zonas de entrega y un panel donde los pedidos entran en vivo. 14 días gratis, sin tarjeta.">
 <meta name="theme-color" content="#F07427">
 <link rel="canonical" href="https://obyra.com.ar/pedidos/">
 
@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="OBYRA">
 <meta property="og:url" content="https://obyra.com.ar/pedidos/">
 <meta property="og:title" content="OBYRA Pedidos - Tienda online y panel de pedidos para tu local">
-<meta property="og:description" content="Tu tienda, tu panel, tus clientes. Los pedidos entran en vivo y la base de clientes queda en tu poder.">
+<meta property="og:description" content="Tu tienda, tu panel, tus clientes. Creá tu tienda en dos minutos y probala 14 días gratis.">
 <meta property="og:image" content="https://obyra.com.ar/images/pedidos/og-pedidos.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -153,9 +153,10 @@ ul{ margin:0; padding:0; list-style:none; }
 .marca img{ height:42px; width:auto; }
 
 .nav{ margin-left:auto; }
-.nav__lista{ display:flex; align-items:center; gap:1.9rem; }
+.nav__lista{ display:flex; align-items:center; gap:1.35rem; }
 .nav__lista a{
   font-size:.95rem; font-weight:500; color:var(--carbon); position:relative; padding:.25rem 0;
+  white-space:nowrap;
 }
 .nav__lista a::after{
   content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px;
@@ -168,7 +169,7 @@ ul{ margin:0; padding:0; list-style:none; }
 
 /* El menú de esta página tiene un ítem más que el de construcción,
    así que pasa a hamburguesa un poco antes. */
-@media (min-width:1025px){ .solo-mobile{ display:none; } }
+@media (min-width:1121px){ .solo-mobile{ display:none; } }
 
 .hamburguesa{
   display:none; flex:none; margin-left:auto;
@@ -182,7 +183,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .hamburguesa[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 .hamburguesa[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
-@media (max-width:1024px){
+@media (max-width:1120px){
   .hamburguesa{ display:block; }
   .cabecera__cta{ display:none; }
   .nav{
@@ -244,6 +245,33 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .hero h1{ margin-bottom:0; }
 .hero .plomo{ font-size:clamp(1.1rem,2vw,1.3rem); color:var(--neutro-osc); }
+.hero__nota{ margin:1.1rem 0 0; font-size:.9rem; color:var(--neutro-med); max-width:48ch; }
+.hero__nota b{ color:var(--carbon); }
+
+/* ---------- Cómo empezar ---------- */
+.pasos{
+  display:grid; gap:1.5rem; counter-reset:paso;
+  grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));
+}
+.paso{
+  position:relative; padding:2rem 1.75rem 1.75rem;
+  background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
+}
+.paso::before{
+  counter-increment:paso; content:counter(paso);
+  display:grid; place-items:center; width:38px; height:38px; margin-bottom:1rem;
+  font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.05rem;
+  color:var(--carbon); background:var(--naranja); border-radius:50%;
+}
+.paso h3{ font-size:1.05rem; margin-bottom:.4rem; }
+.paso p{ margin:0; font-size:.94rem; color:var(--neutro-med); }
+.paso__dir{
+  display:inline-block; margin-top:.6rem; padding:.25rem .6rem;
+  font-family:ui-monospace,'Consolas',monospace; font-size:.74rem; letter-spacing:-.01em;
+  color:var(--naranja-texto); background:var(--naranja-suave); border-radius:6px;
+  overflow-wrap:anywhere;
+}
+
 .hero__sello{
   display:inline-flex; align-items:center; gap:.5rem; margin:0 0 1.25rem;
   padding:.4rem .95rem; border-radius:99px;
@@ -470,18 +498,19 @@ ul{ margin:0; padding:0; list-style:none; }
     <nav class="nav" id="navPrincipal" aria-label="Navegación principal">
       <ul class="nav__lista">
         <li><a href="../">Inicio</a></li>
-        <li><a href="#problema">El problema</a></li>
-        <li><a href="#solucion">La solución</a></li>
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#solucion">Solución</a></li>
         <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#empezar">Empezar</a></li>
         <li><a href="#caso">Caso real</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li class="solo-mobile"><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">Ver la demo</a></li>
+        <li class="solo-mobile"><a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">Creá tu tienda</a></li>
       </ul>
     </nav>
 
     <div class="cabecera__cta">
-      <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">Ver la demo</a>
+      <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">Creá tu tienda</a>
     </div>
   </div>
 </header>
@@ -492,18 +521,19 @@ ul{ margin:0; padding:0; list-style:none; }
   <section class="hero" id="inicio">
     <div class="contenedor split">
       <div class="split__texto">
-        <p class="hero__sello">Para locales de comida y tiendas de barrio</p>
+        <p class="hero__sello">14 días gratis · Para locales de comida y tiendas de barrio</p>
         <h1>Tu tienda de pedidos. Y tus clientes, <span class="acento">tuyos</span>.</h1>
         <div class="linea"></div>
         <p class="plomo">Una tienda online con tu marca, donde tus clientes piden y siguen su pedido desde el celular. Y un panel donde los ves entrar en vivo. Sin repartir tus ventas con una app de delivery.</p>
 
         <div class="grupo-btn">
-          <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">
-            Ver la demo
+          <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">
+            Creá tu tienda
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#contacto" class="btn btn--secundario">Pedir una demo</a>
+          <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--secundario">Ver la demo</a>
         </div>
+        <p class="hero__nota"><b>14 días de prueba gratis.</b> Crearla te toma dos minutos y no hace falta tarjeta: la revisamos y la publicamos, y mientras tanto ya podés cargar tu carta.</p>
       </div>
 
       <div class="split__media">
@@ -737,7 +767,47 @@ ul{ margin:0; padding:0; list-style:none; }
     </div>
   </section>
 
-  <!-- ============ 5. CASO REAL: GINGER ============ -->
+  <!-- ============ 5. CÓMO EMPEZAR ============ -->
+  <section class="seccion" id="empezar">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">Cómo empezar</p>
+        <h2>Tu tienda, abierta esta semana</h2>
+        <div class="linea"></div>
+        <p class="plomo">No hay que esperar una reunión ni firmar nada para arrancar: la tienda la creás vos y la probás 14 días gratis.</p>
+      </div>
+
+      <div class="pasos">
+        <article class="paso">
+          <h3>Creás tu tienda</h3>
+          <p>El nombre de tu negocio, la dirección web que vas a repartir y una contraseña. Dos minutos, sin tarjeta.</p>
+          <span class="paso__dir">tunegocio.pedidos.obyra.com.ar</span>
+        </article>
+        <article class="paso">
+          <h3>Cargás tu carta</h3>
+          <p>Productos con foto y precio — de a uno o todos juntos con Importar Excel —, tus zonas de entrega y los colores de tu marca.</p>
+        </article>
+        <article class="paso">
+          <h3>La revisamos y la publicamos</h3>
+          <p>Miramos que esté todo en orden y la abrimos. Te damos el QR del local para pegar en el mostrador y el link para tus redes.</p>
+        </article>
+        <article class="paso">
+          <h3>Probás 14 días gratis</h3>
+          <p>Vendés con la tienda funcionando de verdad. Recién después se empieza a contar la comisión. Si no te sirve, no seguís.</p>
+        </article>
+      </div>
+
+      <div class="grupo-btn" style="justify-content:center">
+        <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">
+          Creá tu tienda
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contacto" class="btn btn--secundario">Prefiero que me ayuden</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CASO REAL: GINGER ============ -->
   <section class="seccion seccion--suave" id="caso">
     <div class="contenedor">
       <div class="encabezado-seccion">
@@ -774,14 +844,14 @@ ul{ margin:0; padding:0; list-style:none; }
     </div>
   </section>
 
-  <!-- ============ 6. PRECIOS ============ -->
+  <!-- ============ 7. PRECIOS ============ -->
   <section class="seccion" id="precios">
     <div class="contenedor">
       <div class="encabezado-seccion">
         <p class="eyebrow">Precios</p>
         <h2>Nos va bien si a vos te va bien</h2>
         <div class="linea"></div>
-        <p class="plomo">No hay abono mensual fijo. Se paga una puesta en marcha por única vez y una comisión sobre lo que vendas.</p>
+        <p class="plomo">Empezás con <strong>14 días gratis</strong>. Después no hay abono mensual fijo: se paga una puesta en marcha por única vez y una comisión sobre lo que vendas.</p>
       </div>
 
       <div class="cobro">
@@ -799,6 +869,7 @@ ul{ margin:0; padding:0; list-style:none; }
       </div>
 
       <ul class="incluye">
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 14 días de prueba, sin tarjeta y con la tienda vendiendo de verdad</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu dominio y tu base de clientes, a tu nombre</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu tienda es solo tuya: nadie ve ofertas de la competencia</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Usuarios sin límite dentro del local</li>
@@ -807,27 +878,31 @@ ul{ margin:0; padding:0; list-style:none; }
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Actualizaciones y soporte por WhatsApp incluidos</li>
       </ul>
 
+      <div class="grupo-btn" style="justify-content:center">
+        <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">Empezar los 14 días gratis</a>
+      </div>
+
       <p class="precios__pie">
-        Contanos cómo es tu local y te pasamos el número exacto:
+        ¿Querés el número exacto para tu local antes de arrancar? Escribinos:
         <a href="https://wa.me/5491173685175?text=Hola!%20Quiero%20info%20de%20OBYRA%20Pedidos%20para%20mi%20local" target="_blank" rel="noopener"><strong>+54 9 11 7368-5175</strong></a>
       </p>
     </div>
   </section>
 
-  <!-- ============ 7. CTA FINAL ============ -->
+  <!-- ============ 8. CTA FINAL ============ -->
   <section class="cta-final">
     <div class="contenedor">
       <h2>Tu local, con tienda propia</h2>
       <p>Contanos qué vendés y te mostramos cómo quedaría tu tienda funcionando.</p>
       <div class="grupo-btn">
-        <a href="#contacto" class="btn btn--claro">PEDIR UNA DEMO</a>
-        <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--fantasma">Ver la demo en vivo</a>
+        <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--claro">CREÁ TU TIENDA</a>
+        <a href="#contacto" class="btn btn--fantasma">Prefiero que me llamen</a>
       </div>
-      <small>La primera charla no tiene costo ni compromiso.</small>
+      <small>Te toma dos minutos y no hace falta tarjeta.</small>
     </div>
   </section>
 
-  <!-- ============ 8. CONTACTO ============ -->
+  <!-- ============ 9. CONTACTO ============ -->
   <section class="seccion" id="contacto">
     <div class="contenedor contacto__grilla">
       <div>
@@ -887,7 +962,7 @@ ul{ margin:0; padding:0; list-style:none; }
 
 </main>
 
-<!-- ============ 9. FOOTER ============ -->
+<!-- ============ 10. FOOTER ============ -->
 <footer class="pie">
   <div class="contenedor">
     <div class="pie__grilla">
@@ -923,6 +998,7 @@ ul{ margin:0; padding:0; list-style:none; }
         <ul>
           <li><a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a></li>
           <li><a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a></li>
+          <li><a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener">Creá tu tienda</a></li>
           <li><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener">Ver la demo</a></li>
           <li><a href="../">OBYRA Software a medida</a></li>
           <li><a href="../construccion/">OBYRA Construcción</a></li>
@@ -994,7 +1070,7 @@ ul{ margin:0; padding:0; list-style:none; }
   "image":"https://obyra.com.ar/images/pedidos/logo.png",
   "description":"Tienda online y panel de pedidos para locales de comida y tiendas de barrio: menú, promos, zonas de entrega, pedidos en vivo, clientes y reportes.",
   "inLanguage":"es-AR",
-  "offers":{"@type":"Offer","priceCurrency":"ARS","price":"0","description":"Puesta en marcha por única vez más una comisión sobre las ventas. Sin abono mensual fijo."},
+  "offers":{"@type":"Offer","priceCurrency":"ARS","price":"0","description":"14 días de prueba gratis, sin tarjeta. Después, una puesta en marcha por única vez más una comisión sobre las ventas, sin abono mensual fijo."},
   "provider":{
     "@type":"Organization",
     "name":"OBYRA",
