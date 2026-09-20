@@ -51,7 +51,7 @@
    ------------------------------------------------------------ */
 .pie__grilla.pie__grilla--cinco{
   grid-template-columns:1.5fr 1fr 1.1fr 1.2fr 1.1fr;
-  gap:2rem 1.75rem;
+  gap:1.5rem;
 }
 /* Dos filas de columnas angostas antes que cinco apretadas: a partir de acá
    los títulos empiezan a cortarse en dos líneas y se lee peor. */
