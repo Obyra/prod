@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OBYRA Pedidos - Tienda online y panel de pedidos para tu local</title>
+<meta name="description" content="Tu propia tienda de pedidos online, con tu marca y tu dominio: menú, promos, zonas de entrega y un panel donde los pedidos entran en vivo. Sin las comisiones de las apps de delivery.">
+<meta name="theme-color" content="#F07427">
+<link rel="canonical" href="https://obyra.com.ar/pedidos/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="OBYRA">
+<meta property="og:url" content="https://obyra.com.ar/pedidos/">
+<meta property="og:title" content="OBYRA Pedidos - Tienda online y panel de pedidos para tu local">
+<meta property="og:description" content="Tu tienda, tu panel, tus clientes. Los pedidos entran en vivo y la base de clientes queda en tu poder.">
+<meta property="og:image" content="https://obyra.com.ar/images/pedidos/og-pedidos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OBYRA Pedidos - Tienda online para tu local">
+<meta name="twitter:description" content="Tu tienda, tu panel, tus clientes. Los pedidos entran en vivo.">
+<meta name="twitter:image" content="https://obyra.com.ar/images/pedidos/og-pedidos.png">
+
+<link rel="icon" type="image/png" href="../images/pedidos/favicon.png">
+<link rel="apple-touch-icon" href="../images/pedidos/favicon.png">
+
+<link rel="stylesheet" href="/css/pie-legal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   OBYRA Pedidos — Landing
+   Misma estructura que /construccion/, con la paleta de la
+   marca OBYRA Pedidos (naranja + carbón).
+   ============================================================ */
+
+:root{
+  /* Paleta oficial de OBYRA Pedidos */
+  --naranja:       #F07427;   /* el naranja de la marca */
+  --naranja-hover: #E0651A;
+  --naranja-texto: #B4530F;   /* variante accesible sobre blanco (AA 5:1) */
+  --naranja-suave: #FEF0E7;
+  --carbon:        #15171A;   /* el oscuro del logo */
+  --blanco:        #FFFFFF;
+  --neutro-osc:    #3A3D42;   /* el gris del logo */
+  --neutro-med:    #6B7280;
+  --neutro-clr:    #E5E7EB;
+  --fondo-suave:   #FAF8F6;
+
+  --radio:        8px;
+  --radio-lg:     16px;
+  --ancho:        1200px;
+  --sombra:       0 1px 2px rgba(21,23,26,.04), 0 8px 24px rgba(21,23,26,.06);
+  --sombra-alta:  0 2px 4px rgba(21,23,26,.06), 0 18px 48px rgba(21,23,26,.12);
+  --transicion:   .25s cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1rem;
+  line-height:1.65;
+  color:var(--neutro-osc);
+  background:var(--blanco);
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4{
+  font-family:'Montserrat',system-ui,sans-serif;
+  color:var(--carbon);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  margin:0 0 .5em;
+}
+h1{ font-weight:800; font-size:clamp(2.1rem,5.6vw,3.6rem); }
+h2{ font-weight:800; font-size:clamp(1.75rem,4vw,2.75rem); }
+h3{ font-weight:700; font-size:1.2rem; }
+
+p{ margin:0 0 1rem; }
+a{ color:var(--naranja-texto); text-decoration:none; transition:color var(--transicion); }
+a:hover{ color:var(--naranja); }
+img{ max-width:100%; display:block; }
+ul{ margin:0; padding:0; list-style:none; }
+
+:focus-visible{ outline:3px solid var(--naranja); outline-offset:3px; border-radius:4px; }
+
+.contenedor{ width:100%; max-width:var(--ancho); margin-inline:auto; padding-inline:1.25rem; }
+
+.seccion{ padding:clamp(4rem,9vw,7.5rem) 0; }
+.seccion--suave{ background:var(--fondo-suave); }
+.seccion--oscura{ background:var(--carbon); color:#C9CDD3; }
+.seccion--oscura h2,.seccion--oscura h3{ color:var(--blanco); }
+
+.acento{ color:var(--naranja); }
+
+.linea{ width:64px; height:4px; background:var(--naranja); border-radius:99px; margin:1.5rem 0; }
+
+.eyebrow{
+  font-family:'Inter',sans-serif; font-size:.8rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--naranja-texto);
+  margin:0 0 1rem;
+}
+.seccion--oscura .eyebrow{ color:var(--naranja); }
+
+.plomo{ font-size:clamp(1.05rem,1.8vw,1.2rem); color:var(--neutro-med); max-width:56ch; }
+.seccion--oscura .plomo{ color:#A0A6AE; }
+
+.encabezado-seccion{ max-width:64ch; margin:0 auto clamp(2.5rem,5vw,4rem); text-align:center; }
+.encabezado-seccion .linea{ margin-inline:auto; }
+.encabezado-seccion .plomo{ margin-inline:auto; }
+
+/* ---------- Botones ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700;
+  padding:.95rem 1.9rem; border-radius:var(--radio); border:2px solid transparent;
+  cursor:pointer; text-align:center; line-height:1.2;
+  transition:background var(--transicion),color var(--transicion),
+             transform var(--transicion),box-shadow var(--transicion);
+}
+.btn:hover{ transform:translateY(-2px); }
+/* El naranja de la marca es claro: el texto va en carbón, no en blanco. */
+.btn--primario{ background:var(--naranja); color:var(--carbon); box-shadow:0 4px 14px rgba(240,116,39,.32); }
+.btn--primario:hover{ background:var(--naranja-hover); color:var(--carbon); box-shadow:0 8px 22px rgba(240,116,39,.4); }
+.btn--secundario{ background:transparent; color:var(--carbon); border-color:var(--neutro-clr); }
+.btn--secundario:hover{ background:var(--blanco); color:var(--carbon); border-color:var(--carbon); }
+.btn--claro{ background:var(--blanco); color:var(--carbon); }
+.btn--claro:hover{ background:#F4F1EE; color:var(--carbon); }
+.btn--fantasma{ background:transparent; color:var(--blanco); border-color:rgba(255,255,255,.35); }
+.btn--fantasma:hover{ background:rgba(255,255,255,.1); color:var(--blanco); border-color:var(--blanco); }
+.btn svg{ flex:none; }
+
+.grupo-btn{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2rem; }
+@media (max-width:520px){ .grupo-btn .btn{ width:100%; } }
+
+/* ---------- Header ---------- */
+.cabecera{
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--neutro-clr);
+}
+.cabecera__inner{ display:flex; align-items:center; gap:1.5rem; height:76px; }
+.marca{ flex:none; }
+.marca img{ height:42px; width:auto; }
+
+.nav{ margin-left:auto; }
+.nav__lista{ display:flex; align-items:center; gap:1.9rem; }
+.nav__lista a{
+  font-size:.95rem; font-weight:500; color:var(--carbon); position:relative; padding:.25rem 0;
+}
+.nav__lista a::after{
+  content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px;
+  background:var(--naranja); transition:width var(--transicion);
+}
+.nav__lista a:hover::after{ width:100%; }
+
+.cabecera .btn{ padding:.7rem 1.35rem; font-size:.9rem; }
+.cabecera__cta{ flex:none; }
+
+/* El menú de esta página tiene un ítem más que el de construcción,
+   así que pasa a hamburguesa un poco antes. */
+@media (min-width:1025px){ .solo-mobile{ display:none; } }
+
+.hamburguesa{
+  display:none; flex:none; margin-left:auto;
+  width:44px; height:44px; padding:0; background:none; border:0; cursor:pointer;
+}
+.hamburguesa span{
+  display:block; width:24px; height:2px; margin:5px auto;
+  background:var(--carbon); border-radius:2px; transition:transform var(--transicion),opacity var(--transicion);
+}
+.hamburguesa[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburguesa[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.hamburguesa[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+@media (max-width:1024px){
+  .hamburguesa{ display:block; }
+  .cabecera__cta{ display:none; }
+  .nav{
+    position:absolute; left:0; right:0; top:100%;
+    background:var(--blanco); border-bottom:1px solid var(--neutro-clr);
+    box-shadow:var(--sombra); display:none; margin:0;
+  }
+  .nav.abierto{ display:block; }
+  .nav__lista{ flex-direction:column; align-items:stretch; gap:0; padding:.5rem 1.25rem 1.5rem; }
+  .nav__lista a{ display:block; padding:.9rem 0; border-bottom:1px solid var(--neutro-clr); }
+  .nav__lista a::after{ display:none; }
+  .nav__lista .btn{ margin-top:1rem; width:100%; }
+}
+
+/* ---------- Split ---------- */
+.split{
+  display:grid; gap:clamp(2.5rem,6vw,5rem); align-items:center;
+  grid-template-columns:1fr;
+}
+@media (min-width:900px){
+  .split{ grid-template-columns:1fr 1fr; }
+  .split--invertido .split__media{ order:-1; }
+}
+
+.marco{ position:relative; margin-inline:auto; width:100%; max-width:420px; }
+.marco::before{
+  content:''; position:absolute; inset:auto -14px -18px 22%;
+  height:62%; background:var(--naranja-suave);
+  border-radius:var(--radio-lg); z-index:0;
+}
+.marco__img{
+  position:relative; z-index:1; overflow:hidden;
+  border-radius:var(--radio-lg); box-shadow:var(--sombra-alta);
+  aspect-ratio:5/7; background:var(--carbon);
+}
+.marco__img img{ width:100%; height:100%; object-fit:cover; }
+
+/* Captura de celular: se ve entera, sin recorte, dentro de un marco. */
+.marco--celu{ max-width:320px; }
+.marco--celu .marco__img{
+  aspect-ratio:auto; border-radius:26px; border:9px solid var(--carbon); background:var(--blanco);
+}
+.marco--celu .marco__img img{ height:auto; }
+.marco--celu::before{ inset:auto -18px -20px 16%; height:46%; }
+
+/* Captura ancha de la tienda. */
+.marco--ancho{ max-width:100%; }
+.marco--ancho .marco__img{ aspect-ratio:auto; }
+.marco--ancho .marco__img img{ height:auto; }
+.marco--ancho::before{ display:none; }
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative; overflow:hidden;
+  padding:clamp(3rem,7vw,5.5rem) 0 clamp(4rem,8vw,6.5rem);
+  background:
+    radial-gradient(120% 90% at 100% 0%, #FDF3EC 0%, transparent 60%),
+    var(--blanco);
+}
+.hero h1{ margin-bottom:0; }
+.hero .plomo{ font-size:clamp(1.1rem,2vw,1.3rem); color:var(--neutro-osc); }
+.hero__sello{
+  display:inline-flex; align-items:center; gap:.5rem; margin:0 0 1.25rem;
+  padding:.4rem .95rem; border-radius:99px;
+  background:var(--naranja-suave); color:var(--naranja-texto);
+  font-size:.82rem; font-weight:600; letter-spacing:.03em;
+}
+
+/* ---------- Dolores ---------- */
+.dolores{ margin-top:2.25rem; display:grid; gap:.75rem; }
+.dolor{
+  display:flex; align-items:center; gap:1rem;
+  padding:.9rem 1.15rem; background:var(--blanco);
+  border:1px solid var(--neutro-clr); border-radius:var(--radio);
+  transition:transform var(--transicion),box-shadow var(--transicion),border-color var(--transicion);
+}
+.dolor:hover{ transform:translateX(4px); border-color:rgba(240,116,39,.45); box-shadow:var(--sombra); }
+.dolor__icono{
+  flex:none; width:42px; height:42px; display:grid; place-items:center;
+  background:var(--naranja-suave); border-radius:50%; color:var(--naranja-texto);
+}
+.dolor b{ font-family:'Montserrat',sans-serif; font-weight:700; color:var(--carbon); }
+.dolor span{ color:var(--neutro-med); }
+
+/* ---------- Pilares ---------- */
+.pilares{
+  display:grid; gap:1.5rem; margin-top:3rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));
+  padding:2rem; border:1px solid rgba(255,255,255,.12); border-radius:var(--radio-lg);
+  background:rgba(255,255,255,.03);
+}
+.pilar__icono{ color:var(--naranja); margin-bottom:.85rem; }
+.pilar h3{ font-size:1.02rem; margin-bottom:.35rem; }
+.pilar p{ font-size:.92rem; color:#A0A6AE; margin:0; }
+
+/* ---------- Recorrido del pedido ---------- */
+.recorrido{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.55rem;
+  margin:2.5rem 0 0; padding:0;
+}
+.recorrido li{
+  display:flex; align-items:center;
+  font-family:'Montserrat',sans-serif; font-weight:700; font-size:.88rem;
+  color:var(--blanco); background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16); border-radius:99px; padding:.45rem 1.05rem;
+}
+.recorrido li::after{ content:'→'; color:var(--naranja); margin-left:.75rem; }
+.recorrido li:last-child{ background:var(--naranja); border-color:var(--naranja); color:var(--carbon); }
+.recorrido li:last-child::after{ content:''; margin:0; }
+
+/* ---------- Banda CTA ---------- */
+.banda-cta{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:1.5rem; margin-top:3rem; padding:2rem clamp(1.5rem,3vw,2.75rem);
+  background:var(--naranja); border-radius:var(--radio-lg);
+}
+.banda-cta h3{ margin:0; font-size:clamp(1.2rem,2.4vw,1.6rem); color:var(--carbon); }
+.banda-cta p{ margin:.25rem 0 0; color:rgba(21,23,26,.82); }
+.banda-cta .btn{ flex:none; }
+
+/* ---------- Módulos ---------- */
+.grilla-modulos{
+  display:grid; gap:1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+}
+.modulo{
+  padding:2rem 1.75rem; background:var(--blanco);
+  border:1px solid var(--neutro-clr); border-radius:var(--radio);
+  transition:transform var(--transicion),box-shadow var(--transicion),border-color var(--transicion);
+}
+.modulo:hover{ transform:scale(1.02); box-shadow:var(--sombra-alta); border-color:rgba(240,116,39,.4); }
+.modulo__icono{
+  width:52px; height:52px; display:grid; place-items:center; margin-bottom:1.25rem;
+  background:var(--naranja-suave); border-radius:var(--radio); color:var(--naranja-texto);
+}
+.modulo h3{ margin-bottom:.5rem; }
+.modulo p{ margin:0; color:var(--neutro-med); font-size:.95rem; }
+
+/* ---------- Caso Ginger ---------- */
+.caso{
+  display:grid; gap:clamp(2rem,5vw,3.5rem); align-items:center;
+  grid-template-columns:1fr;
+}
+@media (min-width:900px){ .caso{ grid-template-columns:1fr 1.05fr; } }
+.caso__foto{
+  border-radius:var(--radio-lg); box-shadow:var(--sombra-alta);
+  aspect-ratio:4/3; object-fit:cover; width:100%;
+}
+.caso__marca{
+  font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.7rem;
+  color:var(--carbon); margin:0 0 .35rem;
+}
+.caso__lista{ display:grid; gap:.7rem; margin:1.5rem 0 2rem; }
+.caso__lista li{ display:flex; gap:.65rem; align-items:flex-start; }
+.caso__lista svg{ flex:none; margin-top:.35rem; color:var(--naranja-texto); }
+
+/* ---------- Modelo de cobro ---------- */
+.cobro{
+  display:grid; gap:1.5rem; max-width:920px; margin-inline:auto;
+  grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+}
+.cobro__caja{
+  padding:2.25rem 2rem; background:var(--blanco); height:100%;
+  border:1px solid var(--neutro-clr); border-radius:var(--radio-lg);
+}
+.cobro__caja--destacada{ border:2px solid var(--naranja); box-shadow:var(--sombra); }
+.cobro__etiqueta{
+  font-family:'Inter',sans-serif; font-size:.76rem; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--naranja-texto); margin:0 0 .75rem;
+}
+.cobro__caja h3{ margin-bottom:.5rem; }
+.cobro__caja p{ color:var(--neutro-med); font-size:.95rem; margin:0; }
+.incluye{
+  display:grid; gap:.85rem 1.5rem; max-width:920px; margin:2.5rem auto 0;
+  grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));
+}
+.incluye li{ display:flex; gap:.65rem; align-items:flex-start; font-size:.95rem; }
+.incluye svg{ flex:none; margin-top:.35rem; color:var(--naranja-texto); }
+.precios__pie{ margin:2.5rem 0 0; text-align:center; color:var(--neutro-med); }
+
+/* ---------- CTA final ---------- */
+.cta-final{ background:var(--naranja); color:var(--carbon); text-align:center; padding:clamp(4rem,8vw,5.5rem) 0; }
+.cta-final h2{ color:var(--carbon); }
+.cta-final p{ color:rgba(21,23,26,.85); max-width:52ch; margin-inline:auto; font-size:1.1rem; }
+.cta-final .grupo-btn{ justify-content:center; }
+.cta-final .btn--fantasma{ color:var(--carbon); border-color:rgba(21,23,26,.35); }
+.cta-final .btn--fantasma:hover{ background:rgba(21,23,26,.08); color:var(--carbon); border-color:var(--carbon); }
+.cta-final small{ display:block; margin-top:1.5rem; color:rgba(21,23,26,.8); font-size:.9rem; }
+
+/* ---------- Contacto ---------- */
+.contacto__grilla{ display:grid; gap:clamp(2.5rem,5vw,4rem); grid-template-columns:1fr; }
+@media (min-width:900px){ .contacto__grilla{ grid-template-columns:1fr 1fr; } }
+.contacto__metodos{ display:grid; gap:1rem; margin-top:2rem; }
+.contacto__metodos li{ display:flex; align-items:center; gap:1rem; }
+.contacto__metodos svg{ flex:none; color:var(--naranja-texto); }
+.contacto__metodos a{ font-weight:500; color:var(--carbon); }
+.contacto__metodos a:hover{ color:var(--naranja-texto); }
+
+.formulario{
+  padding:clamp(1.75rem,3vw,2.5rem); background:var(--blanco);
+  border:1px solid var(--neutro-clr); border-radius:var(--radio-lg); box-shadow:var(--sombra);
+}
+.campo{ margin-bottom:1.15rem; }
+.campo label{ display:block; font-size:.88rem; font-weight:600; color:var(--carbon); margin-bottom:.4rem; }
+.campo input,.campo textarea{
+  width:100%; padding:.85rem 1rem; font-family:inherit; font-size:1rem; color:var(--carbon);
+  background:var(--blanco); border:1px solid var(--neutro-clr); border-radius:var(--radio);
+  transition:border-color var(--transicion),box-shadow var(--transicion);
+}
+.campo input:focus,.campo textarea:focus{
+  outline:none; border-color:var(--naranja); box-shadow:0 0 0 3px rgba(240,116,39,.2);
+}
+.campo textarea{ resize:vertical; min-height:120px; }
+.formulario .btn{ width:100%; }
+
+/* ---------- Footer ---------- */
+.pie{ background:var(--carbon); color:#A0A6AE; padding:clamp(3.5rem,6vw,4.5rem) 0 2rem; }
+.pie__grilla{
+  display:grid; gap:2.5rem; align-items:start;
+  grid-template-columns:1fr;
+}
+@media (min-width:768px){ .pie__grilla{ grid-template-columns:2fr 1fr 1fr; } }
+.pie img{ height:52px; width:auto; margin-bottom:1rem; }
+.pie h4{
+  font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--blanco); margin:0 0 1.1rem;
+}
+.pie ul{ display:grid; gap:.65rem; }
+.pie a{ color:#A0A6AE; font-size:.95rem; }
+.pie a:hover{ color:var(--naranja); }
+.pie__redes{ display:flex; gap:.75rem; margin-top:1.5rem; }
+.pie__redes a{
+  width:40px; height:40px; display:grid; place-items:center; color:#A0A6AE;
+  border:1px solid rgba(255,255,255,.15); border-radius:var(--radio);
+  transition:all var(--transicion);
+}
+.pie__redes a:hover{ color:var(--carbon); background:var(--naranja); border-color:var(--naranja); }
+.pie__base{
+  margin-top:3rem; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,.12);
+  display:flex; flex-wrap:wrap; gap:.75rem; justify-content:space-between;
+  font-size:.87rem; color:#71767E;
+}
+
+/* ---------- WhatsApp flotante ---------- */
+.wa{
+  position:fixed; right:1.25rem; bottom:1.25rem; z-index:99;
+  width:56px; height:56px; display:grid; place-items:center;
+  background:#25D366; color:var(--blanco); border-radius:50%;
+  box-shadow:0 6px 20px rgba(0,0,0,.22); transition:transform var(--transicion);
+}
+.wa:hover{ transform:scale(1.08); color:var(--blanco); }
+
+/* ---------- Reveal ---------- */
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.visible{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .reveal{ opacity:1; transform:none; transition:none; }
+  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+</style>
+</head>
+
+<body>
+
+<a href="#contenido" class="visually-hidden">Saltar al contenido principal</a>
+
+<!-- ============ HEADER ============ -->
+<header class="cabecera">
+  <div class="contenedor cabecera__inner">
+    <a href="#inicio" class="marca" aria-label="OBYRA Pedidos — Inicio">
+      <img src="../images/pedidos/logo.svg" alt="OBYRA Pedidos" width="1019" height="298">
+    </a>
+
+    <button class="hamburguesa" id="btnMenu" aria-expanded="false" aria-controls="navPrincipal" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="navPrincipal" aria-label="Navegación principal">
+      <ul class="nav__lista">
+        <li><a href="../">Inicio</a></li>
+        <li><a href="#problema">El problema</a></li>
+        <li><a href="#solucion">La solución</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#caso">Caso real</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li class="solo-mobile"><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">Ver la demo</a></li>
+      </ul>
+    </nav>
+
+    <div class="cabecera__cta">
+      <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">Ver la demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="contenedor split">
+      <div class="split__texto">
+        <p class="hero__sello">Para locales de comida y tiendas de barrio</p>
+        <h1>Tu tienda de pedidos. Y tus clientes, <span class="acento">tuyos</span>.</h1>
+        <div class="linea"></div>
+        <p class="plomo">Una tienda online con tu marca, donde tus clientes piden y siguen su pedido desde el celular. Y un panel donde los ves entrar en vivo. Sin repartir tus ventas con una app de delivery.</p>
+
+        <div class="grupo-btn">
+          <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--primario">
+            Ver la demo
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn--secundario">Pedir una demo</a>
+        </div>
+      </div>
+
+      <div class="split__media">
+        <div class="marco marco--celu">
+          <div class="marco__img">
+            <picture>
+              <source srcset="../images/pedidos/tienda-celular.webp" type="image/webp">
+              <img src="../images/pedidos/tienda-celular.png" width="420" height="861" fetchpriority="high" decoding="async"
+                   alt="La tienda vista desde un celular: el menú, las promos de la semana y el botón para pedir">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. EL PROBLEMA REAL ============ -->
+  <section class="seccion seccion--suave" id="problema">
+    <div class="contenedor split split--invertido">
+      <div class="split__texto">
+        <p class="eyebrow">El problema real</p>
+        <h2>Lo que vemos en casi todos los locales que arrancan a vender online</h2>
+        <div class="linea"></div>
+
+        <ul class="dolores">
+          <li class="dolor">
+            <span class="dolor__icono" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l2-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
+            </span>
+            <p style="margin:0"><b>Los pedidos por WhatsApp</b> <span>y anotados en un cuaderno.</span></p>
+          </li>
+          <li class="dolor">
+            <span class="dolor__icono" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5s2.2 3 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>
+            </span>
+            <p style="margin:0"><b>Las apps de delivery</b> <span>que se llevan una parte de cada venta.</span></p>
+          </li>
+          <li class="dolor">
+            <span class="dolor__icono" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6"/></svg>
+            </span>
+            <p style="margin:0"><b>Los clientes son de la app,</b> <span>no del local: no sabés a quién le vendiste.</span></p>
+          </li>
+          <li class="dolor">
+            <span class="dolor__icono" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg>
+            </span>
+            <p style="margin:0"><b>La carta en PDF</b> <span>con precios de hace tres meses dando vueltas.</span></p>
+          </li>
+          <li class="dolor">
+            <span class="dolor__icono" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-4 4"/></svg>
+            </span>
+            <p style="margin:0"><b>Y a fin de mes,</b> <span>ningún número: ni qué se vendió ni qué conviene preparar.</span></p>
+          </li>
+        </ul>
+
+        <div class="grupo-btn">
+          <a href="#solucion" class="btn btn--secundario">Ver cómo se resuelve</a>
+        </div>
+      </div>
+
+      <div class="split__media">
+        <div class="marco">
+          <div class="marco__img">
+            <img src="../images/home/gastronomia.jpg" width="960" height="640" loading="lazy" decoding="async"
+                 alt="Manos estirando pasta fresca recién hecha en la cocina de un local">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. SOLUCIÓN ============ -->
+  <section class="seccion seccion--oscura" id="solucion">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">La solución</p>
+        <h2>Tu tienda, tu panel, <span class="acento">tus clientes</span>.</h2>
+        <div class="linea"></div>
+        <p class="plomo">Tu local tiene su propia dirección web, con tu logo, tus colores y tu menú. Tus clientes entran, piden y pagan ahí. Vos lo ves todo desde un panel, en vivo.</p>
+      </div>
+
+      <div class="marco marco--ancho">
+        <div class="marco__img">
+          <picture>
+            <source srcset="../images/pedidos/tienda.webp" type="image/webp">
+            <img src="../images/pedidos/tienda.png" width="1280" height="960" loading="lazy" decoding="async"
+                 alt="La tienda online: portada con el nombre del local, promos de la semana con descuentos y el menú por categorías">
+          </picture>
+        </div>
+      </div>
+
+      <div class="pilares">
+        <div class="pilar">
+          <div class="pilar__icono" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          </div>
+          <h3>Los pedidos entran en vivo</h3>
+          <p>Aparecen solos en el panel, con sonido. Sin recargar nada.</p>
+        </div>
+        <div class="pilar">
+          <div class="pilar__icono" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </div>
+          <h3>La base de clientes es tuya</h3>
+          <p>Sabés quién te compra, cuánto y hace cuánto. Y podés escribirle.</p>
+        </div>
+        <div class="pilar">
+          <div class="pilar__icono" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <h3>El dinero va directo a vos</h3>
+          <p>Mercado Pago con tu propia cuenta, o transferencia. Sin escalas.</p>
+        </div>
+        <div class="pilar">
+          <div class="pilar__icono" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </div>
+          <h3>Se instala como app</h3>
+          <p>Tu cliente se guarda el ícono en el teléfono. Sin bajar nada de ninguna tienda.</p>
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin:3rem 0 0">El pedido, paso a paso</p>
+      <ul class="recorrido">
+        <li>Recibido</li>
+        <li>Aceptado</li>
+        <li>En preparación</li>
+        <li>En camino</li>
+        <li>Entregado</li>
+      </ul>
+      <p style="margin-top:1rem;font-size:.95rem;color:#A0A6AE">Tu cliente ve cada cambio desde su teléfono, sin llamar a preguntar. Si retira por el local, el recorrido termina en <strong style="color:#fff">Listo para retirar</strong>.</p>
+
+      <div class="banda-cta">
+        <div>
+          <h3>Mirá la tienda funcionando</h3>
+          <p>Es una demo real: entrá, armá un pedido y seguilo.</p>
+        </div>
+        <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--claro">
+          VER LA DEMO
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. FUNCIONALIDADES ============ -->
+  <section class="seccion" id="funcionalidades">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">Funcionalidades</p>
+        <h2>Todo lo que tu local necesita para vender online</h2>
+        <div class="linea"></div>
+        <p class="plomo">Pensado para el día a día de un local que cocina y reparte, no para alguien que vive frente a una computadora.</p>
+      </div>
+
+      <div class="grilla-modulos">
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h1v11M6 2v7M9 2v7"/><path d="M18 2c-1.7 0-3 2.5-3 6 0 2.5 1 4 2 4h1v10"/></svg>
+          </div>
+          <h3>Tu menú, siempre al día</h3>
+          <p>Categorías, productos con foto, precio y descripción. Si tenés muchos, los subís de una con Importar Excel. Cambiás un precio y cambia al instante en la tienda.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Zonas de entrega</h3>
+          <p>Definís a dónde repartís por código postal, con su costo de envío, desde qué monto va gratis y si tiene compra mínima. Si el cliente está fuera de zona, se entera antes de armar el pedido.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h3>La tienda, a tu gusto</h3>
+          <p>Tres plantillas de portada, cinco pares de tipografías, tus colores y tu logo. Probás con la tienda abierta y vendiendo: tus clientes siguen viendo la versión anterior hasta que publicás.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Pedidos en vivo</h3>
+          <p>Entran solos, con sonido, y los vas moviendo de estado. Al aceptar decís en cuánto lo tenés listo y tu cliente lo ve. Podés rechazar uno indicando el motivo: si ya pagó, se le devuelve.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </div>
+          <h3>Los pedidos por teléfono, adentro</h3>
+          <p>El que te llama o te escribe lo cargás a mano, y queda en el mismo lugar, con el mismo seguimiento y en los mismos reportes. Se terminó tener media venta en un cuaderno.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 3 5V3h18v2l-6 6v7l-6 3z"/></svg>
+          </div>
+          <h3>Promos</h3>
+          <p>Un descuento sobre un producto, una categoría o toda la carta. Con día y fecha: la promo de los martes aparece sola el martes. El precio rebajado lo cobra el sistema, no se cobra de más por error.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </div>
+          <h3>Tus clientes, y cómo hablarles</h3>
+          <p>Quién compró, cuántas veces y cuánto gasta por mes. Filtrás los que más gastaron o los que hace rato no vuelven, y les mandás una promo por WhatsApp.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+          </div>
+          <h3>Reportes</h3>
+          <p>Cuánto vendiste por mes, con qué medio de pago te pagaron, cuánto diste en descuentos y qué productos son los que más salen. Los cancelados no cuentan.</p>
+        </article>
+
+        <article class="modulo reveal">
+          <div class="modulo__icono" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3z"/></svg>
+          </div>
+          <h3>QR del local y reseñas</h3>
+          <p>Un código para pegar en el mostrador o publicar en tus redes: quien lo escanea entra directo a tu tienda. Y las reseñas de tus productos no se publican hasta que vos las aprobás.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. CASO REAL: GINGER ============ -->
+  <section class="seccion seccion--suave" id="caso">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">Caso real</p>
+        <h2>De vender por WhatsApp a tener tienda propia</h2>
+        <div class="linea"></div>
+      </div>
+
+      <div class="caso">
+        <img class="caso__foto" src="../images/home/gastronomia.jpg" width="960" height="640" loading="lazy" decoding="async"
+             alt="Elaboración de pasta fresca, uno de los productos que Ginger vende congelados">
+
+        <div>
+          <p class="caso__marca">Ginger</p>
+          <p class="plomo" style="margin-bottom:1rem">Pastas y empanadas congeladas</p>
+          <p>Vendían por WhatsApp y los pedidos se perdían entre mensajes: había que ir para arriba en el chat para saber qué había pedido cada uno, y nadie sabía cuánto se había vendido en la semana.</p>
+          <p>Hoy tienen su propia tienda online y un panel donde los pedidos entran solos.</p>
+
+          <ul class="caso__lista">
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tienda propia con carrito y catálogo de productos</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pago con Mercado Pago o transferencia, con descuento configurable</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Panel de pedidos en tiempo real y reportes de venta</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Comprobante al cliente por WhatsApp</li>
+          </ul>
+
+          <div class="grupo-btn" style="margin-top:0">
+            <a href="https://www.gingereat.com.ar" target="_blank" rel="noopener" class="btn btn--primario">
+              Ver la tienda de Ginger
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. PRECIOS ============ -->
+  <section class="seccion" id="precios">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="eyebrow">Precios</p>
+        <h2>Nos va bien si a vos te va bien</h2>
+        <div class="linea"></div>
+        <p class="plomo">No hay abono mensual fijo. Se paga una puesta en marcha por única vez y una comisión sobre lo que vendas.</p>
+      </div>
+
+      <div class="cobro">
+        <article class="cobro__caja">
+          <p class="cobro__etiqueta">Una sola vez</p>
+          <h3>Puesta en marcha</h3>
+          <p>El armado de tu tienda: tu página, tu menú cargado, tus zonas de entrega y el local andando. El monto depende del tamaño del negocio, desde el que cocina en casa hasta la distribuidora.</p>
+        </article>
+
+        <article class="cobro__caja cobro__caja--destacada">
+          <p class="cobro__etiqueta">Todos los meses</p>
+          <h3>Comisión sobre lo que vendas</h3>
+          <p>Se calcula sobre lo vendido en el mes, <strong>sin el costo de envío</strong> y <strong>sin los pedidos cancelados o rechazados</strong>: los mismos números que ves en tus reportes. Mes sin ventas, mes sin comisión.</p>
+        </article>
+      </div>
+
+      <ul class="incluye">
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu dominio y tu base de clientes, a tu nombre</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu tienda es solo tuya: nadie ve ofertas de la competencia</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Usuarios sin límite dentro del local</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Cinco impresiones del QR del local, en distintos tamaños</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Un video promocional para tus redes</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Actualizaciones y soporte por WhatsApp incluidos</li>
+      </ul>
+
+      <p class="precios__pie">
+        Contanos cómo es tu local y te pasamos el número exacto:
+        <a href="https://wa.me/5491173685175?text=Hola!%20Quiero%20info%20de%20OBYRA%20Pedidos%20para%20mi%20local" target="_blank" rel="noopener"><strong>+54 9 11 7368-5175</strong></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 7. CTA FINAL ============ -->
+  <section class="cta-final">
+    <div class="contenedor">
+      <h2>Tu local, con tienda propia</h2>
+      <p>Contanos qué vendés y te mostramos cómo quedaría tu tienda funcionando.</p>
+      <div class="grupo-btn">
+        <a href="#contacto" class="btn btn--claro">PEDIR UNA DEMO</a>
+        <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--fantasma">Ver la demo en vivo</a>
+      </div>
+      <small>La primera charla no tiene costo ni compromiso.</small>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACTO ============ -->
+  <section class="seccion" id="contacto">
+    <div class="contenedor contacto__grilla">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos de tu local</h2>
+        <div class="linea"></div>
+        <p class="plomo">Contanos qué vendés, cómo entregás hoy y qué te está costando. Te decimos si OBYRA Pedidos te sirve, y si no te sirve también te lo decimos.</p>
+
+        <ul class="contacto__metodos">
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+            <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener">pedidos.obyra.com.ar</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="formulario">
+        <h3>Envianos un mensaje</h3>
+        <form action="https://formsubmit.co/obyra.servicios@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://obyra.com.ar/pedidos/#inicio">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Consulta desde OBYRA Pedidos">
+
+          <div class="campo">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="local">Nombre del local <span style="font-weight:400;color:var(--neutro-med)">(opcional)</span></label>
+            <input type="text" id="local" name="local" autocomplete="organization">
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">WhatsApp <span style="font-weight:400;color:var(--neutro-med)">(opcional)</span></label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+          </div>
+          <div class="campo">
+            <label for="mensaje">¿Qué vendés y cómo entregás hoy?</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primario">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 9. FOOTER ============ -->
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__grilla">
+      <div>
+        <img src="../images/pedidos/logo-claro.svg" alt="OBYRA Pedidos" width="1019" height="298">
+        <p style="max-width:38ch">Tienda online y panel de pedidos para locales de comida y tiendas de barrio.</p>
+        <div class="pie__redes">
+          <a href="https://www.linkedin.com/in/obyra/" target="_blank" rel="noopener" aria-label="OBYRA en LinkedIn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05C21.4 8.65 22 11 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.6-2.37 3.27V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/obyra.app/" target="_blank" rel="noopener" aria-label="OBYRA en Instagram">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Obyra-f3h" target="_blank" rel="noopener" aria-label="OBYRA en YouTube">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.5-.45-5.18a2.9 2.9 0 0 0-2.04-2.05C18.83 4.3 12 4.3 12 4.3s-6.83 0-8.51.47A2.9 2.9 0 0 0 1.45 6.8C1 8.5 1 12 1 12s0 3.5.45 5.18a2.9 2.9 0 0 0 2.04 2.05c1.68.47 8.51.47 8.51.47s6.83 0 8.51-.47a2.9 2.9 0 0 0 2.04-2.05C23 15.5 23 12 23 12zM9.75 15.25v-6.5L15.5 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Enlaces del sitio">
+        <h4>El producto</h4>
+        <ul>
+          <li><a href="#problema">El problema</a></li>
+          <li><a href="#solucion">La solución</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#caso">Caso real</a></li>
+          <li><a href="#precios">Precios</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a></li>
+          <li><a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a></li>
+          <li><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener">Ver la demo</a></li>
+          <li><a href="../">OBYRA Software a medida</a></li>
+          <li><a href="../construccion/">OBYRA Construcción</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+      <div class="pieleg">
+        <div>
+          <h4>Datos del vendedor</h4>
+          <p>
+            <strong>OBYRA</strong> — Brenda Priscila Koldobsky<br>
+            CUIT 27-34722707-8 · Responsable Monotributo<br>
+            Provincia de Buenos Aires, Argentina
+          </p>
+          <p>
+            <a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a><br>
+            <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>
+          </p>
+          <a class="pieleg__arrepentimiento" href="/arrepentimiento/">Botón de arrepentimiento</a>
+        </div>
+
+        <div>
+          <h4>Legales</h4>
+          <ul class="pieleg__lista">
+            <li><a href="/terminos/">Términos y Condiciones</a></li>
+            <li><a href="/privacidad/">Política de Privacidad</a></li>
+            <li><a href="/reembolsos/">Política de Reembolsos y Cancelación</a></li>
+            <li><a href="/arrepentimiento/">Botón de arrepentimiento</a></li>
+            <li><a href="/precios/">Precios</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Medios de pago aceptados</h4>
+          <!-- TODO (Brenda): cambiar por los logos oficiales cuando Mobbex
+               confirme qué medios quedan habilitados. -->
+          <ul class="pieleg__medios">
+            <li>VISA</li>
+            <li>MASTERCARD</li>
+            <li>AMERICAN EXPRESS</li>
+            <li>CABAL</li>
+            <li>TRANSFERENCIA</li>
+          </ul>
+          <p style="margin-top:.75rem">Pagos procesados por Mobbex.<br>No almacenamos datos de tarjetas.</p>
+        </div>
+      </div>
+
+    <div class="pie__base">
+      <span>© <span id="anio">2026</span> OBYRA. Tu tienda, tu panel, tus clientes.</span>
+      <span>Hecho en Argentina 🇦🇷</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491173685175?text=Hola!%20Quiero%20info%20de%20OBYRA%20Pedidos%20para%20mi%20local" class="wa" target="_blank" rel="noopener" aria-label="Chateá con nosotros por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.82 2.42 8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"OBYRA Pedidos",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "url":"https://obyra.com.ar/pedidos/",
+  "image":"https://obyra.com.ar/images/pedidos/logo.png",
+  "description":"Tienda online y panel de pedidos para locales de comida y tiendas de barrio: menú, promos, zonas de entrega, pedidos en vivo, clientes y reportes.",
+  "inLanguage":"es-AR",
+  "offers":{"@type":"Offer","priceCurrency":"ARS","price":"0","description":"Puesta en marcha por única vez más una comisión sobre las ventas. Sin abono mensual fijo."},
+  "provider":{
+    "@type":"Organization",
+    "name":"OBYRA",
+    "url":"https://obyra.com.ar",
+    "email":"obyra.servicios@gmail.com",
+    "telephone":"+5491173685175",
+    "address":{"@type":"PostalAddress","addressCountry":"AR"}
+  }
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* --- Menú mobile --- */
+  var btn = document.getElementById('btnMenu');
+  var nav = document.getElementById('navPrincipal');
+
+  btn.addEventListener('click', function () {
+    var abierto = nav.classList.toggle('abierto');
+    btn.setAttribute('aria-expanded', String(abierto));
+    btn.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  });
+
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a') && nav.classList.contains('abierto')) {
+      nav.classList.remove('abierto');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+    }
+  });
+
+  /* --- Reveal al hacer scroll --- */
+  var elementos = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    elementos.forEach(function (el) { el.classList.add('visible'); });
+  } else {
+    var obs = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada, i) {
+        if (!entrada.isIntersecting) return;
+        var el = entrada.target;
+        el.style.transitionDelay = (i * 70) + 'ms';
+        el.classList.add('visible');
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    elementos.forEach(function (el) { obs.observe(el); });
+  }
+
+  /* --- Año del footer --- */
+  document.getElementById('anio').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
