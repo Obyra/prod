@@ -40,3 +40,36 @@
 @media (max-width:820px){
   .pieleg{ grid-template-columns:1fr; gap:1.5rem; }
 }
+
+/* ------------------------------------------------------------
+   Pie de OBYRA Pedidos: una sola fila con todo
+
+   En esa página "Legales" y "Medios de pago" viven arriba, junto a los
+   enlaces del sitio, en vez de en una segunda fila. Va como modificador y no
+   tocando `.pie__grilla` porque esa clase la comparten la home y construcción,
+   que siguen con sus tres columnas.
+   ------------------------------------------------------------ */
+.pie__grilla.pie__grilla--cinco{
+  grid-template-columns:1.5fr 1fr 1.1fr 1.2fr 1.1fr;
+  gap:2rem 1.75rem;
+}
+/* Dos filas de columnas angostas antes que cinco apretadas: a partir de acá
+   los títulos empiezan a cortarse en dos líneas y se lee peor. */
+@media (max-width:1100px){
+  .pie__grilla.pie__grilla--cinco{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:640px){
+  .pie__grilla.pie__grilla--cinco{ grid-template-columns:1fr; }
+}
+
+/* Al subir "Legales" y "Medios de pago" a la fila de arriba dejaron de estar
+   dentro de `.pieleg`, que es de donde colgaban sus estilos. Se repiten acá
+   para el pie de cinco columnas. */
+.pie__grilla--cinco .pieleg__lista{ list-style:none; padding:0; margin:0; display:grid; gap:.55rem; }
+.pie__grilla--cinco .pieleg__medios{
+  display:flex; flex-wrap:wrap; gap:.5rem; margin:.75rem 0 0; padding:0; list-style:none;
+}
+.pie__grilla--cinco .pieleg__medios li{
+  background:#fff; color:#0D1B2A; font-size:.68rem; font-weight:700; letter-spacing:.03em;
+  border-radius:6px; padding:.35rem .55rem;
+}
