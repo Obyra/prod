@@ -35,7 +35,7 @@ window.OBYRA_PRECIOS = {
         ['Más de $10 millones', '2,50%'],
         ['Prueba gratuita', '14 días desde que se publica tu tienda'],
         ['Si armás la tienda vos', 'Alta sin costo'],
-        ['Si te la armamos nosotros', '$100.000 por única vez'],
+        ['Si te la armamos nosotros', 'Lo cotizamos según tu carta'],
         ['Usuarios incluidos', 'Sin límite dentro del local'],
         ['Actualizaciones', 'Incluidas'],
         ['Soporte', 'Incluido por WhatsApp']
