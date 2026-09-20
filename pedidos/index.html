@@ -428,6 +428,21 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .cobro__caja h3{ margin-bottom:.5rem; }
 .cobro__caja p{ color:var(--neutro-med); font-size:.95rem; margin:0; }
+/* La caja de precios hereda el centrado de la sección, y una tabla de números
+   centrada no se lee: los porcentajes tienen que quedar alineados entre sí. */
+.cobro__caja{ text-align:left; }
+.cobro__caja p + p{ margin-top:.75rem; }
+.escalones{ width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+.escalones caption{
+  caption-side:bottom; margin-top:.7rem; font-size:.8rem;
+  color:var(--neutro-med); text-align:left;
+}
+.escalones th, .escalones td{
+  padding:.55rem 0; border-bottom:1px solid var(--neutro-clr);
+}
+.escalones th{ text-align:left; font-weight:500; color:var(--neutro-med); }
+.escalones td{ text-align:right; font-weight:800; white-space:nowrap; }
+.escalones tr:last-child th, .escalones tr:last-child td{ border-bottom:0; }
 .incluye{
   display:grid; gap:.85rem 1.5rem; max-width:920px; margin:2.5rem auto 0;
   grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));
@@ -897,28 +912,38 @@ ul{ margin:0; padding:0; list-style:none; }
         <p class="eyebrow">Precios</p>
         <h2>Nos va bien si a vos te va bien</h2>
         <div class="linea"></div>
-        <p class="plomo">Empezás con <strong>14 días gratis</strong>. Después no hay abono mensual fijo: se paga una puesta en marcha por única vez y una comisión sobre lo que vendas.</p>
+        <p class="plomo">Empezás con <strong>14 días gratis</strong>. Después no hay abono mensual fijo: pagás una comisión sobre lo que vendas, y <strong>cuanto más vendés, menor es el porcentaje</strong>.</p>
       </div>
 
       <div class="cobro">
-        <article class="cobro__caja">
-          <p class="cobro__etiqueta">Una sola vez</p>
-          <h3>Puesta en marcha</h3>
-          <p>El armado de tu tienda: tu página, tu menú cargado, tus zonas de entrega y el local andando. El monto depende del tamaño del negocio, desde el que cocina en casa hasta la distribuidora.</p>
-        </article>
-
         <article class="cobro__caja cobro__caja--destacada">
           <p class="cobro__etiqueta">Todos los meses</p>
           <h3>Comisión sobre lo que vendas</h3>
-          <p>Se calcula sobre lo vendido en el mes, <strong>sin el costo de envío</strong> y <strong>sin los pedidos cancelados o rechazados</strong>: los mismos números que ves en tus reportes. Mes sin ventas, mes sin comisión.</p>
+          <table class="escalones">
+            <caption>Se aplica por tramo: los primeros $2.000.000 pagan 3,90% siempre.</caption>
+            <tbody>
+              <tr><th scope="row">Hasta $2.000.000</th><td>3,90%</td></tr>
+              <tr><th scope="row">De $2 a $5 millones</th><td>3,00%</td></tr>
+              <tr><th scope="row">De $5 a $10 millones</th><td>2,30%</td></tr>
+              <tr><th scope="row">Más de $10 millones</th><td>1,80%</td></tr>
+            </tbody>
+          </table>
+          <p>Se calcula sobre lo vendido en el mes, <strong>sin el costo de envío</strong> y <strong>sin los pedidos cancelados o rechazados</strong>: los mismos números que ves en tus reportes. <strong>Mes sin ventas, mes sin comisión.</strong></p>
+        </article>
+
+        <article class="cobro__caja">
+          <p class="cobro__etiqueta">Una sola vez</p>
+          <h3>Puesta en marcha</h3>
+          <p><strong>Si armás la tienda vos, no pagás nada.</strong> Te damos las plantillas, los colores y el importador de Excel, y en un rato la tenés lista.</p>
+          <p>Si preferís que la armemos nosotros —tu página, tu menú cargado, tus zonas de entrega y el local andando—, eso sí tiene un costo, y depende del tamaño del negocio.</p>
         </article>
       </div>
 
       <ul class="incluye">
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 14 días de prueba, sin tarjeta y con la tienda vendiendo de verdad</li>
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu dominio y tu base de clientes, a tu nombre</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu tienda en tu propia dirección, y si querés tu dominio propio a tu nombre</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tu tienda es solo tuya: nadie ve ofertas de la competencia</li>
-        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Usuarios sin límite dentro del local</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> La base de datos de tus clientes es tuya, y te la llevás si te vas</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Cinco impresiones del QR del local, en distintos tamaños</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Un video promocional para tus redes</li>
         <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Actualizaciones y soporte por WhatsApp incluidos</li>

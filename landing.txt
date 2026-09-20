@@ -1,0 +1,164 @@
+OBYRA Pedidos - Tienda online y panel de pedidos para tu local 
+ Saltar al contenido principal 
+ Inicio 
+ Problema 
+ Solución 
+ Funcionalidades 
+ Empezar 
+ Caso real 
+ Precios 
+ Contacto 
+ Creá tu tienda 
+ Creá tu tienda 
+ 14 días gratis · Para locales de comida y tiendas de barrio
+### Tu tienda de pedidos. Y tus clientes, tuyos .
+ Una tienda online con tu marca, donde tus clientes piden y siguen su pedido desde el celular. Y un panel donde los ves entrar en vivo. Sin repartir tus ventas con una app de delivery.
+ Creá tu tienda
+ Ver la demo 
+ 14 días de prueba gratis. Crearla te toma dos minutos y no hace falta tarjeta: la revisamos y la publicamos, y mientras tanto ya podés cargar tu carta.
+ El problema real
+### Lo que vemos en casi todos los locales que arrancan a vender online
+ Los pedidos por WhatsApp y anotados en un cuaderno. 
+ Las apps de delivery que se llevan una parte de cada venta. 
+ Los clientes son de la app, no del local: no sabés a quién le vendiste. 
+ La carta en PDF con precios de hace tres meses dando vueltas. 
+ Y a fin de mes, ningún número: ni qué se vendió ni qué conviene preparar. 
+ Ver cómo se resuelve 
+ La solución
+### Tu tienda, tu panel, tus clientes .
+ Tu local tiene su propia dirección web, con tu logo, tus colores y tu menú. Tus clientes entran, piden y pagan ahí. Vos lo ves todo desde un panel, en vivo.
+### Los pedidos entran en vivo
+ Aparecen solos en el panel, con sonido. Sin recargar nada.
+### La base de clientes es tuya
+ Sabés quién te compra, cuánto y hace cuánto. Y podés escribirle.
+### El dinero va directo a vos
+ Mercado Pago con tu propia cuenta, o transferencia. Sin escalas.
+### Se instala como app
+ Tu cliente se guarda el ícono en el teléfono. Sin bajar nada de ninguna tienda.
+ El pedido, paso a paso
+ Recibido
+ Aceptado
+ En preparación
+ En camino
+ Entregado
+ Tu cliente ve cada cambio desde su teléfono, sin llamar a preguntar. Si retira por el local, el recorrido termina en Listo para retirar .
+### Mirá la tienda funcionando
+ Es una demo real: entrá, armá un pedido y seguilo.
+ VER LA DEMO
+ Funcionalidades
+### Todo lo que tu local necesita para vender online
+ Pensado para el día a día de un local que cocina y reparte, no para alguien que vive frente a una computadora.
+### Tu menú, siempre al día
+ Categorías, productos con foto, precio y descripción. Si tenés muchos, los subís de una con Importar Excel. Cambiás un precio y cambia al instante en la tienda.
+### Zonas de entrega
+ Definís a dónde repartís por código postal, con su costo de envío, desde qué monto va gratis y si tiene compra mínima. Si el cliente está fuera de zona, se entera antes de armar el pedido.
+### La tienda, a tu gusto
+ Tres plantillas de portada, cinco pares de tipografías, tus colores y tu logo. Probás con la tienda abierta y vendiendo: tus clientes siguen viendo la versión anterior hasta que publicás.
+### Pedidos en vivo
+ Entran solos, con sonido, y los vas moviendo de estado. Al aceptar decís en cuánto lo tenés listo y tu cliente lo ve. Podés rechazar uno indicando el motivo: si ya pagó, se le devuelve.
+### Los pedidos por teléfono, adentro
+ El que te llama o te escribe lo cargás a mano, y queda en el mismo lugar, con el mismo seguimiento y en los mismos reportes. Se terminó tener media venta en un cuaderno.
+### Promos
+ Un descuento sobre un producto, una categoría o toda la carta. Con día y fecha: la promo de los martes aparece sola el martes. El precio rebajado lo cobra el sistema, no se cobra de más por error.
+### Tus clientes, y cómo hablarles
+ Quién compró, cuántas veces y cuánto gasta por mes. Filtrás los que más gastaron o los que hace rato no vuelven, y les mandás una promo por WhatsApp.
+### Reportes
+ Cuánto vendiste por mes, con qué medio de pago te pagaron, cuánto diste en descuentos y qué productos son los que más salen. Los cancelados no cuentan.
+### QR del local y reseñas
+ Un código para pegar en el mostrador o publicar en tus redes: quien lo escanea entra directo a tu tienda. Y las reseñas de tus productos no se publican hasta que vos las aprobás.
+ Cómo empezar
+### Tu tienda, abierta esta semana
+ No hay que esperar una reunión ni firmar nada para arrancar: la tienda la creás vos y la probás 14 días gratis.
+### Creás tu tienda
+ El nombre de tu negocio, la dirección web que vas a repartir y una contraseña. Dos minutos, sin tarjeta.
+ tunegocio.pedidos.obyra.com.ar 
+### Cargás tu carta
+ Productos con foto y precio — de a uno o todos juntos con Importar Excel —, tus zonas de entrega y los colores de tu marca.
+### La revisamos y la publicamos
+ Miramos que esté todo en orden y la abrimos. Te damos el QR del local para pegar en el mostrador y el link para tus redes.
+### Probás 14 días gratis
+ Vendés con la tienda funcionando de verdad. Recién después se empieza a contar la comisión. Si no te sirve, no seguís.
+ Creá tu tienda
+ Prefiero que me ayuden 
+ Caso real
+### De vender por WhatsApp a tener tienda propia
+ Ginger
+ Pastas y empanadas congeladas
+ Vendían por WhatsApp y los pedidos se perdían entre mensajes: había que ir para arriba en el chat para saber qué había pedido cada uno, y nadie sabía cuánto se había vendido en la semana.
+ Hoy tienen su propia tienda online y un panel donde los pedidos entran solos.
+ Tienda propia con carrito y catálogo de productos
+ Pago con Mercado Pago o transferencia, con descuento configurable
+ Panel de pedidos en tiempo real y reportes de venta
+ Comprobante al cliente por WhatsApp
+ Ver la tienda de Ginger
+ Precios
+### Nos va bien si a vos te va bien
+ Empezás con 14 días gratis . Después no hay abono mensual fijo: se paga una puesta en marcha por única vez y una comisión sobre lo que vendas.
+ Una sola vez
+### Puesta en marcha
+ El armado de tu tienda: tu página, tu menú cargado, tus zonas de entrega y el local andando. El monto depende del tamaño del negocio, desde el que cocina en casa hasta la distribuidora.
+ Todos los meses
+### Comisión sobre lo que vendas
+ Se calcula sobre lo vendido en el mes, sin el costo de envío y sin los pedidos cancelados o rechazados : los mismos números que ves en tus reportes. Mes sin ventas, mes sin comisión.
+ 14 días de prueba, sin tarjeta y con la tienda vendiendo de verdad
+ Tu dominio y tu base de clientes, a tu nombre
+ Tu tienda es solo tuya: nadie ve ofertas de la competencia
+ Usuarios sin límite dentro del local
+ Cinco impresiones del QR del local, en distintos tamaños
+ Un video promocional para tus redes
+ Actualizaciones y soporte por WhatsApp incluidos
+ Empezar los 14 días gratis 
+ ¿Querés el número exacto para tu local antes de arrancar? Escribinos:
+ +54 9 11 7368-5175 
+### Tu local, con tienda propia
+ Contanos qué vendés y te mostramos cómo quedaría tu tienda funcionando.
+ CREÁ TU TIENDA 
+ Prefiero que me llamen 
+ Te toma dos minutos y no hace falta tarjeta. 
+ Contacto
+### Hablemos de tu local
+ Contanos qué vendés, cómo entregás hoy y qué te está costando. Te decimos si OBYRA Pedidos te sirve, y si no te sirve también te lo decimos.
+ obyra.servicios@gmail.com 
+ +54 9 11 7368-5175 
+ pedidos.obyra.com.ar 
+### Envianos un mensaje
+ Nombre y apellido 
+ Nombre del local (opcional) 
+ Email 
+ WhatsApp (opcional) 
+ ¿Qué vendés y cómo entregás hoy? 
+ Enviar mensaje 
+ Tienda online y panel de pedidos para locales de comida y tiendas de barrio.
+### El producto
+ El problema 
+ La solución 
+ Funcionalidades 
+ Caso real 
+ Precios 
+### Contacto
+ obyra.servicios@gmail.com 
+ +54 9 11 7368-5175 
+ Creá tu tienda 
+ Ver la demo 
+ OBYRA Software a medida 
+ OBYRA Construcción 
+### Legales
+ Términos y Condiciones 
+ Política de Privacidad 
+ Política de Reembolsos y Cancelación 
+ Botón de arrepentimiento 
+ Precios 
+### Medios de pago aceptados
+ VISA
+ MASTERCARD
+ AMERICAN EXPRESS
+ CABAL
+ TRANSFERENCIA
+ Pagos procesados por Mobbex. No almacenamos datos de tarjetas.
+ © 2026 OBYRA. Tu tienda, tu panel, tus clientes. 
+ OBYRA — Brenda Priscila Koldobsky · CUIT 27-34722707-8 · Buenos Aires, Argentina 
+ Hecho en Argentina 🇦🇷 
+ Así ve tu tienda quien te compra
+ Es una tienda de demostración: tocá el menú y armá un pedido. 
+ Abrirla en una pestaña 
+ Creá tu tienda
