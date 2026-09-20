@@ -1214,6 +1214,14 @@ ul{ margin:0; padding:0; list-style:none; }
     demo.addEventListener('close', function () {
       document.body.style.overflow = '';
     });
+
+    /* obyra.com.ar/pedidos/#demo abre el teléfono directo: sirve para mandar
+       el link por WhatsApp sin explicar dónde hay que tocar. */
+    if (window.location.hash === '#demo') {
+      marco.src = marco.dataset.src;
+      demo.showModal();
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   /* --- Año del footer --- */
