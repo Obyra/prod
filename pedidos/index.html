@@ -229,6 +229,51 @@ ul{ margin:0; padding:0; list-style:none; }
 .marco--celu .marco__img img{ height:auto; }
 .marco--celu::before{ inset:auto -18px -20px 16%; height:46%; }
 
+/* ---------- Celular con la tienda adentro ---------- */
+.demo[open]{
+  border:0; padding:0; background:transparent; max-width:none; max-height:none;
+  width:100%; height:100%;
+  display:grid; place-items:center;
+}
+.demo::backdrop{ background:rgba(21,23,26,.82); backdrop-filter:blur(3px); }
+.demo__caja{ display:grid; justify-items:center; gap:1rem; padding:1rem; }
+.demo__titulo{
+  color:var(--blanco); font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:1.05rem; margin:0; text-align:center;
+}
+.demo__titulo span{ display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:.88rem; color:#C9CDD3; margin-top:.25rem; }
+/* El ancho manda: 360px deja 340 adentro, que es el ancho de un celular de
+   verdad, y con menos la tienda se ve apretada. El alto se achica solo en
+   pantallas bajas para que el telefono entre entero. */
+.demo__tel{
+  position:relative; background:var(--carbon);
+  border-radius:34px; padding:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  width:min(92vw,360px); height:min(78vh,760px);
+}
+.demo__tel::before{
+  content:''; position:absolute; top:16px; left:50%; transform:translateX(-50%);
+  width:82px; height:5px; background:#3A3D42; border-radius:99px; z-index:2;
+}
+.demo__tel iframe{
+  width:100%; height:100%; border:0; border-radius:26px; background:var(--blanco);
+  display:block;
+}
+.demo__pie{ display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center; }
+.demo__pie .btn{ padding:.7rem 1.35rem; font-size:.9rem; }
+.demo__cerrar{
+  position:fixed; top:1rem; right:1rem;
+  width:44px; height:44px; display:grid; place-items:center;
+  background:rgba(255,255,255,.12); color:var(--blanco);
+  border:1px solid rgba(255,255,255,.25); border-radius:50%;
+  cursor:pointer; transition:background var(--transicion);
+}
+.demo__cerrar:hover{ background:rgba(255,255,255,.22); }
+@media (max-width:520px){
+  .demo__tel{ height:min(68vh,620px); }
+  .demo__titulo{ font-size:.95rem; }
+}
+
 /* Captura ancha de la tienda. */
 .marco--ancho{ max-width:100%; }
 .marco--ancho .marco__img{ aspect-ratio:auto; }
@@ -532,7 +577,7 @@ ul{ margin:0; padding:0; list-style:none; }
             Creá tu tienda
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--secundario">Ver la demo</a>
+          <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--secundario" data-demo>Ver la demo</a>
         </div>
         <p class="hero__nota"><b>14 días de prueba gratis.</b> Crearla te toma dos minutos y no hace falta tarjeta: la revisamos y la publicamos, y mientras tanto ya podés cargar tu carta.</p>
       </div>
@@ -674,7 +719,7 @@ ul{ margin:0; padding:0; list-style:none; }
           <h3>Mirá la tienda funcionando</h3>
           <p>Es una demo real: entrá, armá un pedido y seguilo.</p>
         </div>
-        <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--claro">
+        <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--claro" data-demo>
           VER LA DEMO
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1000,7 +1045,7 @@ ul{ margin:0; padding:0; list-style:none; }
           <li><a href="mailto:obyra.servicios@gmail.com">obyra.servicios@gmail.com</a></li>
           <li><a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a></li>
           <li><a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener">Creá tu tienda</a></li>
-          <li><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener">Ver la demo</a></li>
+          <li><a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" data-demo>Ver la demo</a></li>
           <li><a href="../">OBYRA Software a medida</a></li>
           <li><a href="../construccion/">OBYRA Construcción</a></li>
         </ul>
@@ -1044,6 +1089,31 @@ ul{ margin:0; padding:0; list-style:none; }
 <a href="https://wa.me/5491173685175?text=Hola!%20Quiero%20info%20de%20OBYRA%20Pedidos%20para%20mi%20local" class="wa" target="_blank" rel="noopener" aria-label="Chateá con nosotros por WhatsApp">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.82 2.42 8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29z"/></svg>
 </a>
+
+<!-- ============ LA TIENDA DENTRO DE UN CELULAR ============ -->
+<!-- El iframe arranca vacío: la tienda se carga recién cuando alguien abre la
+     demo, para no cargar la aplicación entera en cada visita. -->
+<dialog class="demo" id="demo" aria-label="La tienda demo en un celular">
+  <button type="button" class="demo__cerrar" id="demoCerrar" aria-label="Cerrar la demo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+
+  <div class="demo__caja">
+    <p class="demo__titulo">Así ve tu tienda quien te compra
+      <span>Es una tienda de demostración: tocá el menú y armá un pedido.</span>
+    </p>
+
+    <div class="demo__tel">
+      <iframe id="demoMarco" title="Tienda de demostración de OBYRA Pedidos"
+              data-src="https://pedidos.obyra.com.ar/" loading="lazy"></iframe>
+    </div>
+
+    <div class="demo__pie">
+      <a href="https://pedidos.obyra.com.ar" target="_blank" rel="noopener" class="btn btn--fantasma">Abrirla en una pestaña</a>
+      <a href="https://pedidos.obyra.com.ar/crear-tienda" target="_blank" rel="noopener" class="btn btn--primario">Creá tu tienda</a>
+    </div>
+  </div>
+</dialog>
 
 <script type="application/ld+json">
 {
@@ -1108,6 +1178,42 @@ ul{ margin:0; padding:0; list-style:none; }
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
     elementos.forEach(function (el) { obs.observe(el); });
+  }
+
+  /* --- La tienda dentro del celular --- */
+  var demo = document.getElementById('demo');
+  var marco = document.getElementById('demoMarco');
+
+  /* Sin <dialog> (navegadores viejos) no se toca nada: los botones siguen
+     siendo enlaces y abren la tienda en otra pestaña. */
+  if (demo && marco && typeof demo.showModal === 'function') {
+    var abrir = function (e) {
+      e.preventDefault();
+      /* La tienda se carga la primera vez y se queda: así quien cierra y
+         vuelve a abrir encuentra su pedido como lo dejó. */
+      if (!marco.src) marco.src = marco.dataset.src;
+      demo.showModal();
+      document.body.style.overflow = 'hidden';
+    };
+
+    var enlaces = document.querySelectorAll('[data-demo]');
+    for (var i = 0; i < enlaces.length; i++) {
+      enlaces[i].addEventListener('click', abrir);
+    }
+
+    document.getElementById('demoCerrar').addEventListener('click', function () {
+      demo.close();
+    });
+
+    /* Clic en el fondo oscuro, fuera del teléfono. */
+    demo.addEventListener('click', function (e) {
+      if (e.target === demo) demo.close();
+    });
+
+    /* Vale tanto para el botón como para la tecla Escape. */
+    demo.addEventListener('close', function () {
+      document.body.style.overflow = '';
+    });
   }
 
   /* --- Año del footer --- */
