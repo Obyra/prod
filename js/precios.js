@@ -26,16 +26,15 @@ window.OBYRA_PRECIOS = {
          la factura coincide con la tabla y se explica en una frase. */
       monto: '3,90%',
       periodo: 'de lo que vendas por mes',
-      detalle: 'Baja a 3,50%, 3% y 2,50% a medida que vendés más. Sin abono mensual fijo.',
+      detalle: 'Baja a 3,50%, 3% y 2,80% a medida que vendés más. Sin abono mensual fijo.',
       destacado: true,
       filas: [
         ['Hasta $2.000.000 por mes', '3,90%'],
         ['De $2 a $5 millones', '3,50%'],
         ['De $5 a $10 millones', '3,00%'],
-        ['Más de $10 millones', '2,50%'],
-        ['Prueba gratuita', '14 días desde que se publica tu tienda'],
-        ['Si armás la tienda vos', 'Alta sin costo'],
-        ['Si te la armamos nosotros', 'Lo cotizamos según tu carta'],
+        ['Más de $10 millones', '2,80%'],
+        ['Puesta en marcha', '$50.000 por única vez'],
+        ['Si te la armamos nosotros', 'Se cotiza aparte según tu carta'],
         ['Usuarios incluidos', 'Sin límite dentro del local'],
         ['Actualizaciones', 'Incluidas'],
         ['Soporte', 'Incluido por WhatsApp']
