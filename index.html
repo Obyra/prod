@@ -209,8 +209,11 @@ ul{ margin:0; padding:0; list-style:none; }
   /* Un `split` que se quedo sin su media: una sola columna, y el texto con un
      ancho de lectura. Sin esto queda media pantalla vacia al lado, que se lee
      como que la foto no cargo. */
+  /* Centrado: alineado a la izquierda con 600 px de aire a la derecha, se lee
+     como una foto que no cargo. Centrado se lee como lo que es, un bloque de
+     texto. */
   .split--solo{ grid-template-columns:1fr; }
-  .split--solo > *{ max-width:62ch; }
+  .split--solo > *{ max-width:62ch; margin-inline:auto; }
 }
 
 .marco{ position:relative; margin-inline:auto; width:100%; max-width:420px; }
