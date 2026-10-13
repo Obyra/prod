@@ -16,3 +16,10 @@
 /construccion     /    301
 /construccion/    /    301
 /construccion/*   /    301
+
+# El login del sistema de obra, que vivia en la raiz del sitio.
+#
+# Se borro con el resto de lo de Construccion, pero la direccion puede estar
+# guardada en el favorito de alguien. Sin esta linea daria 404; con ella, cae
+# en la principal. El sistema de obra tiene su propia puerta en app.obyra.com.ar.
+/login.html   /    301
