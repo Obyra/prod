@@ -417,7 +417,10 @@ ul{ margin:0; padding:0; list-style:none; }
   /* Y centrado. El texto se queda en su ancho de lectura -no se estira a
      1.160 px, que no se lee- pero alineado a la izquierda dejaba media
      pantalla vacia a la derecha, que se ve como una foto que falto. */
-  .caso--sin-foto > *{ margin-inline:auto; }
+  /* Ancho de LECTURA y centrado. A 1.160 px el renglon se hace tan largo
+     que el ojo pierde donde empieza el siguiente; alineado a la izquierda
+     dejaba media pantalla vacia. Es la misma receta que `.split--solo`. */
+  .caso--sin-foto > *{ max-width:62ch; margin-inline:auto; }
 }
 .caso__foto{
   border-radius:var(--radio-lg); box-shadow:var(--sombra-alta);
