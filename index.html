@@ -216,10 +216,6 @@ ul{ margin:0; padding:0; list-style:none; }
   .split--solo > *{ max-width:62ch; margin-inline:auto; }
 }
 
-/* Un caso sin foto: el texto toma el ancho entero en vez de dejar media
-   grilla vacia al lado. */
-.caso--sin-foto{ grid-template-columns:1fr; }
-
 .marco{ position:relative; margin-inline:auto; width:100%; max-width:420px; }
 .marco::before{
   content:''; position:absolute; inset:auto -14px -18px 22%;
@@ -412,6 +408,11 @@ ul{ margin:0; padding:0; list-style:none; }
   grid-template-columns:1fr;
 }
 @media (min-width:900px){ .caso{ grid-template-columns:1fr 1.05fr; } }
+/* Un caso SIN foto: el texto toma el ancho entero en vez de dejar media
+   grilla vacia al lado. Va DESPUES de la media query de arriba: las dos
+   reglas tienen la misma especificidad -una clase- asi que decide el orden,
+   y puesta antes no hacia nada. */
+@media (min-width:900px){ .caso--sin-foto{ grid-template-columns:1fr; } }
 .caso__foto{
   border-radius:var(--radio-lg); box-shadow:var(--sombra-alta);
   aspect-ratio:4/3; object-fit:cover; width:100%;
