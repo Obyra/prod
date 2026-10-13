@@ -1,0 +1,25 @@
+# Redirecciones de Cloudflare Pages.
+#
+# 301 y no 302: son permanentes. Google ya tiene guardado /pedidos/ y hay
+# links dados a mano; con un 302 seguiria indexando la vieja y repartiendo la
+# autoridad entre dos direcciones para la misma pagina.
+#
+# La pagina de Pedidos ES la principal desde el 13/10/2026, asi que /pedidos/
+# no es "otra pagina que se fue": es esta misma, en su direccion de antes.
+/pedidos      /    301
+/pedidos/     /    301
+/pedidos/*    /    301
+
+# Construccion y software a medida salieron del sitio. Van a la principal y no
+# a un 404: el que entra por un link viejo llega a lo que OBYRA hace hoy, que
+# es mejor que una pagina de error.
+/construccion     /    301
+/construccion/    /    301
+/construccion/*   /    301
+
+# El login del sistema de obra, que vivia en la raiz del sitio.
+#
+# Se borro con el resto de lo de Construccion, pero la direccion puede estar
+# guardada en el favorito de alguien. Sin esta linea daria 404; con ella, cae
+# en la principal. El sistema de obra tiene su propia puerta en app.obyra.com.ar.
+/login.html   /    301

@@ -2,7 +2,8 @@
    OBYRA — Precios publicados
    ------------------------------------------------------------
    ESTE ES EL ÚNICO ARCHIVO QUE HAY QUE TOCAR PARA CAMBIAR PRECIOS.
-   Se usa en la home (sección Precios) y en la página /precios/.
+   Se usa en la pagina /precios/. La principal (OBYRA Pedidos) trae sus
+   precios escritos en su propio HTML.
    ============================================================ */
 
 window.OBYRA_PRECIOS = {
@@ -41,65 +42,6 @@ window.OBYRA_PRECIOS = {
       ],
       cta: { texto: 'Creá tu tienda', href: 'https://pedidos.obyra.com.ar/crear-tienda' }
     },
-
-    {
-      id: 'construccion-profesional',
-      etiqueta: 'OBYRA Construcción',
-      nombre: 'Plan Profesional',
-      modalidad: 'Suscripción mensual',
-      monto: '$420.000',
-      periodo: 'ARS / mes',
-      /* TODO (Brenda): confirmar el monto en pesos. Sale de los USD 300/mes
-         publicados en /construccion/ a la cotización usada ahí (1 USD = $1.400). */
-      detalle: 'Equivale a USD 300 + IVA por mes. Actualización trimestral por IPC.',
-      filas: [
-        ['Modalidad', 'Suscripción mensual'],
-        ['Usuarios incluidos', '15'],
-        ['Obras', 'Ilimitadas'],
-        ['Prueba gratuita', '30 días, sin tarjeta'],
-        ['Actualizaciones', 'Incluidas'],
-        ['Soporte', 'Incluido']
-      ],
-      cta: { texto: 'Empezar prueba gratis', href: 'https://app.obyra.com.ar/auth/register' }
-    },
-
-    {
-      id: 'construccion-licencia',
-      etiqueta: 'OBYRA Construcción',
-      nombre: 'Licencia 5 años',
-      modalidad: 'Pago único',
-      monto: '$16.660.000',
-      periodo: 'ARS (pago único)',
-      /* TODO (Brenda): confirmar el monto en pesos. Sale de los USD 11.900
-         publicados en /construccion/ a la misma cotización (1 USD = $1.400). */
-      detalle: 'Equivale a USD 11.900 + IVA, por 60 meses de servicio.',
-      filas: [
-        ['Modalidad', 'Pago único'],
-        ['Usuarios incluidos', '15'],
-        ['Obras', 'Ilimitadas'],
-        ['Prueba gratuita', '30 días, sin tarjeta'],
-        ['Actualizaciones', 'Incluidas por 5 años'],
-        ['Soporte', 'Incluido']
-      ],
-      cta: { texto: 'Consultar por WhatsApp', href: 'https://wa.me/5491173685175?text=Hola%2C%20quiero%20info%20sobre%20la%20licencia%205%20a%C3%B1os%20de%20OBYRA' }
-    },
-
-    {
-      id: 'a-medida',
-      etiqueta: 'Software a medida',
-      nombre: 'Sistemas para otros rubros',
-      modalidad: 'Presupuesto a medida',
-      monto: 'Presupuesto',
-      periodo: 'a medida',
-      detalle: 'El precio depende del alcance. La primera reunión de diagnóstico no tiene costo.',
-      filas: [
-        ['Modalidad', 'Proyecto cerrado o por etapas'],
-        ['Diagnóstico', 'Sin costo'],
-        ['Prototipo', 'Antes de desarrollar'],
-        ['Soporte', 'Incluido después de la puesta en marcha']
-      ],
-      cta: { texto: 'Contar mi problema', href: '/#contacto' }
-    }
 
   ]
 };
