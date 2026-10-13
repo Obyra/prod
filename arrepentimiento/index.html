@@ -59,7 +59,11 @@
       <p>También podés escribirnos a <a href="mailto:contacto@obyra.com.ar?subject=Arrepentimiento%20de%20compra">contacto@obyra.com.ar</a> con el asunto "Arrepentimiento de compra", o por WhatsApp al <a href="https://wa.me/5491173685175" target="_blank" rel="noopener">+54 9 11 7368-5175</a>.</p>
 
       <div class="formulario">
-        <form action="https://formsubmit.co/contacto@obyra.com.ar" method="POST">
+        <!-- El codigo de FormSubmit, no el correo.
+             Llega al mismo lugar -contacto@obyra.com.ar, ya activado- pero la
+             direccion deja de estar escrita en el HTML, que es de donde la
+             levantan los robots que recolectan correos para spam. -->
+        <form action="https://formsubmit.co/505d2facbd56fa1b0df73a326b7df223" method="POST">
           <input type="hidden" name="_next" value="https://obyra.com.ar/arrepentimiento/?enviado=1">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="Arrepentimiento de compra — obyra.com.ar">
