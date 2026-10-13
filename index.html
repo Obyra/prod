@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OBYRA Pedidos - Tienda online y panel de pedidos para tu local</title>
-<meta name="description" content="Tu propia tienda de pedidos online, con tu marca y tu dominio: menú, promos, zonas de entrega y un panel donde los pedidos entran en vivo. Puesta en marcha $50.000 por única vez y una comisión sobre lo que vendas.">
+<meta name="description" content="Tu propia tienda de pedidos online, con tu marca y tu dominio: catálogo, promos, zonas de entrega y un panel donde los pedidos entran en vivo. Puesta en marcha $50.000 por única vez y una comisión sobre lo que vendas.">
 <meta name="theme-color" content="#F07427">
 <link rel="canonical" href="https://obyra.com.ar/">
 
@@ -206,6 +206,11 @@ ul{ margin:0; padding:0; list-style:none; }
 @media (min-width:900px){
   .split{ grid-template-columns:1fr 1fr; }
   .split--invertido .split__media{ order:-1; }
+  /* Un `split` que se quedo sin su media: una sola columna, y el texto con un
+     ancho de lectura. Sin esto queda media pantalla vacia al lado, que se lee
+     como que la foto no cargo. */
+  .split--solo{ grid-template-columns:1fr; }
+  .split--solo > *{ max-width:62ch; }
 }
 
 .marco{ position:relative; margin-inline:auto; width:100%; max-width:420px; }
@@ -603,7 +608,7 @@ ul{ margin:0; padding:0; list-style:none; }
             <picture>
               <source srcset="/images/pedidos/tienda-celular.webp?v=2" type="image/webp">
               <img src="/images/pedidos/tienda-celular.png?v=2" width="420" height="861" fetchpriority="high" decoding="async"
-                   alt="La tienda demo en un celular: la portada, las promos de la semana y el buscador del menú">
+                   alt="La tienda demo en un celular: la portada, las promos de la semana y el buscador del catálogo">
             </picture>
           </div>
         </div>
@@ -613,7 +618,7 @@ ul{ margin:0; padding:0; list-style:none; }
 
   <!-- ============ 2. EL PROBLEMA REAL ============ -->
   <section class="seccion seccion--suave" id="problema">
-    <div class="contenedor split split--invertido">
+    <div class="contenedor split split--solo">
       <div class="split__texto">
         <p class="eyebrow">El problema real</p>
         <h2>Lo que vemos en casi todos los locales que arrancan a vender online</h2>
@@ -642,7 +647,7 @@ ul{ margin:0; padding:0; list-style:none; }
             <span class="dolor__icono" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg>
             </span>
-            <p style="margin:0"><b>La carta en PDF</b> <span>con precios de hace tres meses dando vueltas.</span></p>
+            <p style="margin:0"><b>La lista de precios en PDF</b> <span>con precios de hace tres meses dando vueltas.</span></p>
           </li>
           <li class="dolor">
             <span class="dolor__icono" aria-hidden="true">
@@ -657,14 +662,26 @@ ul{ margin:0; padding:0; list-style:none; }
         </div>
       </div>
 
+      <!-- LA FOTO SE SACO, y el lugar queda esperando una.
+
+           Era un food truck con dos porciones de papas fritas: una pagina que
+           dice "para comercios -comida, pet shops, almacenes-" y muestra eso,
+           dice con la imagen lo contrario que con el texto, y la imagen gana.
+
+           No se reemplazo porque en el repo no hay ninguna foto neutra: la de
+           "comercio" del sitio viejo es un electricista. Cuando haya una de
+           comercio en general, va aca adentro y se le saca a la seccion la
+           clase `split--solo`.
+
       <div class="split__media">
         <div class="marco">
           <div class="marco__img">
-            <img src="/images/pedidos/local-gastronomico.jpg" width="1000" height="1500" loading="lazy" decoding="async"
-                 alt="Dueño de un local gastronómico sosteniendo dos pedidos listos para entregar">
+            <img src="/images/pedidos/{FOTO}.jpg" width="1000" height="1500"
+                 loading="lazy" decoding="async" alt="{QUE SE VE}">
           </div>
         </div>
       </div>
+      -->
     </div>
   </section>
 
@@ -675,7 +692,7 @@ ul{ margin:0; padding:0; list-style:none; }
         <p class="eyebrow">La solución</p>
         <h2>Tu tienda, tu panel, <span class="acento">tus clientes</span>.</h2>
         <div class="linea"></div>
-        <p class="plomo">Tu local tiene su propia dirección web, con tu logo, tus colores y tu menú. Tus clientes entran, piden y pagan ahí. Vos lo ves todo desde un panel, en vivo.</p>
+        <p class="plomo">Tu comercio tiene su propia dirección web, con tu logo, tus colores y tu catálogo. Tus clientes entran, piden y pagan ahí. Vos lo ves todo desde un panel, en vivo.</p>
       </div>
 
       <div class="marco marco--ancho">
@@ -683,7 +700,7 @@ ul{ margin:0; padding:0; list-style:none; }
           <picture>
             <source srcset="/images/pedidos/tienda.webp?v=2" type="image/webp">
             <img src="/images/pedidos/tienda.png?v=2" width="1280" height="960" loading="lazy" decoding="async"
-                 alt="La tienda demo de OBYRA Pedidos: portada con el nombre del local, promos de la semana con descuentos y el menú por categorías">
+                 alt="La tienda demo de OBYRA Pedidos: portada con el nombre del local, promos de la semana con descuentos y el catálogo por categorías">
           </picture>
         </div>
       </div>
@@ -708,7 +725,7 @@ ul{ margin:0; padding:0; list-style:none; }
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
           </div>
           <h3>El dinero va directo a vos</h3>
-          <p>Mercado Pago con tu propia cuenta, o transferencia. Sin escalas.</p>
+          <p>Mercado Pago con tu propia cuenta, transferencia o efectivo al recibir. Sin escalas.</p>
         </div>
         <div class="pilar">
           <div class="pilar__icono" aria-hidden="true">
@@ -749,7 +766,7 @@ ul{ margin:0; padding:0; list-style:none; }
         <p class="eyebrow">Funcionalidades</p>
         <h2>Todo lo que tu local necesita para vender online</h2>
         <div class="linea"></div>
-        <p class="plomo">Pensado para el día a día de un local que cocina y reparte, no para alguien que vive frente a una computadora.</p>
+        <p class="plomo">Pensado para el día a día de un comercio que atiende y despacha, no para alguien que vive frente a una computadora.</p>
       </div>
 
       <div class="grilla-modulos">
@@ -757,7 +774,7 @@ ul{ margin:0; padding:0; list-style:none; }
           <div class="modulo__icono" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h1v11M6 2v7M9 2v7"/><path d="M18 2c-1.7 0-3 2.5-3 6 0 2.5 1 4 2 4h1v10"/></svg>
           </div>
-          <h3>Tu menú, siempre al día</h3>
+          <h3>Tu catálogo, siempre al día</h3>
           <p>Categorías, productos con foto, precio y descripción. Si tenés muchos, los subís de una con Importar Excel. Cambiás un precio y cambia al instante en la tienda.</p>
         </article>
 
@@ -889,7 +906,7 @@ ul{ margin:0; padding:0; list-style:none; }
 
           <ul class="caso__lista">
             <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Tienda propia con carrito y catálogo de productos</li>
-            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pago con Mercado Pago o transferencia, con descuento configurable</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pago con Mercado Pago, transferencia o efectivo al recibir, con descuento configurable</li>
             <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Panel de pedidos en tiempo real y reportes de venta</li>
             <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Comprobante al cliente por WhatsApp</li>
           </ul>
@@ -969,14 +986,14 @@ ul{ margin:0; padding:0; list-style:none; }
             </tbody>
           </table>
           <p>Se calcula sobre lo vendido en el mes, <strong>sin el costo de envío</strong> y <strong>sin los pedidos cancelados o rechazados</strong>: los mismos números que ves en tus reportes. <strong>Mes sin ventas, mes sin comisión.</strong></p>
-          <p>La comisión de OBYRA es independiente del costo de tu medio de cobro. Si cobrás con Mercado Pago, la plata entra directo a tu cuenta y la comisión de Mercado Pago la seguís pagando vos a Mercado Pago, como hoy. <strong>OBYRA no toca tu dinero.</strong></p>
+          <p>La comisión de OBYRA es independiente del costo de tu medio de cobro. Si cobrás con Mercado Pago, la plata entra directo a tu cuenta y la comisión de Mercado Pago la seguís pagando vos a Mercado Pago, como hoy. <strong>Tus clientes te pagan directo a vos. OBYRA te cobra su comisión una vez por mes.</strong></p>
         </article>
 
         <article class="cobro__caja">
           <p class="cobro__etiqueta">Una sola vez</p>
           <h3>Puesta en marcha</h3>
           <p><strong>$50.000, una sola vez.</strong> Si la armás vos te damos las plantillas, los colores y el importador de Excel, y en un rato la tenés lista.</p>
-          <p>¿No tenés tiempo o preferís no pelearte con la computadora? <strong>Te la dejamos lista para vender</strong>: tu página, tu menú cargado con tus fotos, tus zonas de entrega y el local andando. Eso se cotiza aparte según tu carta, y te decimos el número antes de que decidas nada.</p>
+          <p>¿No tenés tiempo o preferís no pelearte con la computadora? <strong>Te la dejamos lista para vender</strong>: tu página, tu catálogo cargado con tus fotos, tus zonas de entrega y el comercio andando. Eso se cotiza aparte según cuántos productos tengas, y te decimos el número antes de que decidas nada.</p>
         </article>
       </div>
 
@@ -996,7 +1013,7 @@ ul{ margin:0; padding:0; list-style:none; }
       </div>
 
       <p class="precios__pie">
-        Los porcentajes de OBYRA son finales, sin IVA por encima. No incluyen la comisión de tu medio de cobro. ¿Dudas? Escribinos:
+        Los porcentajes son finales: no se suma IVA. No incluyen la comisión de tu medio de cobro. ¿Dudas? Escribinos:
         <a href="https://wa.me/5491173685175?text=Hola!%20Quiero%20info%20de%20OBYRA%20Pedidos%20para%20mi%20local" target="_blank" rel="noopener"><strong>+54 9 11 7368-5175</strong></a>
       </p>
     </div>
@@ -1163,8 +1180,8 @@ ul{ margin:0; padding:0; list-style:none; }
   </button>
 
   <div class="demo__caja">
-    <p class="demo__titulo">Así ve tu tienda quien te compra
-      <span>Es una tienda de demostración: tocá el menú y armá un pedido.</span>
+    <p class="demo__titulo">Así ve tu tienda quien te compra.
+      <span>Es una tienda de demostración: tocá el catálogo y armá un pedido.</span>
     </p>
 
     <div class="demo__tel">
